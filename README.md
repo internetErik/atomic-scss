@@ -43,3 +43,8 @@ Here is an [atomic-scss-starter-kit](https://github.com/internetErik/atomic-scss
 Thanks to yahoo for poneering this technique (as far as I know).  
 
 Also see [acss](http://acss.io).
+
+## License
+
+[MIT license](LICENSE.md)
+
