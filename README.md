@@ -20,17 +20,32 @@ e.g.,
 
 ## Supported Styles
 
+The class names follow (for the most part) emmet syntax. ([cheat sheet](http://docs.emmet.io/cheat-sheet/))
+
 * Padding (`p#`, `pt#`, `pb#`, `pl#`, `pr#`, `p0-#`, `p#-0`)
-* Margin (`m#`, `mt#`, `mb#`, `ml#`, `mr#`, `m0-#`, `m#-0`)
-* Height (`h#`, `h#%`)
+* Margin (`m#`, `mt#`, `mb#`, `ml#`, `mr#`, `m0-#`, `m#-0`, `m0-auto`)
+* Height (`h#`, `h#%`, `mih100%`, `mah100%`)
 * Width (`w#`, `w#%`)
-* Top
-* Bottom
-* Left
-* Right
-* Display
-* Flexbox
-* Position
+* Top (`t#`, `t#%`)
+* Bottom (`b#`, `b#%`)
+* Left (`l#`, `l#%`)
+* Right (`r#`, `r#%`)
+* Z-Index
+* Display (`dn`, `db`, `d-i`, `dib`)
+* Flexbox (`df`, dif`)
+  * Flex Direction (`fxdr`, `fxdc`, `fxdrr`, `fxdcr`)
+  * Flex Wrap (`fxwn`, `fxww`, `fxwr`)
+  * Justify Content (`jcfs`, `jcfe`, `jcc`, `jcsb`, `jcsa`)
+  * Align Items (`aib`, `aic`, `asa`, `asb`, `asc`)
+  * Order (`ord#`)
+* Position (`poss`, `posa`, `posr`, `posf`)
+* Overflow (`oh`, `oa`, `oyh`, `oya`, `oxh`, `oxa`)
+* Float (`fll`, `flr`, `fln`)
+* Clear (`clb`, `cll`, `clr`)
+* Font
+  * Font Style
+  * Font Weight
+  * Font Size
 
 ## Recommendations
 
