@@ -1,0 +1,307 @@
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//show or hide items at different breakpoints
+.show-tablet {
+	display: none;
+
+	@media all and (max-width: $bp-md) {
+		display: block;
+	}
+}
+
+.show-mobile {
+	display: none;
+
+	@media all and (max-width: $bp-sm) {
+		display: block;
+	}
+}
+
+@media all and (max-width: $bp-lg) {
+	.hide-large {
+		display: none;
+	}
+}
+
+@media all and (max-width: $bp-md) {
+	.hide-tablet {
+		display: none;
+	}
+}
+
+@media all and (max-width: $bp-sm) {
+	.hide-mobile {
+		display: none;
+	}
+}
+
+//use border-radius to create a circle shape
+.border-circle {
+	border-radius: 100%;
+}
+
+//force element to fill container height/width
+.max-height {
+	height: 100%;
+}
+
+.max-width {
+	width: 100%;
+}
+
+//center elements horizontally and/or vertically 
+.vertical-align {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.horizontal-align {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.transform-center {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.horizontal-align-absolute {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.vertical-align-absolute {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.transform-center-absolute {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.horizontal-align-fixed {
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.vertical-align-fixed {
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.transform-center-fixed {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@media all and (max-width: $bp-md) {
+	.vertical-align\@md {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.horizontal-align\@md {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.transform-center\@md {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.horizontal-align-absolute\@md {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.vertical-align-absolute\@md {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.transform-center-absolute\@md {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.horizontal-align-fixed\@md {
+		position: fixed;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.vertical-align-fixed\@md {
+		position: fixed;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.transform-center-fixed\@md {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+@media all and (max-width: $bp-sm) {
+	.vertical-align\@sm {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.horizontal-align\@sm {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.transform-center\@sm {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.horizontal-align-absolute\@sm {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.vertical-align-absolute\@sm {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.transform-center-absolute\@sm {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.horizontal-align-fixed\@sm {
+		position: fixed;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.vertical-align-fixed\@sm {
+		position: fixed;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.transform-center-fixed\@sm {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+// use a checkbox to show and hide sibling elements with target class
+.toggle-sibling {
+	display: none;
+}
+
+.toggle-sibling ~ .toggle-sibling-target {
+	display: none;
+}
+
+.toggle-sibling:checked ~ .toggle-sibling-target {
+	display: block;
+}
+
+//transforms
+.rotateZ45 {
+	transform: rotateZ(45deg);
+}
+.rotateZ90 {
+	transform: rotateZ(90deg);
+}
+.scale50 {
+	transform: scale(.5, .5); 
+}
+.scale150 {
+	transform: scale(1.5, 1.5); 
+}
+.scale200 {
+	transform: scale(2, 2); 
+}
+
+//transition settings
+.transition-opacity {
+	transition: opacity .3s;
+}
+
+.transition-color {
+	transition: color .3s;
+}
+
+.transition-background {
+	transition: background .3s;
+}
+
+.transition-transform {
+	transition: transform .3s;
+}
+
+.transition-top {
+	transition: top .3s;
+}
+
+.transition-left {
+	transition: left .3s;
+}
+
+.transition-right {
+	transition: right .3s;
+}
+
+.transition-bottom {
+	transition: bottom .3s;
+}
+
+.transition-all {
+	transition: all .3s;
+}
+
+.background-transparent {
+	background: transparent;
+}
