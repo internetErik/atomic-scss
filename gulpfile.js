@@ -20,6 +20,7 @@ gulp.task('sass', function(){
     .pipe(gulp.dest(paths.css));
 });
 
+gulp.task('default', ['sass'], function() {});
 
 gulp.task('watch', function() {
     gulp.start('sass');
