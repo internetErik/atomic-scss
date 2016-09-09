@@ -248,6 +248,37 @@ $ords: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 99;
   }
 }
 
+//flex grow
+$fxgs: 1, 2, 3, 4, 5;
+
+@each $fxg in $fxgs {
+  .fxg#{$fxg} {
+    flex-grow: $fxg;
+  }
+}
+
+//flex shrink
+$fxshs: 1, 2, 3, 4, 5;
+
+@each $fxsh in $fxshs {
+  .fxsh#{$fxsh} {
+    flex-shrink: $fxsh;
+  }
+}
+
+//flex basis
+$fxbs: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800;
+
+@each $fxb in $fxbs {
+  .fxb#{$fxg} {
+    flex-basis: #{$fxb}px;
+  }
+}
+
+.fxba {
+  flex-basis: auto;
+}
+
 //position
 .poss {
   position: static;

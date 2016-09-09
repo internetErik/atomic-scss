@@ -39,9 +39,16 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
   * Flex Direction (`fxdr`, `fxdc`, `fxdrr`, `fxdcr`)
   * Flex Wrap (`fxwn`, `fxww`, `fxwr`)
   * Justify Content (`jcfs`, `jcfe`, `jcc`, `jcsb`, `jcsa`)
-  * Align Items (`aib`, `aic`, `asa`, `asb`, `asc`)
+  * Align Self (`aib`, `aic`, `asa`, `asb`, `asc`)
   * Order (`ord#`)
     * value: `1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 99`
+  * Flex Grow (`fxg#`)
+    * values: `1, 2, 3, 4, 5`
+  * Flex Shrink (`fxsh#`)
+    * values: `1, 2, 3, 4, 5`
+  * Flex Basis - in pixels (`fxb#`)
+    * values: `0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800`
+    * Flex Basis `auto` (`fxba`)
 * Position (`poss`, `posa`, `posr`, `posf`)
 * Overflow (`oh`, `oa`, `oyh`, `oya`, `oxh`, `oxa`)
 * Float (`fll`, `flr`, `fln`)
