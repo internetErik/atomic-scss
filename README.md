@@ -18,7 +18,7 @@ Start using atomic styles!
 e.g., 
 `p20` => `padding: 20px;`
 
-## Supported Styles
+## Supported Atomic Styles
 
 The class names follow emmet syntax (for the most part). ([cheat sheet](http://docs.emmet.io/cheat-sheet/))
 
@@ -59,7 +59,9 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
   * (text) Color on hover (`c-<color>:h`)
   * values: `white, lightgray, gray, black    `
 * Background Color (`bgc-<color>`)
+  * Background Color `transparent` (`bgct`)
   * Background Color on hover (`bgc-<color>:h`)
+    * Background Color `transparent` on hover (`bgct:h`)
   * values: `white, lightgray, gray, black `
 * Opacity (`op#`)
   * values: `0, .1, .2, .3, .4, .5, .6, .7, .8, .9, 1`
@@ -106,6 +108,45 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
   * Float (`fll@sm`, `flr@sm`, `fln@sm`)
   * Font Size (`fz#@sm`)
     * values: `10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 34, 36, 42, 48`
+
+## Available Helper Classes
+
+* Clearfix (`clearfix`)
+* Truncate and add ellipsis to text (`truncate-text`)
+* Make an object into a circle (`round-element`)
+* Show and hide an element with checkbox
+  * `<input type="checkbox" class="toggle-sibling"><span class="toggle-sibling-target">Hidden Until Checkbox is on</span>` 
+* Center Objects Vertically
+  * With relative position (`vertical-align`)
+  * With absolute position (`vertical-align-absolute`)
+  * With fixed position (`vertical-align-fixed`) 
+  * All of these at `@md` and `@sm`
+    * `vertical-align@md`, `vertical-align@sm`
+    * `vertical-align-absolute@md`, `vertical-align-absolute@sm`
+    * `vertical-align-fixed@md`, `vertical-align-fixed@sm`
+* Center Objects Horizontally
+  * With relative position (`horizontal-align`)
+  * With absolute position (`horizontal-align-absolute`)
+  * With fixed position (`horizontal-align-fixed`) 
+  * All of these at `@md` and `@sm`
+    * `horizontal-align@md`, `horizontal-align@sm`
+    * `horizontal-align-absolute@md`, `horizontal-align-absolute@sm`
+    * `horizontal-align-fixed@md`, `horizontal-align-fixed@sm`
+* Center Objects Vertically and Horizontally
+  * With relative position (`transform-center`)
+  * With absolute position (`transform-center-absolute`)
+  * With fixed position (`transform-center-fixed`)
+  * All of these at `@md` and `@sm`
+    * `transform-center@md`, `transform-center@sm`
+    * `transform-center-absolute@md`, `transform-center-absolute@sm`
+    * `transform-center-fixed@md`, `transform-center-fixed@sm`
+* Transforms
+  * Rotate Z (`rotateZ#`) 
+    * values: `45, 90, -45, -90`
+  * Scale (`scale#`) 
+    * values: `50, 150, 200` 
+* Transition with `.3s ease-in-out` (`transition-<property>`) 
+  * values: `opacity, color, background, transform, top, bottom, left, right, all`
 
 ## SCSS Variables (Should be overridden by user)
 

@@ -10,53 +10,22 @@
   text-overflow: ellipsis;
 }
 
-//show or hide items at different breakpoints
-.show-tablet {
-	display: none;
-
-	@media all and (max-width: $bp-md) {
-		display: block;
-	}
-}
-
-.show-mobile {
-	display: none;
-
-	@media all and (max-width: $bp-sm) {
-		display: block;
-	}
-}
-
-@media all and (max-width: $bp-lg) {
-	.hide-large {
-		display: none;
-	}
-}
-
-@media all and (max-width: $bp-md) {
-	.hide-tablet {
-		display: none;
-	}
-}
-
-@media all and (max-width: $bp-sm) {
-	.hide-mobile {
-		display: none;
-	}
-}
-
 //use border-radius to create a circle shape
-.border-circle {
+.round-element {
 	border-radius: 100%;
 }
 
-//force element to fill container height/width
-.max-height {
-	height: 100%;
+// use a checkbox to show and hide sibling elements with target class
+.toggle-sibling {
+	display: none;
 }
 
-.max-width {
-	width: 100%;
+.toggle-sibling ~ .toggle-sibling-target {
+	display: none;
+}
+
+.toggle-sibling:checked ~ .toggle-sibling-target {
+	display: block;
 }
 
 //center elements horizontally and/or vertically 
@@ -235,73 +204,68 @@
 	}
 }
 
-// use a checkbox to show and hide sibling elements with target class
-.toggle-sibling {
-	display: none;
-}
-
-.toggle-sibling ~ .toggle-sibling-target {
-	display: none;
-}
-
-.toggle-sibling:checked ~ .toggle-sibling-target {
-	display: block;
-}
-
 //transforms
 .rotateZ45 {
 	transform: rotateZ(45deg);
 }
+
 .rotateZ90 {
 	transform: rotateZ(90deg);
 }
+
+.rotateZ-45 {
+	transform: rotateZ(-45deg);
+}
+
+.rotateZ-90 {
+	transform: rotateZ(-90deg);
+}
+
 .scale50 {
 	transform: scale(.5, .5); 
 }
+
 .scale150 {
 	transform: scale(1.5, 1.5); 
 }
+
 .scale200 {
 	transform: scale(2, 2); 
 }
 
 //transition settings
 .transition-opacity {
-	transition: opacity .3s;
+	transition: opacity .3s ease-in-out;
 }
 
 .transition-color {
-	transition: color .3s;
+	transition: color .3s ease-in-out;
 }
 
 .transition-background {
-	transition: background .3s;
+	transition: background .3s ease-in-out;
 }
 
 .transition-transform {
-	transition: transform .3s;
+	transition: transform .3s ease-in-out;
 }
 
 .transition-top {
-	transition: top .3s;
+	transition: top .3s ease-in-out;
 }
 
 .transition-left {
-	transition: left .3s;
+	transition: left .3s ease-in-out;
 }
 
 .transition-right {
-	transition: right .3s;
+	transition: right .3s ease-in-out;
 }
 
 .transition-bottom {
-	transition: bottom .3s;
+	transition: bottom .3s ease-in-out;
 }
 
 .transition-all {
-	transition: all .3s;
-}
-
-.background-transparent {
-	background: transparent;
+	transition: all .3s ease-in-out;
 }
