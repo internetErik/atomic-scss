@@ -11,10 +11,6 @@ $color-lightgray: lightgray !default;
 $color-gray     : gray !default;
 
 // breakpoints
-// starting from 400px and using * 1.4 to scale (500 * 1.4 = 560, etc.)
-	// Redefine these widths by the actual design!
-$bp-lgx: 1536px !default;
 $bp-lg : 1097px !default;
 $bp-md : 784px !default;
 $bp-sm : 560px !default;
-$bp-smx: 400px !default;
