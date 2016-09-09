@@ -67,7 +67,9 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
   * Font Family (`ffs`, `ffss`)
 * (text) Color (`c-<color>`)
   * (text) Color on hover (`c-<color>:h`)
-  * values: `white, lightgray, gray, black    `
+  * values: `white, lightgray, gray, black`
+* Text Shadow (`tsh1-1-1-<color>`)
+	* values: `white, lightgray, gray, black`
 * Background Color (`bgc-<color>`)
   * Background Color `transparent` (`bgct`)
   * Background Color on hover (`bgc-<color>:h`)

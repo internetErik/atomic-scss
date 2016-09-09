@@ -509,6 +509,22 @@ $fzs:  10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 3
   color: $color-black;
 }
 
+.tsh1-1-1-black {
+  text-shadow: 1px 1px 1px $color-black;
+}
+
+.tsh1-1-1-white {
+  text-shadow: 1px 1px 1px $color-white;
+}
+
+.tsh1-1-1-lightgray {
+  text-shadow: 1px 1px 1px $color-lightgray;
+}
+
+.tsh1-1-1-gray {
+  text-shadow: 1px 1px 1px $color-gray;
+}
+
 //background color
 .bgc-white {
   background-color: $color-white;
