@@ -7,16 +7,19 @@ Install with npm
 
 `npm install --save atomic-scss`
 
-Include the scss into your own project
+Import the scss into your own project from `node_modules` or copy the files into your own project.
 
-`@import "../../node_modules/atomic-scss/scss/atomic";`
+*(See example usage [here](https://github.com/internetErik/atomic-scss-starter-kit/blob/master/client/scss/atomic.scss))*
 
-*See example usage [here](https://github.com/internetErik/atomic-scss-starter-kit/blob/master/client/scss/atomic.scss)*
+Now, atomic scss should be available in your project!
 
-Start using atomic styles!
-
-e.g., 
-`p20` => `padding: 20px;`
+### Examples
+```
+p20 = padding: 20px;
+fz12 = font-size: 12px;
+w50% = width: 50%;
+w100%@sm = width: 100%; //at the breakpoint defined by $bp-sm
+```
 
 ## Supported Atomic Styles
 
@@ -116,7 +119,7 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
 * Make an object into a circle (`round-element`)
 * Show and hide an element with checkbox
   * `<input type="checkbox" class="toggle-sibling"><span class="toggle-sibling-target">Hidden Until Checkbox is on</span>` 
-* Center Objects Vertically
+* Center Element Vertically
   * With relative position (`vertical-align`)
   * With absolute position (`vertical-align-absolute`)
   * With fixed position (`vertical-align-fixed`) 
@@ -124,7 +127,7 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
     * `vertical-align@md`, `vertical-align@sm`
     * `vertical-align-absolute@md`, `vertical-align-absolute@sm`
     * `vertical-align-fixed@md`, `vertical-align-fixed@sm`
-* Center Objects Horizontally
+* Center Element Horizontally
   * With relative position (`horizontal-align`)
   * With absolute position (`horizontal-align-absolute`)
   * With fixed position (`horizontal-align-fixed`) 
@@ -132,7 +135,7 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
     * `horizontal-align@md`, `horizontal-align@sm`
     * `horizontal-align-absolute@md`, `horizontal-align-absolute@sm`
     * `horizontal-align-fixed@md`, `horizontal-align-fixed@sm`
-* Center Objects Vertically and Horizontally
+* Center Element Vertically and Horizontally
   * With relative position (`transform-center`)
   * With absolute position (`transform-center-absolute`)
   * With fixed position (`transform-center-fixed`)
@@ -163,7 +166,13 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
 
 `$bp-sm : 560px !default;`
 
+*The `!default` property means that it assigns this value only if the variable isn't already defined! So this won't override your own variables*
+
 ## Recommendations
+
+Import atomic into your scss at a fairly high level so the classes are easier to override
+
+This framework comes with some variables it defines for colors and breakpoints (see above). But you can override them by defining them **before** the import of the atomic.
 
 Pair with [unCSS](https://github.com/giakki/uncss) in some form in order to remove unused styles in the end. However, if you don't do this the added weight isn't all too bad.
 
@@ -171,7 +180,7 @@ Here is an [atomic-scss-starter-kit](https://github.com/internetErik/atomic-scss
 
 ## Thanks
 
-Thanks to yahoo for poneering this technique (as far as I know).  
+Thanks to yahoo for pioneering this technique (as far as I know).  
 
 Also see [acss](http://acss.io).
 
