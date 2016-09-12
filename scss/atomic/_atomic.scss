@@ -840,6 +840,26 @@ $bdrss: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
     max-height: 100%;
   }
 
+  $vws: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100;
+
+  @each $vw in $vws {
+    .h#{$vw}vh\@md {
+      height: #{$vw}vh;
+    }
+
+    .w#{$vw}vh\@md {
+      width: #{$vw}vh;
+    }
+
+    .h#{$vw}vw\@md {
+      height: #{$vw}vw;
+    }
+
+    .w#{$vw}vw\@md {
+      width: #{$vw}vw;
+    }
+  }
+
   .dn\@md {
     display: none;
   }
@@ -1066,6 +1086,26 @@ $bdrss: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 
   .mah100\%\@sm {
     max-height: 100%;
+  }
+
+  $vws: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100;
+
+  @each $vw in $vws {
+    .h#{$vw}vh\@sm {
+      height: #{$vw}vh;
+    }
+
+    .w#{$vw}vh\@sm {
+      width: #{$vw}vh;
+    }
+
+    .h#{$vw}vw\@sm {
+      height: #{$vw}vw;
+    }
+
+    .w#{$vw}vw\@sm {
+      width: #{$vw}vw;
+    }
   }
 
   .dn\@sm {

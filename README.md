@@ -94,6 +94,8 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
     * Height, Width, Padding, Margin, Top, Bottom, Left, Right by percentage (`h#%@md`, `w#%@md`, `p#%@md`, `m#%@md`, `t#%@md`, `b#%@md`, `l#%@md`, `r#%@md`)
       * Min/Max Height and Width by percentage (`mih100%@md`, `mah100%@md`,`miw100%@md`, `maw100%@md`)
       * percentage values: `1, 2, 3, 4, 5, 10, 12.25, 15, 20, 25, 30, 33.3333, 35, 40, 45, 50, 55, 60, 65, 66.6666, 70, 75, 80, 85, 90, 95, 100, 110, 120 ,130 ,140 ,150`
+		  * Height and Width by View Height and View Width (`h#vh`, `w#vh`, `h#vw`, `w#vw`)
+		    * values: `5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100`
   * Display (`dn@md`, `db@md`, `d-i@md`, `dib@md`)
   * Flexbox (`df@md`, `dif@md`)
     * Flex Direction (`fxdr@md`, `fxdc@md`, `fxdrr@md`, `fxdcr@md`)
@@ -112,6 +114,8 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
     * Height, Width, Padding, Margin, Top, Bottom, Left, Right by percentage (`h#%@sm`, `w#%@sm`, `p#%@sm`, `m#%@sm`, `t#%@sm`, `b#%@sm`, `l#%@sm`, `r#%@sm`)
       * Min/Max Height and Width by percentage (`mih100%@sm`, `mah100%@sm`,`miw100%@sm`, `maw100%@sm`)
       * percentage values: `1, 2, 3, 4, 5, 10, 12.25, 15, 20, 25, 30, 33.3333, 35, 40, 45, 50, 55, 60, 65, 66.6666, 70, 75, 80, 85, 90, 95, 100, 110, 120 ,130 ,140 ,150`
+		  * Height and Width by View Height and View Width (`h#vh`, `w#vh`, `h#vw`, `w#vw`)
+		    * values: `5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100`
   * Display (`dn@sm`, `db@sm`, `d-i@sm`, `dib@sm`)
   * Flexbox (`df@sm`, `dif@sm`)
     * Flex Direction (`fxdr@sm`, `fxdc@sm`, `fxdrr@sm`, `fxdcr@sm`)
