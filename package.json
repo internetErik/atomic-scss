@@ -12,7 +12,7 @@
     "url": "git@github.com:internetErik/atomic-scss.git"
   },
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-sass": "^2.3.2"
