@@ -1,0 +1,5 @@
+@each $px in $pxs {
+  .t#{$px} {
+    top: #{$px}px;
+  }
+}

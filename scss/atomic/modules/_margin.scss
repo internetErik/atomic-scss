@@ -1,0 +1,13 @@
+@each $px in $pxs {
+  .m#{$px} {
+    margin: #{$px}px;
+  }
+  
+  .m#{$px}-0 {
+    margin: #{$px}px 0;
+  }
+  
+  .m0-#{$px} {
+    margin: 0 #{$px}px;
+  }
+}

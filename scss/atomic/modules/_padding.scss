@@ -1,0 +1,13 @@
+@each $px in $pxs {
+  .p#{$px} {
+    padding: #{$px}px;
+  }
+  
+  .p#{$px}-0 {
+    padding: #{$px}px 0;
+  }
+  
+  .p0-#{$px} {
+    padding: 0 #{$px}px;
+  }
+}
