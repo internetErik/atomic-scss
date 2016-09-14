@@ -11,3 +11,21 @@
     padding: 0 #{$px}px;
   }
 }
+
+@each $px in $pxs {
+  .pt#{$px} {
+    padding-top: #{$px}px;
+  }
+  
+  .pb#{$px} {
+    padding-bottom: #{$px}px;
+  }
+  
+  .pr#{$px} {
+    padding-right: #{$px}px;
+  }
+  
+  .pl#{$px} {
+    padding-left: #{$px}px;
+  }
+}

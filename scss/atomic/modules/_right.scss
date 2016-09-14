@@ -1,13 +1,13 @@
 @each $px in $pxs {
-  .t#{$px} {
-    top: #{$px}px;
+  .r#{$px} {
+    right: #{$px}px;
   }
 }
 
 @for $i from 1 through length($perc) {
   $val: nth($percVal, $i);
   $p  : nth($perc, $i);
-  .t#{$val}\% {
-    top: percentage($p);
+  .r#{$val}\% {
+    right: percentage($p);
   }
 }

@@ -3,3 +3,29 @@
     width: #{$px}px;
   }
 }
+
+@for $i from 1 through length($perc) {
+  $val: nth($percVal, $i);
+  $p  : nth($perc, $i);
+  .w#{$val}\% {
+    width: percentage($p);
+  }
+}
+
+@each $vw in $vws {
+  .w#{$vw}vh {
+    width: #{$vw}vh;
+  }
+
+  .w#{$vw}vw {
+    width: #{$vw}vw;
+  }
+}
+
+.miw100\% {
+  min-width: 100%;
+}
+
+.mah100\% {
+  max-height: 100%;
+}

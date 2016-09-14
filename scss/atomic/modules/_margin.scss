@@ -11,3 +11,25 @@
     margin: 0 #{$px}px;
   }
 }
+
+@each $px in $pxs {
+  .mt#{$px} {
+    margin-top: #{$px}px;
+  }
+  
+  .mb#{$px} {
+    margin-bottom: #{$px}px;
+  }
+  
+  .mr#{$px} {
+    margin-right: #{$px}px;
+  }
+  
+  .ml#{$px} {
+    margin-left: #{$px}px;
+  }
+}
+
+.m0-auto {
+  margin: 0 auto;
+}

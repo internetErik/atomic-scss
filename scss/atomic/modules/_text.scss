@@ -1,0 +1,31 @@
+.ttu {
+  text-transform: uppercase;
+}
+
+.ttn {
+  text-transform: none;
+}
+
+.tdn {
+  text-decoration: none;
+}
+
+.tdu {
+  text-decoration: underline;
+}
+
+.tsh1-1-1-black {
+  text-shadow: 1px 1px 1px $color-black;
+}
+
+.tsh1-1-1-white {
+  text-shadow: 1px 1px 1px $color-white;
+}
+
+.tsh1-1-1-lightgray {
+  text-shadow: 1px 1px 1px $color-lightgray;
+}
+
+.tsh1-1-1-gray {
+  text-shadow: 1px 1px 1px $color-gray;
+}

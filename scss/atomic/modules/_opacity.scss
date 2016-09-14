@@ -1,0 +1,7 @@
+@for $i from 1 through length($ops) {
+  $val: nth($opVal, $i);
+  $op: nth($ops, $i);
+  .op#{$val} {
+    opacity: #{$op};
+  }
+}

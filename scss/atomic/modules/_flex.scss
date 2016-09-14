@@ -1,0 +1,97 @@
+.fxdr {
+  flex-direction: row;
+}
+
+.fxdc {
+  flex-direction: column;
+}
+
+.fxdrr {
+  flex-direction: row-reverse;
+}
+
+.fxdcr {
+  flex-direction: column-reverse;
+}
+
+.fxwn {
+  flex-wrap: nowrap;
+}
+
+.fxww {
+  flex-wrap: wrap;
+}
+
+.fxwr {
+  flex-wrap: wrap-reverse;
+}
+
+.jcfs {
+  justify-content: flex-start;
+}
+
+.jcfe {
+  justify-content: flex-end;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.jcsa {
+  justify-content: space-around;
+}
+
+.aib {
+  align-items: baseline;
+}
+
+.aic {
+  align-items: center;
+}
+
+.asa {
+  align-self: auto;
+}
+
+.asb {
+  align-self: baseline;
+}
+
+.asc {
+  align-self: center;
+}
+
+@each $ord in $ords {
+  .ord#{$ord} {
+    order: $ord;
+  }
+}
+
+
+@each $fxg in $fxgs {
+  .fxg#{$fxg} {
+    flex-grow: $fxg;
+  }
+}
+
+@each $fxsh in $fxshs {
+  .fxsh#{$fxsh} {
+    flex-shrink: $fxsh;
+  }
+}
+
+
+@each $fxb in $fxbs {
+  .fxb#{$fxb} {
+    flex-basis: #{$fxb}px;
+  }
+}
+
+.fxba {
+  flex-basis: auto;
+}

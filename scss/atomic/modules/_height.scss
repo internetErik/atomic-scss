@@ -3,3 +3,37 @@
     height: #{$px}px;
   }
 }
+
+@for $i from 1 through length($perc) {
+  $val: nth($percVal, $i);
+  $p  : nth($perc, $i);
+  .h#{$val}\% {
+    height: percentage($p);
+  }
+}
+
+@each $vw in $vws {
+  .h#{$vw}vh {
+    height: #{$vw}vh;
+  }
+
+  .h#{$vw}vw {
+    height: #{$vw}vw;
+  }
+}
+
+.mih100\% {
+  min-height: 100%;
+}
+
+.mah100\% {
+  max-height: 100%;
+}
+
+
+@media all and (max-width: $bp-md) {
+  
+}
+
+@media all and (max-width: $bp-sm) {
+}

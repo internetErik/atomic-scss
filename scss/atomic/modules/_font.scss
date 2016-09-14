@@ -1,0 +1,32 @@
+.fsi {
+  font-style: italic;
+}
+
+.fso {
+  font-style: oblique;
+}
+
+@each $fw in $fws {
+  .fw#{$fw} {
+    font-weight: $fw;
+  }
+}
+
+@each $fz in $fzs {
+  .fz#{$fz} {
+    font-size: #{$fz}px;
+  }
+}
+@each $fw in $fws {
+  .fw#{$fw} {
+    font-weight: $fw;
+  }
+}
+
+.ffs {
+  font-family: serif;
+}
+
+.ffss {
+  font-family: sans-serif;
+}
