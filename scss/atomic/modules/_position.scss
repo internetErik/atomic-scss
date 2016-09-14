@@ -13,3 +13,39 @@
 .posf {
   position: fixed;
 }
+
+@media all and (max-width: $bp-md) {
+  .poss\@md {
+    position: static;
+  }
+
+  .posr\@md {
+    position: relative;
+  }
+
+  .posa\@md {
+    position: absolute;
+  }
+
+  .posf\@md {
+    position: fixed;
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+  .poss\@sm {
+    position: static;
+  }
+
+  .posr\@sm {
+    position: relative;
+  }
+
+  .posa\@sm {
+    position: absolute;
+  }
+
+  .posf\@sm {
+    position: fixed;
+  }
+}

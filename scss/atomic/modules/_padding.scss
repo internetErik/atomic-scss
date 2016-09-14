@@ -29,3 +29,37 @@
     padding-left: #{$px}px;
   }
 }
+
+@media all and (max-width: $bp-md) {
+  @each $px in $pxs {
+    .p#{$px}\@md {
+      padding: #{$px}px;
+    }
+    
+    .p#{$px}-0\@md {
+      padding: #{$px}px 0;
+    }
+    
+    .p0-#{$px}\@md {
+      padding: 0 #{$px}px;
+    }
+  }
+
+  @each $px in $pxs {
+    .pt#{$px}\@md {
+      padding-top: #{$px}px;
+    }
+    
+    .pb#{$px}\@md {
+      padding-bottom: #{$px}px;
+    }
+    
+    .pr#{$px}\@md {
+      padding-right: #{$px}px;
+    }
+    
+    .pl#{$px}\@md {
+      padding-left: #{$px}px;
+    }
+  }
+}

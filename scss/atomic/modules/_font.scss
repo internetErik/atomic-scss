@@ -30,3 +30,19 @@
 .ffss {
   font-family: sans-serif;
 }
+
+@media all and (max-width: $bp-md) {
+  @each $fz in $fzs {
+    .fz#{$fz}\@md {
+      font-size: #{$fz}px;
+    }
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+  @each $fz in $fzs {
+    .fz#{$fz}\@sm {
+      font-size: #{$fz}px;
+    }
+  }
+}

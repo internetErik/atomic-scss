@@ -9,3 +9,31 @@
 .fln {
   float: none;
 }
+
+@media all and (max-width: $bp-md) {
+  .fll\@md {
+    float: left;
+  }
+
+  .flr\@md {
+    float: right;
+  }
+
+  .fln\@md {
+    float: none;
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+  .fll\@sm {
+    float: left;
+  }
+
+  .flr\@sm {
+    float: right;
+  }
+
+  .fln\@sm {
+    float: none;
+  }
+}

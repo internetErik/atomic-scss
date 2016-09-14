@@ -11,3 +11,37 @@
     bottom: percentage($p);
   }
 }
+
+@media all and (max-width: $bp-md) {
+  @each $px in $pxs {
+    .b#{$px}\@md {
+      bottom: #{$px}px;
+    }
+  }
+
+  @for $i from 1 through length($perc) {
+    $val: nth($percVal, $i);
+    $p  : nth($perc, $i);
+
+    .b#{$val}\%\@md {
+      bottom: percentage($p);
+    }
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+  @each $px in $pxs {
+    .b#{$px}\@sm {
+      bottom: #{$px}px;
+    }
+  }
+
+  @for $i from 1 through length($perc) {
+    $val: nth($percVal, $i);
+    $p  : nth($perc, $i);
+
+    .b#{$val}\%\@sm {
+      bottom: percentage($p);
+    }
+  }
+}

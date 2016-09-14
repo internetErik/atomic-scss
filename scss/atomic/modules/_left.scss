@@ -11,3 +11,19 @@
     left: percentage($p);
   }
 }
+
+@media all and (max-width: $bp-md) {
+  @each $px in $pxs {
+    .l#{$px}\@md {
+      left: #{$px}px;
+    }
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+  @each $px in $pxs {
+    .l#{$px}\@sm {
+      left: #{$px}px;
+    }
+  }
+}

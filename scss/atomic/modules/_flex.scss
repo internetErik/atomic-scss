@@ -95,3 +95,63 @@
 .fxba {
   flex-basis: auto;
 }
+
+@media all and (max-width: $bp-md) {
+  .fxdr\@md {
+    flex-direction: row;
+  }
+
+  .fxdc\@md {
+    flex-direction: column;
+  }
+
+  .fxdrr\@md {
+    flex-direction: row-reverse;
+  }
+
+  .fxdcr\@md {
+    flex-direction: column-reverse;
+  }
+
+  .jcfs\@md {
+    justify-content: flex-start;
+  }
+
+  .jcfe\@md {
+    justify-content: flex-end;
+  }
+
+  .jcc\@md {
+    justify-content: center;
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+  .fxdr\@sm {
+    flex-direction: row;
+  }
+
+  .fxdc\@sm {
+    flex-direction: column;
+  }
+
+  .fxdrr\@sm {
+    flex-direction: row-reverse;
+  }
+
+  .fxdcr\@sm {
+    flex-direction: column-reverse;
+  }
+
+  .jcfs\@sm {
+    justify-content: flex-start;
+  }
+
+  .jcfe\@sm {
+    justify-content: flex-end;
+  }
+
+  .jcc\@sm {
+    justify-content: center;
+  }
+}

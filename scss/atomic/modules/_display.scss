@@ -22,3 +22,55 @@
 .dif {
   display: inline-flex;
 }
+
+@media all and (max-width: $bp-md) {
+  .dn\@md {
+    display: none;
+  }
+
+  .db\@md {
+    display: block;
+  }
+
+  .dib\@md {
+    display: inline-block;
+  }
+
+  .d-i\@md {
+    display: inline;
+  }
+
+  .df\@md {
+    display: flex;
+  }
+
+  .dif\@md {
+    display: inline-flex;
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+  .dn\@sm {
+    display: none;
+  }
+
+  .db\@sm {
+    display: block;
+  }
+
+  .dib\@sm {
+    display: inline-block;
+  }
+
+  .d-i\@sm {
+    display: inline;
+  }
+
+  .df\@sm {
+    display: flex;
+  }
+
+  .dif\@sm {
+    display: inline-flex;
+  }
+}
