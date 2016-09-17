@@ -1,0 +1,115 @@
+$mPx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
+$mPx-md: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
+$mPx-sm: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
+
+@each $px in $mPx {
+  .m#{$px} {
+    margin: #{$px}px;
+  }
+  
+  .m#{$px}-0 {
+    margin: #{$px}px 0;
+  }
+  
+  .m0-#{$px} {
+    margin: 0 #{$px}px;
+  }
+}
+
+@each $px in $mPx {
+  .mt#{$px} {
+    margin-top: #{$px}px;
+  }
+  
+  .mb#{$px} {
+    margin-bottom: #{$px}px;
+  }
+  
+  .mr#{$px} {
+    margin-right: #{$px}px;
+  }
+  
+  .ml#{$px} {
+    margin-left: #{$px}px;
+  }
+}
+
+.m0-auto {
+  margin: 0 auto;
+}
+
+@media all and (max-width: $bp-md) {
+  @each $px in $mPx-md {
+    .m#{$px}\@md {
+      margin: #{$px}px;
+    }
+    
+    .m#{$px}-0\@md {
+      margin: #{$px}px 0;
+    }
+    
+    .m0-#{$px}\@md {
+      margin: 0 #{$px}px;
+    }
+  }
+
+  @each $px in $mPx-md {    
+    .mt#{$px}\@md {
+      margin-top: #{$px}px;
+    }
+    
+    .mb#{$px}\@md {
+      margin-bottom: #{$px}px;
+    }
+    
+    .mr#{$px}\@md {
+      margin-right: #{$px}px;
+    }
+    
+    .ml#{$px}\@md {
+      margin-left: #{$px}px;
+    }
+  }
+
+  .m0-auto\@md {
+    margin: 0 auto;
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+  @each $px in $mPx-sm {
+    .m#{$px}\@sm {
+      margin: #{$px}px;
+    }
+    
+    .m#{$px}-0\@sm {
+      margin: #{$px}px 0;
+    }
+    
+    .m0-#{$px}\@sm {
+      margin: 0 #{$px}px;
+    }
+  }
+
+  @each $px in $mPx-sm {    
+    .mt#{$px}\@sm {
+      margin-top: #{$px}px;
+    }
+    
+    .mb#{$px}\@sm {
+      margin-bottom: #{$px}px;
+    }
+    
+    .mr#{$px}\@sm {
+      margin-right: #{$px}px;
+    }
+    
+    .ml#{$px}\@sm {
+      margin-left: #{$px}px;
+    }
+  }
+
+  .m0-auto\@sm {
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,114 @@
+//order
+$ords: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 99 !default;
+
+//flex-grow
+$fxgs: 1, 2, 3, 4, 5 !default;
+
+//flex-shrink
+$fxshs: 1, 2, 3, 4, 5 !default;
+
+//flex-basis
+$fxbs: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
+
+//flex-direction
+$fxdrs: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse) !default;
+$fxdrs-md: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse) !default;
+$fxdrs-sm: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse) !default;
+
+//flex-wrap
+$fxws: ('n': nowrap, 'w': wrap, 'r': wrap-reverse) !default;
+
+//justify-content
+$jcs: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around) !default;
+$jcs-md: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around) !default;
+$jcs-sm: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around) !default;
+
+//align-items
+$ais: ('b': baseline, 'c': center) !default;
+
+//align-self
+$ass: ('b': baseline, 'c': center, 'a': auto) !default;
+
+@each $name,$value in $fxdrs {
+  .fxd#{$name} {
+    flex-direction: $value;
+  }
+}
+
+@each $name,$value in $fxws {
+  .fxw#{$name} {
+    flex-wrap: $value;
+  }
+}
+
+@each $name,$value in $jcs {
+  .jc#{$name} {
+    justify-content: $value;
+  }
+}
+
+@each $name,$value in $ais {
+  .ai#{$name} {
+    align-items: $value;
+  }
+}
+
+@each $name,$value in $ass {
+  .as#{$name} {
+    align-self: $value;
+  }
+}
+
+@each $ord in $ords {
+  .ord#{$ord} {
+    order: $ord;
+  }
+}
+
+@each $fxg in $fxgs {
+  .fxg#{$fxg} {
+    flex-grow: $fxg;
+  }
+}
+
+@each $fxsh in $fxshs {
+  .fxsh#{$fxsh} {
+    flex-shrink: $fxsh;
+  }
+}
+
+@each $fxb in $fxbs {
+  .fxb#{$fxb} {
+    flex-basis: #{$fxb}px;
+  }
+}
+
+.fxba {
+  flex-basis: auto;
+}
+
+@media all and (max-width: $bp-md) {
+  @each $name,$value in $fxdrs-md {
+    .fxd#{$name}\@md {
+      flex-direction: $value;
+    }
+  }
+  @each $name,$value in $jcs-md {
+    .jc#{$name}\@md {
+      justify-content: $value;
+    }
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+  @each $name,$value in $fxdrs-sm {
+    .fxd#{$name}\@sm {
+      flex-direction: $value;
+    }
+  }
+  @each $name,$value in $jcs-sm {
+    .jc#{$name}\@sm {
+      justify-content: $value;
+    }
+  }
+}

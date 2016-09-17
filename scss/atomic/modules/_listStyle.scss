@@ -1,0 +1,6 @@
+$lss: ('n': none) !default;
+@each $name,$value in $lss {
+  .ls#{$name} {
+    list-style: #{$value};
+  }
+}

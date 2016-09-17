@@ -1,0 +1,6 @@
+$tas: ('l': left, 'c': center, 'r': right, 'j': justify) !default;
+@each $name,$value in $tas {
+  .ta#{$name} {
+    text-align: $value;
+  }
+}

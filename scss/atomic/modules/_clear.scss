@@ -1,0 +1,6 @@
+$cls: ('b': 'both', 'l': 'left', 'r': 'right') !default;
+@each $name, $value in $cls {
+  .cl#{$name} {
+    clear: #{$value};
+  }
+}

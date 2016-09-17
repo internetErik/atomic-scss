@@ -1,0 +1,25 @@
+$ds: ('n': none, '-i': inline, 'b': block, 'ib': 'inline-block', 'f': flex, 'if': inline-flex) !default;
+$ds-md: ('n': none, '-i': inline, 'b': block, 'ib': inline-block, 'f': flex, 'if': inline-flex) !default;
+$ds-sm: ('n': none, '-i': inline, 'b': block, 'ib': inline-block, 'f': flex, 'if': inline-flex) !default;
+
+@each $name,$value in $ds {
+  .d#{$name} {
+    display: #{$value};
+  }
+}
+
+@media all and (max-width: $bp-md) {
+  @each $name,$value in $ds-md {
+    .d#{$name}\@md {
+      display: #{$value};
+    }
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+  @each $name,$value in $ds-sm {
+    .d#{$name}\@sm {
+      display: #{$value};
+    }
+  }
+}

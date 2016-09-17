@@ -1,0 +1,25 @@
+$poss: ('s': static, 'r': relative, 'a': absolute, 'f': fixed) !default;
+$poss-md: ('s': static, 'r': relative, 'a': absolute, 'f': fixed) !default;
+$poss-sm: ('s': static, 'r': relative, 'a': absolute, 'f': fixed) !default;
+
+@each $name,$value in $poss {
+  .pos#{$name} {
+    position: $value;
+  }
+}
+
+@media all and (max-width: $bp-md) {
+  @each $name,$value in $poss-md {
+    .pos#{$name}\@md {
+      position: $value;
+    }
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+  @each $name,$value in $poss-sm {
+    .pos#{$name}\@sm {
+      position: $value;
+    }
+  }
+}

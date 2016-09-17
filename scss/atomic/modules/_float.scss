@@ -1,0 +1,25 @@
+$fls: ('l': left, 'r': right, 'n': none) !default;
+$fls-md: ('l': left, 'r': right, 'n': none) !default;
+$fls-sm: ('l': left, 'r': right, 'n': none) !default;
+
+@each $name,$value in $fls {
+  .fl#{$name} {
+    float: $value;
+  }
+}
+
+@media all and (max-width: $bp-md) {
+  @each $name,$value in $fls-md {
+    .fl#{$name}\@md {
+      float: $value;
+    }
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+  @each $name,$value in $fls-md {
+    .fl#{$name}\@sm {
+      float: $value;
+    }
+  }
+}

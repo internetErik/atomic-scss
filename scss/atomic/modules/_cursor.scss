@@ -1,0 +1,6 @@
+$curs: ('p': pointer, 'c': crosshair, 'm': move, 'ha': hand, 'he': help) !default;
+@each $name,$value in $curs {
+  .cur#{$name} {
+    cursor: $value;
+  }
+}
