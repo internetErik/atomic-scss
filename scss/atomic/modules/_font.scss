@@ -1,9 +1,18 @@
-.fsi {
-  font-style: italic;
-}
+//font weight
+$fws: 100, 200, 300, 400, 500, 600, 700, 800, 900 !default;
 
-.fso {
-  font-style: oblique;
+//font size
+$fzs:  10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 34, 36, 42, 48 !default;
+$fzs-md:  10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 34, 36, 42, 48 !default;
+$fzs-sm:  10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 34, 36, 42, 48 !default;
+
+$fss: ('i': italic, 'o': oblique) !default;
+$ffs: ('s': serif, 'ss': sans-serif) !default;
+
+@each $name,$value in $fss {
+  .fs#{$name} {
+    font-style: $value;
+  }
 }
 
 @each $fw in $fws {
@@ -23,16 +32,14 @@
   }
 }
 
-.ffs {
-  font-family: serif;
-}
-
-.ffss {
-  font-family: sans-serif;
+@each $name,$value in $fss {
+  .ff#{$name} {
+    font-family: $value;
+  }
 }
 
 @media all and (max-width: $bp-md) {
-  @each $fz in $fzs {
+  @each $fz in $fzs-md {
     .fz#{$fz}\@md {
       font-size: #{$fz}px;
     }
@@ -40,7 +47,7 @@
 }
 
 @media all and (max-width: $bp-sm) {
-  @each $fz in $fzs {
+  @each $fz in $fzs-sm {
     .fz#{$fz}\@sm {
       font-size: #{$fz}px;
     }

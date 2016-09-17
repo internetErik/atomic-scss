@@ -1,31 +1,26 @@
-.ttu {
-  text-transform: uppercase;
+$tts: ('u': uppercase, 'n': none) !default;
+$tds: ('n': none, 'u': underline) !default;
+$tshColors: (
+  (1, 1, 1, 'white', $color-white),
+  (1, 1, 1, 'lightgray', $color-lightgray),
+  (1, 1, 1, 'gray', $color-gray),
+  (1, 1, 1, 'black', $color-black),
+) !default;
+
+@each $name,$value in $tts {
+  .tt#{name} {
+    text-transform: $value;
+  }
 }
 
-.ttn {
-  text-transform: none;
+@each $name,$value in $tds {
+  .td#{name} {
+    text-decoration: $value;
+  }
 }
 
-.tdn {
-  text-decoration: none;
-}
-
-.tdu {
-  text-decoration: underline;
-}
-
-.tsh1-1-1-black {
-  text-shadow: 1px 1px 1px $color-black;
-}
-
-.tsh1-1-1-white {
-  text-shadow: 1px 1px 1px $color-white;
-}
-
-.tsh1-1-1-lightgray {
-  text-shadow: 1px 1px 1px $color-lightgray;
-}
-
-.tsh1-1-1-gray {
-  text-shadow: 1px 1px 1px $color-gray;
+@each $hoff,$voff,$blur,$colorName,$color in $tshColors {
+  .tsh#{$hoff}-#{$voff}-#{$blur}-#{$colorName} {
+    text-shadow: #{$hoff}px #{$voff}px #{$blur}px $color;
+  }
 }

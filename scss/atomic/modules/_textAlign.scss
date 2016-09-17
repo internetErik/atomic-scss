@@ -1,15 +1,6 @@
-.tal {
-  text-align: left;
-}
-
-.tac {
-  text-align: center;
-}
-
-.tar {
-  text-align: right;
-}
-
-.taj {
-  text-align: justify;
+$tas: ('l': left, 'c': center, 'r': right, 'j': justify) !default;
+@each $name,$value in $tas {
+  .ta#{$name} {
+    text-align: $value;
+  }
 }

@@ -1,101 +1,120 @@
-@each $px in $pxs {
+//pixels
+$wPx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
+$wPx-md: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
+$wPx-sm: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
+
+//percentages
+$wPercentages: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
+$wPercentages-md: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
+$wPercentages-sm: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
+
+//view widths
+$wVws: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
+$wVws-md: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
+$wVws-sm: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
+
+//view widths
+$wVhs: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
+$wVhs-md: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
+$wVhs-sm: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
+
+@each $px in $wPx {
   .w#{$px} {
     width: #{$px}px;
   }
 }
 
-@for $i from 1 through length($perc) {
-  $val: nth($percVal, $i);
-  $p  : nth($perc, $i);
-  .w#{$val}\% {
-    width: percentage($p);
+@each $name,$value in $wPercentages {
+  .w#{$name}\% {
+    width: percentage($value);
   }
 }
 
-@each $vw in $vws {
-  .w#{$vw}vh {
-    width: #{$vw}vh;
+@each $vh in $wVhs {
+  .w#{$vh}vh {
+    width: #{$vh}vh;
   }
+}
 
+@each $vw in $wVws {
   .w#{$vw}vw {
     width: #{$vw}vw;
   }
 }
 
-.miw100\% {
+.mih100\% {
   min-width: 100%;
 }
 
-.maw100\% {
+.mah100\% {
   max-width: 100%;
 }
 
-@media all and (max-width: $bp-md) { 
-  @each $px in $pxs {
+
+@media all and (max-width: $bp-md) {  
+  @each $px in $wPx-md {
     .w#{$px}\@md {
       width: #{$px}px;
     }
   }
 
-  @for $i from 1 through length($perc) {
-    $val: nth($percVal, $i);
-    $p  : nth($perc, $i);
-
-    .w#{$val}\%\@md {
-      width: percentage($p);
+  @each $name,$value in $wPercentages-md {
+    .w#{$name}\%\@md {
+      width: percentage($value);
     }
   }
 
-  .miw100\%\@md {
-    min-width: 100%;
-  }
-
-  .maw100\%\@md {
-    max-width: 100%;
-  }
-
-  @each $vw in $vws {
-    .w#{$vw}vh\@md {
-      width: #{$vw}vh;
+  @each $vh in $wVhs-md {
+    .w#{$vh}vh\@md {
+      width: #{$vh}vh;
     }
+  }
 
+  @each $vw in $wVws-md {
     .w#{$vw}vw\@md {
       width: #{$vw}vw;
     }
   }
+
+  .mih100\%\@md {
+    min-width: 100%;
+  }
+
+  .mah100\%\@md {
+    max-width: 100%;
+  }
 }
 
-@media all and (max-width: $bp-sm) { 
-  @each $px in $pxs {
+@media all and (max-width: $bp-sm) {
+  @each $px in $wPx-sm {
     .w#{$px}\@sm {
       width: #{$px}px;
     }
   }
 
-  @for $i from 1 through length($perc) {
-    $val: nth($percVal, $i);
-    $p  : nth($perc, $i);
-
-    .w#{$val}\%\@sm {
-      width: percentage($p);
+  @each $name,$value in $wPercentages-sm {
+    .w#{$name}\%\@sm {
+      width: percentage($value);
     }
   }
 
-  .miw100\%\@sm {
-    min-width: 100%;
-  }
-
-  .maw100\%\@sm {
-    max-width: 100%;
-  }
-
-  @each $vw in $vws {
-    .w#{$vw}vh\@sm {
-      width: #{$vw}vh;
+  @each $vh in $wVhs-sm {
+    .w#{$vh}vh\@sm {
+      width: #{$vh}vh;
     }
+  }
 
+  @each $vw in $wVws-sm {
     .w#{$vw}vw\@sm {
       width: #{$vw}vw;
     }
+  }
+
+  .mih100\%\@sm {
+    min-width: 100%;
+  }
+
+  .mah100\%\@sm {
+    max-width: 100%;
   }
 }

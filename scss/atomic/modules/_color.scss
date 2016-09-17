@@ -1,31 +1,10 @@
-.c-white {
-  color: $color-white;
-}
-
-.c-lightgray {
-  color: $color-lightgray;
-}
-
-.c-gray {
-  color: $color-gray;
-}
-
-.c-black {
-  color: $color-black;
-}
-
-.c-white\:h:hover {
-  color: $color-white;
-}
-
-.c-lightgray\:h:hover {
-  color: $color-lightgray;
-}
-
-.c-gray\:h:hover {
-  color: $color-gray;
-}
-
-.c-black\:h:hover {
-  color: $color-black;
+//color
+$cColors: ('white': $color-white, 'lightgray':$color-lightgray, 'gray':$color-gray, 'black':$color-black) !default;
+@each $name, $color in $cColors { 
+  .c-#{$name} {
+    color: $color;
+  }
+  .c-#{$name}\:h:hover {
+    color: $color;
+  }
 }

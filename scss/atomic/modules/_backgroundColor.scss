@@ -1,39 +1,9 @@
-.bgc-white {
-  background-color: $color-white;
-}
-
-.bgc-lightgray {
-  background-color: $color-lightgray;
-}
-
-.bgc-gray {
-  background-color: $color-gray;
-}
-
-.bgc-black {
-  background-color: $color-black;
-}
-
-.bgct {
-  background-color: transparent;
-}
-
-.bgc-white\:h:hover {
-  background-color: $color-white;
-}
-
-.bgc-lightgray\:h:hover {
-  background-color: $color-lightgray;
-}
-
-.bgc-gray\:h:hover {
-  background-color: $color-gray;
-}
-
-.bgc-black\:h:hover {
-  background-color: $color-black;
-}
-
-.bgct\:h:hover {
-  background-color: transparent;
+$bgColors: ('white': $color-white, 'lightgray':$color-lightgray, 'gray':$color-gray, 'black':$color-black, 't': transparent) !default;
+@each $name, $color in $bgColors {  
+  .bgc-#{$name} {
+    background-color: $color;
+  }
+  .bgc-#{$name}\:h:hover {
+    background-color: $color;
+  }
 }

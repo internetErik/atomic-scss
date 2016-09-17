@@ -1,19 +1,6 @@
-.curp {
-  cursor: pointer;
-}
-
-.curc {
-  cursor: crosshair;
-}
-
-.curm {
-  cursor: move;
-}
-
-.curha {
-  cursor: hand;
-}
-
-.curhe {
-  cursor: help;
+$curs: ('p': pointer, 'c': crosshair, 'm': move, 'ha': hand, 'he': help) !default;
+@each $name,$value in $curs {
+  .cur#{$name} {
+    cursor: $value;
+  }
 }

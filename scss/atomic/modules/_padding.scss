@@ -1,4 +1,8 @@
-@each $px in $pxs {
+$pPx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
+$pPx-md: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
+$pPx-sm: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
+
+@each $px in $pPx {
   .p#{$px} {
     padding: #{$px}px;
   }
@@ -12,7 +16,7 @@
   }
 }
 
-@each $px in $pxs {
+@each $px in $pPx {
   .pt#{$px} {
     padding-top: #{$px}px;
   }
@@ -31,7 +35,7 @@
 }
 
 @media all and (max-width: $bp-md) {
-  @each $px in $pxs {
+  @each $px in $pPx-md {
     .p#{$px}\@md {
       padding: #{$px}px;
     }
@@ -45,7 +49,7 @@
     }
   }
 
-  @each $px in $pxs {
+  @each $px in $pPx-md {    
     .pt#{$px}\@md {
       padding-top: #{$px}px;
     }
@@ -59,6 +63,40 @@
     }
     
     .pl#{$px}\@md {
+      padding-left: #{$px}px;
+    }
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+  @each $px in $pPx-sm {
+    .p#{$px}\@sm {
+      padding: #{$px}px;
+    }
+    
+    .p#{$px}-0\@sm {
+      padding: #{$px}px 0;
+    }
+    
+    .p0-#{$px}\@sm {
+      padding: 0 #{$px}px;
+    }
+  }
+
+  @each $px in $pPx-sm {    
+    .pt#{$px}\@sm {
+      padding-top: #{$px}px;
+    }
+    
+    .pb#{$px}\@sm {
+      padding-bottom: #{$px}px;
+    }
+    
+    .pr#{$px}\@sm {
+      padding-right: #{$px}px;
+    }
+    
+    .pl#{$px}\@sm {
       padding-left: #{$px}px;
     }
   }

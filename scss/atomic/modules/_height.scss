@@ -1,22 +1,42 @@
-@each $px in $pxs {
+//pixels
+$hPx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
+$hPx-md: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
+$hPx-sm: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
+
+//percentages
+$hPercentages: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
+$hPercentages-md: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
+$hPercentages-sm: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
+
+//view widths
+$hVws: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
+$hVws-md: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
+$hVws-sm: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
+
+//view heights
+$hVhs: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
+$hVhs-md: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
+$hVhs-sm: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
+
+@each $px in $hPx {
   .h#{$px} {
     height: #{$px}px;
   }
 }
 
-@for $i from 1 through length($perc) {
-  $val: nth($percVal, $i);
-  $p  : nth($perc, $i);
-  .h#{$val}\% {
-    height: percentage($p);
+@each $name,$value in $hPercentages {
+  .h#{$name}\% {
+    height: percentage($value);
   }
 }
 
-@each $vw in $vws {
-  .h#{$vw}vh {
-    height: #{$vw}vh;
+@each $vh in $hVhs {
+  .h#{$vh}vh {
+    height: #{$vh}vh;
   }
+}
 
+@each $vw in $hVws {
   .h#{$vw}vw {
     height: #{$vw}vw;
   }
@@ -32,18 +52,27 @@
 
 
 @media all and (max-width: $bp-md) {  
-  @each $px in $pxs {
+  @each $px in $hPx-md {
     .h#{$px}\@md {
       height: #{$px}px;
     }
   }
 
-  @for $i from 1 through length($perc) {
-    $val: nth($percVal, $i);
-    $p  : nth($perc, $i);
+  @each $name,$value in $hPercentages-md {
+    .h#{$name}\%\@md {
+      height: percentage($value);
+    }
+  }
 
-    .h#{$val}\%\@md {
-      height: percentage($p);
+  @each $vh in $hVhs-md {
+    .h#{$vh}vh\@md {
+      height: #{$vh}vh;
+    }
+  }
+
+  @each $vw in $hVws-md {
+    .h#{$vw}vw\@md {
+      height: #{$vw}vw;
     }
   }
 
@@ -54,31 +83,30 @@
   .mah100\%\@md {
     max-height: 100%;
   }
-
-  @each $vw in $vws {
-    .h#{$vw}vh\@md {
-      height: #{$vw}vh;
-    }
-
-    .h#{$vw}vw\@md {
-      height: #{$vw}vw;
-    }
-  }
 }
 
 @media all and (max-width: $bp-sm) {
-  @each $px in $pxs {
+  @each $px in $hPx-sm {
     .h#{$px}\@sm {
       height: #{$px}px;
     }
   }
 
-  @for $i from 1 through length($perc) {
-    $val: nth($percVal, $i);
-    $p  : nth($perc, $i);
+  @each $name,$value in $hPercentages-sm {
+    .h#{$name}\%\@sm {
+      height: percentage($value);
+    }
+  }
 
-    .h#{$val}\%\@sm {
-      height: percentage($p);
+  @each $vh in $hVhs-sm {
+    .h#{$vh}vh\@sm {
+      height: #{$vh}vh;
+    }
+  }
+
+  @each $vw in $hVws-sm {
+    .h#{$vw}vw\@sm {
+      height: #{$vw}vw;
     }
   }
 
@@ -88,15 +116,5 @@
 
   .mah100\%\@sm {
     max-height: 100%;
-  }
-
-  @each $vw in $vws {
-    .h#{$vw}vh\@sm {
-      height: #{$vw}vh;
-    }
-
-    .h#{$vw}vw\@sm {
-      height: #{$vw}vw;
-    }
   }
 }

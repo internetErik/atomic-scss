@@ -1,31 +1,12 @@
-.wobn {
-  word-break: normal;
+$wobs: ('n': normal, 'k': keep-all, 'ba': break-all, 'nm': normal) !default;
+$wows: ('u': unrestricted, 's': suppress, 'b': break-word, 'n': none) !default;
+@each $name,$value in $wobs {
+  .wob#{$name} {
+    word-break: $value;
+  }
 }
-
-.wobk {
-  word-break: keep-all;
-}
-
-.wobba {
-  word-break: break-all;
-}
-
-.wownm {
-  word-wrap: normal;
-}
-
-.wown {
-  word-wrap: none;
-}
-
-.wowu {
-  word-wrap: unrestricted;
-}
-
-.wows {
-  word-wrap: suppress;
-}
-
-.wowb {
-  word-wrap: break-word;
+@each $name,$value in $wows {
+  .wow#{$name} {
+    word-wrap: $value;
+  }
 }

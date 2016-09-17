@@ -1,51 +1,25 @@
-.poss {
-  position: static;
-}
+$poss: ('s': static, 'r': relative, 'a': absolute, 'f': fixed) !default;
+$poss-md: ('s': static, 'r': relative, 'a': absolute, 'f': fixed) !default;
+$poss-sm: ('s': static, 'r': relative, 'a': absolute, 'f': fixed) !default;
 
-.posr {
-  position: relative;
-}
-
-.posa {
-  position: absolute;
-}
-
-.posf {
-  position: fixed;
+@each $name,$value in $poss {
+  .pos#{$name} {
+    position: $value;
+  }
 }
 
 @media all and (max-width: $bp-md) {
-  .poss\@md {
-    position: static;
-  }
-
-  .posr\@md {
-    position: relative;
-  }
-
-  .posa\@md {
-    position: absolute;
-  }
-
-  .posf\@md {
-    position: fixed;
+  @each $name,$value in $poss-md {
+    .pos#{$name}\@md {
+      position: $value;
+    }
   }
 }
 
 @media all and (max-width: $bp-sm) {
-  .poss\@sm {
-    position: static;
-  }
-
-  .posr\@sm {
-    position: relative;
-  }
-
-  .posa\@sm {
-    position: absolute;
-  }
-
-  .posf\@sm {
-    position: fixed;
+  @each $name,$value in $poss-sm {
+    .pos#{$name}\@sm {
+      position: $value;
+    }
   }
 }

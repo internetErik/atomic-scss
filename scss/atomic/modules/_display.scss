@@ -1,76 +1,25 @@
-.dn {
-  display: none;
-}
+$ds: ('n': none, '-i': inline, 'b': block, 'ib': 'inline-block', 'f': flex, 'if': inline-flex) !default;
+$ds-md: ('n': none, '-i': inline, 'b': block, 'ib': inline-block, 'f': flex, 'if': inline-flex) !default;
+$ds-sm: ('n': none, '-i': inline, 'b': block, 'ib': inline-block, 'f': flex, 'if': inline-flex) !default;
 
-.d-i {
-  display: inline;
-}
-
-.db {
-  display: block;
-}
-
-.dib {
-  display: inline-block;
-}
-
-//flex
-.df {
-  display: flex;
-}
-
-.dif {
-  display: inline-flex;
+@each $name,$value in $ds {
+  .d#{$name} {
+    display: #{$value};
+  }
 }
 
 @media all and (max-width: $bp-md) {
-  .dn\@md {
-    display: none;
-  }
-
-  .db\@md {
-    display: block;
-  }
-
-  .dib\@md {
-    display: inline-block;
-  }
-
-  .d-i\@md {
-    display: inline;
-  }
-
-  .df\@md {
-    display: flex;
-  }
-
-  .dif\@md {
-    display: inline-flex;
+  @each $name,$value in $ds-md {
+    .d#{$name}\@md {
+      display: #{$value};
+    }
   }
 }
 
 @media all and (max-width: $bp-sm) {
-  .dn\@sm {
-    display: none;
-  }
-
-  .db\@sm {
-    display: block;
-  }
-
-  .dib\@sm {
-    display: inline-block;
-  }
-
-  .d-i\@sm {
-    display: inline;
-  }
-
-  .df\@sm {
-    display: flex;
-  }
-
-  .dif\@sm {
-    display: inline-flex;
+  @each $name,$value in $ds-sm {
+    .d#{$name}\@sm {
+      display: #{$value};
+    }
   }
 }

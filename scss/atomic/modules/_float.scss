@@ -1,39 +1,25 @@
-.fll {
-  float: left;
-}
+$fls: ('l': left, 'r': right, 'n': none) !default;
+$fls-md: ('l': left, 'r': right, 'n': none) !default;
+$fls-sm: ('l': left, 'r': right, 'n': none) !default;
 
-.flr {
-  float: right;
-}
-
-.fln {
-  float: none;
+@each $name,$value in $fls {
+  .fl#{$name} {
+    float: $value;
+  }
 }
 
 @media all and (max-width: $bp-md) {
-  .fll\@md {
-    float: left;
-  }
-
-  .flr\@md {
-    float: right;
-  }
-
-  .fln\@md {
-    float: none;
+  @each $name,$value in $fls-md {
+    .fl#{$name}\@md {
+      float: $value;
+    }
   }
 }
 
 @media all and (max-width: $bp-sm) {
-  .fll\@sm {
-    float: left;
-  }
-
-  .flr\@sm {
-    float: right;
-  }
-
-  .fln\@sm {
-    float: none;
+  @each $name,$value in $fls-md {
+    .fl#{$name}\@sm {
+      float: $value;
+    }
   }
 }
