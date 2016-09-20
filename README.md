@@ -168,9 +168,54 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
 
 ## SCSS Variables (Should be overridden by user)
 
-There are sass variables for each group of styles. These may include too many (or too few) values, and can produce a large css file. These variables have been defined with `!default`* so they are easy to override.
+There are sass variables for each group of styles. These may include too many (or too few) values, and can produce a large css file. These variables have been defined with `!default`* so they are easy to override. 
+
+**Check the variables before you override them so you know if you need to override a list (single or multi-dimension), or a map.**
 
 **The `!default` property means that it assigns this value only if the variable isn't already defined! So this won't override your own variables*
+
+### Example
+
+To override the values for height in pixels
+
+```
+$hPx: 10, 20, 50, 100;
+
+//importing atomic scss
+@import "node_modues/atomic-scss/scss/atomic";
+
+//For height in pixels, only the following classes will be generated:
+//h10, h20, h50, h100
+```
+
+Most variables are lists, but some are also maps (key/value pairs). 
+
+For example, widths in percentage use a key value pair:
+
+```
+$wPercentages: ('25': .25, '30': .30, '33\\.3333': .333333, '50': .50, '66\\.6666': .666666);
+
+//importing atomic scss
+@import "node_modues/atomic-scss/scss/atomic";
+
+//For width in percentages, only the following classes will be generated:
+//w25%, w30%, w33.3333%, w50%, w66.6666%
+```
+
+Other than maps, there are also lists of lists, for example text-shadow:
+
+```
+$tshs: (
+  (1, 1, 1, 'gray', $color-gray),
+  (2, 2, 3, 'black', $color-black),
+);
+
+//importing atomic scss
+@import "node_modues/atomic-scss/scss/atomic";
+
+//For text-shadow, only the following classes will be generated:
+//tsh1-1-1-gray, tsh2-2-2-black
+```
 
 ### Breakpoints (_`_variables.scss`_)
 
@@ -191,241 +236,241 @@ There are sass variables for each group of styles. These may include too many (o
 
 ### Background Colors (`_backgroundColor.scss`)
 
-`$bgColors`
+`$bgcs` (Map)
 
 ### Borders (`_border.scss`)
 
-`$bdColors`
-`$bdrss`
+`$bds` (Multi-Dimensional List)
+`$bdrss` (List)
 
 ### Bottom (`_bottom.scss`)
 
-`$bPx`
-`$bPx-md`
-`$bPx-sm`
+`$bPx` (List)
+`$bPx-md` (List)
+`$bPx-sm` (List)
 
-`$bPercentages`
-`$bPercentages-md`
-`$bPercentages-sm`
+`$bPercentages` (Map)
+`$bPercentages-md` (Map)
+`$bPercentages-sm` (Map)
 
 ### Clear (`_clear.scss`)
 
-`$cls`
+`$cls` (Map)
 
 ### Color (`_color.scss`)
 
-`$cs`
+`$cs` (Map)
 
 ### Cursor (`_cursor.scss`)
 
-`$curs`
+`$curs` (Map)
 
 ### Display (`_display.scss`)
 
-`$ds`
-`$ds-md`
-`$ds-sm`
+`$ds` (Map)
+`$ds-md` (Map)
+`$ds-sm` (Map)
 
 ### Order (`_flex.scss`)
 
-`$ords`
+`$ords` (List)
 
 ### Flex-grow (`_flex.scss`)
 
-`$fxgs`
+`$fxgs` (List)
 
 ### Flex-shrink (`_flex.scss`)
 
-`$fxshs`
+`$fxshs` (List)
 
 ### Flex-basis (`_flex.scss`)
 
-`$fxbs`
+`$fxbs` (List)
 
 ### Flex-direction (`_flex.scss`)
 
-`$fxdrs`
-`$fxdrs-md`
-`$fxdrs-sm`
+`$fxdrs` (Map)
+`$fxdrs-md` (Map)
+`$fxdrs-sm` (Map)
 
 ### Flex-wrap (`_flex.scss`)
 
-`$fxws`
+`$fxws` (Map)
 
 ### Justify-content (`_flex.scss`)
 
-`$jcs`
-`$jcs-md`
-`$jcs-sm`
+`$jcs` (Map)
+`$jcs-md` (Map)
+`$jcs-sm` (Map)
 
 ### Align-items (`_flex.scss`)
 
-`$ais`
+`$ais` (Map)
 
 ### Align-self (`_flex.scss`)
 
-`$ass`
+`$ass` (Map)
 
 ### Float (`_float.scss`)
 
-`$fls`
-`$fls-md`
-`$fls-sm`
+`$fls` (Map)
+`$fls-md` (Map)
+`$fls-sm` (Map)
 
 ### Font-weight (`_font.scss`)
 
-`$fws`
+`$fws` (List)
 
 ### Font-size (`_font.scss`)
 
-`$fzs`
-`$fzs-md`
-`$fzs-sm`
+`$fzs` (List)
+`$fzs-md` (List)
+`$fzs-sm` (List)
 
 
 ### Font-style (`_font.scss`)
 
-`$fss`
+`$fss` (Map)
 
 ### Font-family (`_font.scss`)
 
-`$ffs`
+`$ffs` (Map)
 
 ### Height (`_height.scss`)
 
-`$hPx`
-`$hPx-md`
-`$hPx-sm`
+`$hPx` (List)
+`$hPx-md` (List)
+`$hPx-sm` (List)
 
-`$hPercentages`
-`$hPercentages-md`
-`$hPercentages-sm`
+`$hPercentages` (Map)
+`$hPercentages-md` (Map)
+`$hPercentages-sm` (Map)
 
-`$hVws`
-`$hVws-md`
-`$hVws-sm`
+`$hVws` (List)
+`$hVws-md` (List)
+`$hVws-sm` (List)
 
-`$hVhs`
-`$hVhs-md`
-`$hVhs-sm`
+`$hVhs` (List)
+`$hVhs-md` (List)
+`$hVhs-sm` (List)
 
 ### Left (`_left.scss`)
 
-`$lPx`
-`$lPx-md`
-`$lPx-sm`
+`$lPx` (List)
+`$lPx-md` (List)
+`$lPx-sm` (List)
 
-`$lPercentages`
-`$lPercentages-md`
-`$lPercentages-sm`
+`$lPercentages` (Map)
+`$lPercentages-md` (Map)
+`$lPercentages-sm` (Map)
 
 ### Line-height (`_lineHeight.scss`)
 
-`$lhs`
+`$lhs` (Map)
 
 ### List-style (`_listStyle.scss`)
 
-`$lss`
+`$lss` (Map)
 
 ### Margin (`_margin.scss`)
 
-`$mPx`
-`$mPx-md`
-`$mPx-sm`
+`$mPx` (List)
+`$mPx-md` (List)
+`$mPx-sm` (List)
 
 ### Opacity (`_opacity.scss`)
 
-`$ops`
+`$ops` (Map)
 
 ### Overflow (`_overflow.scss`)
 
-`$os`
+`$os` (Map)
 
 ### Overflow-x (`_overflow.scss`)
 
-`$oxs`
+`$oxs` (Map)
 
 ### Overflow-y (`_overflow.scss`)
 
-`$oys`
+`$oys` (Map)
 
 ### Padding (`_padding.scss`)
 
-`$pPx`
-`$pPx-md`
-`$pPx-sm`
+`$pPx` (List)
+`$pPx-md` (List)
+`$pPx-sm` (List)
 
 ### Position (`_position.scss`)
 
-`$poss`
-`$poss-md`
-`$poss-sm`
+`$poss` (Map)
+`$poss-md` (Map)
+`$poss-sm` (Map)
 
 ### Right (`_right.scss`)
 
-`$rPx`
-`$rPx-md`
-`$rPx-sm`
+`$rPx` (List)
+`$rPx-md` (List)
+`$rPx-sm` (List)
 
-`$rPercentages`
-`$rPercentages-md`
-`$rPercentages-sm`
+`$rPercentages` (Map)
+`$rPercentages-md` (Map)
+`$rPercentages-sm` (Map)
 
 ### Text-transform (`_text.scss`)
 
-`$tts`
+`$tts` (Map)
 
 ### Text-decoration (`_text.scss`)
 
-`$tds`
+`$tds` (Map)
 
 ### Text-shadow (`_text.scss`)
 
-`$tshColors`
+`$tshColors` (Multi-Dimensional List)
 
 ### Text-align (`_textAlign.scss`)
 
-`$tas`
+`$tas` (Map)
 
 ### Top (`_top.scss`)
 
-`$tPx`
-`$tPx-md`
-`$tPx-sm`
+`$tPx` (List)
+`$tPx-md` (List)
+`$tPx-sm` (List)
 
-`$tPercentages`
-`$tPercentages-md`
-`$tPercentages-sm`
+`$tPercentages` (Map)
+`$tPercentages-md` (Map)
+`$tPercentages-sm` (Map)
 
 ### Width (`_width.scss`)
 
-`$wPx`
-`$wPx-md`
-`$wPx-sm`
+`$wPx` (List)
+`$wPx-md` (List)
+`$wPx-sm` (List)
 
-`$wPercentages`
-`$wPercentages-md`
-`$wPercentages-sm`
+`$wPercentages` (Map)
+`$wPercentages-md` (Map)
+`$wPercentages-sm` (Map)
 
-`$wVws`
-`$wVws-md`
-`$wVws-sm`
+`$wVws` (List)
+`$wVws-md` (List)
+`$wVws-sm` (List)
 
-`$wVhs`
-`$wVhs-md`
-`$wVhs-sm`
+`$wVhs` (List)
+`$wVhs-md` (List)
+`$wVhs-sm` (List)
 
 ### Word-break (`_word.scss`)
 
-`$wobs`
+`$wobs` (Map)
 
 ### Word-wrap (`_word.scss`)
 
-`$wows`
+`$wows` (Map)
 
 ### Z-index (`_zIndex.scss`)
 
-`$zs`
+`$zs` (List)
 
 ## Recommendations
 

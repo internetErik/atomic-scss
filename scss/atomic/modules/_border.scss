@@ -1,4 +1,4 @@
-$bdColors: (
+$bds: (
   (1, 's', 'solid', 'white', $color-white), 
   (1, 's', 'solid', 'lightgray', $color-lightgray), 
   (1, 's', 'solid', 'gray', $color-gray), 
@@ -12,7 +12,7 @@ $bdrss: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 !default;
   border: none;
 }
 
-@each $px,$typeName,$type,$colorName,$color in $bdColors {
+@each $px,$typeName,$type,$colorName,$color in $bds {
   .bd#{$px}-#{$typeName}-#{$colorName} {
     border: #{$px}px #{$type} $color;
   }
