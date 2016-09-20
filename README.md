@@ -168,6 +168,18 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
 
 ## SCSS Variables (Should be overridden by user)
 
+There are sass variables for each group of styles. These may include too many (or too few) values, and can produce a large css file. These variables have been defined with `!default`* so they are easy to override.
+
+**The `!default` property means that it assigns this value only if the variable isn't already defined! So this won't override your own variables*
+
+### Breakpoints (_`_variables.scss`_)
+
+`$bp-md : 784px !default;`
+
+`$bp-sm : 560px !default;`
+
+### Colors  (_`_variables.scss`_)
+
 `$color-black    : #101010 !default;`
 
 `$color-white    : #fefefe !default;`
@@ -177,11 +189,243 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
 `$color-gray     : gray !default;`
 
 
-`$bp-md : 784px !default;`
+### Background Colors (`_backgroundColor.scss`)
 
-`$bp-sm : 560px !default;`
+`$bgColors`
 
-*The `!default` property means that it assigns this value only if the variable isn't already defined! So this won't override your own variables*
+### Borders (`_border.scss`)
+
+`$bdColors`
+`$bdrss`
+
+### Bottom (`_bottom.scss`)
+
+`$bPx`
+`$bPx-md`
+`$bPx-sm`
+
+`$bPercentages`
+`$bPercentages-md`
+`$bPercentages-sm`
+
+### Clear (`_clear.scss`)
+
+`$cls`
+
+### Color (`_color.scss`)
+
+`$cs`
+
+### Cursor (`_cursor.scss`)
+
+`$curs`
+
+### Display (`_display.scss`)
+
+`$ds`
+`$ds-md`
+`$ds-sm`
+
+### Order (`_flex.scss`)
+
+`$ords`
+
+### Flex-grow (`_flex.scss`)
+
+`$fxgs`
+
+### Flex-shrink (`_flex.scss`)
+
+`$fxshs`
+
+### Flex-basis (`_flex.scss`)
+
+`$fxbs`
+
+### Flex-direction (`_flex.scss`)
+
+`$fxdrs`
+`$fxdrs-md`
+`$fxdrs-sm`
+
+### Flex-wrap (`_flex.scss`)
+
+`$fxws`
+
+### Justify-content (`_flex.scss`)
+
+`$jcs`
+`$jcs-md`
+`$jcs-sm`
+
+### Align-items (`_flex.scss`)
+
+`$ais`
+
+### Align-self (`_flex.scss`)
+
+`$ass`
+
+### Float (`_float.scss`)
+
+`$fls`
+`$fls-md`
+`$fls-sm`
+
+### Font-weight (`_font.scss`)
+
+`$fws`
+
+### Font-size (`_font.scss`)
+
+`$fzs`
+`$fzs-md`
+`$fzs-sm`
+
+
+### Font-style (`_font.scss`)
+
+`$fss`
+
+### Font-family (`_font.scss`)
+
+`$ffs`
+
+### Height (`_height.scss`)
+
+`$hPx`
+`$hPx-md`
+`$hPx-sm`
+
+`$hPercentages`
+`$hPercentages-md`
+`$hPercentages-sm`
+
+`$hVws`
+`$hVws-md`
+`$hVws-sm`
+
+`$hVhs`
+`$hVhs-md`
+`$hVhs-sm`
+
+### Left (`_left.scss`)
+
+`$lPx`
+`$lPx-md`
+`$lPx-sm`
+
+`$lPercentages`
+`$lPercentages-md`
+`$lPercentages-sm`
+
+### Line-height (`_lineHeight.scss`)
+
+`$lhs`
+
+### List-style (`_listStyle.scss`)
+
+`$lss`
+
+### Margin (`_margin.scss`)
+
+`$mPx`
+`$mPx-md`
+`$mPx-sm`
+
+### Opacity (`_opacity.scss`)
+
+`$ops`
+
+### Overflow (`_overflow.scss`)
+
+`$os`
+
+### Overflow-x (`_overflow.scss`)
+
+`$oxs`
+
+### Overflow-y (`_overflow.scss`)
+
+`$oys`
+
+### Padding (`_padding.scss`)
+
+`$pPx`
+`$pPx-md`
+`$pPx-sm`
+
+### Position (`_position.scss`)
+
+`$poss`
+`$poss-md`
+`$poss-sm`
+
+### Right (`_right.scss`)
+
+`$rPx`
+`$rPx-md`
+`$rPx-sm`
+
+`$rPercentages`
+`$rPercentages-md`
+`$rPercentages-sm`
+
+### Text-transform (`_text.scss`)
+
+`$tts`
+
+### Text-decoration (`_text.scss`)
+
+`$tds`
+
+### Text-shadow (`_text.scss`)
+
+`$tshColors`
+
+### Text-align (`_textAlign.scss`)
+
+`$tas`
+
+### Top (`_top.scss`)
+
+`$tPx`
+`$tPx-md`
+`$tPx-sm`
+
+`$tPercentages`
+`$tPercentages-md`
+`$tPercentages-sm`
+
+### Width (`_width.scss`)
+
+`$wPx`
+`$wPx-md`
+`$wPx-sm`
+
+`$wPercentages`
+`$wPercentages-md`
+`$wPercentages-sm`
+
+`$wVws`
+`$wVws-md`
+`$wVws-sm`
+
+`$wVhs`
+`$wVhs-md`
+`$wVhs-sm`
+
+### Word-break (`_word.scss`)
+
+`$wobs`
+
+### Word-wrap (`_word.scss`)
+
+`$wows`
+
+### Z-index (`_zIndex.scss`)
+
+`$zs`
 
 ## Recommendations
 

@@ -1,28 +1,35 @@
+$bdColors: (
+  (1, 's', 'solid', 'white', $color-white), 
+  (1, 's', 'solid', 'lightgray', $color-lightgray), 
+  (1, 's', 'solid', 'gray', $color-gray), 
+  (1, 's', 'solid', 'black', $color-black)
+) !default;
+
+//border radius
+$bdrss: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 !default;
+
 .bdn {
   border: none;
 }
 
-$bdColors: ('white': $color-white, 'lightgray':$color-lightgray, 'gray':$color-gray, 'black':$color-black) !default;
-@each $name, $color in $bdColors {
-  .bd1-s-#{$name} {
-    border: 1px solid $color;
+@each $px,$typeName,$type,$colorName,$color in $bdColors {
+  .bd#{$px}-#{$typeName}-#{$colorName} {
+    border: #{$px}px #{$type} $color;
   }
-  .bt1-s-#{$name} {
-    border-bottom: 1px solid $color;
+  .bt#{$px}-#{$typeName}-#{$colorName} {
+    border-bottom: #{$px}px #{$type} $color;
   }
-  .bb1-s-#{$name} {
-    border-top: 1px solid $color;
+  .bb#{$px}-#{$typeName}-#{$colorName} {
+    border-top: #{$px}px #{$type} $color;
   }
-  .br1-s-#{$name} {
-    border-right: 1px solid $color;
+  .br#{$px}-#{$typeName}-#{$colorName} {
+    border-right: #{$px}px #{$type} $color;
   }
-  .bl1-s-#{$name} {
-    border-left: 1px solid $color;
+  .bl#{$px}-#{$typeName}-#{$colorName} {
+    border-left: #{$px}px #{$type} $color;
   }
 }
 
-//border radius
-$bdrss: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 !default;
 @each $bdrs in $bdrss {
   .bdrs#{$bdrs} {
     border-radius: #{$bdrs}px;

@@ -1,6 +1,6 @@
 $tts: ('u': uppercase, 'n': none) !default;
 $tds: ('n': none, 'u': underline) !default;
-$tshColors: (
+$tshs: (
   (1, 1, 1, 'white', $color-white),
   (1, 1, 1, 'lightgray', $color-lightgray),
   (1, 1, 1, 'gray', $color-gray),
@@ -19,7 +19,7 @@ $tshColors: (
   }
 }
 
-@each $hoff,$voff,$blur,$colorName,$color in $tshColors {
+@each $hoff,$voff,$blur,$colorName,$color in $tshs {
   .tsh#{$hoff}-#{$voff}-#{$blur}-#{$colorName} {
     text-shadow: #{$hoff}px #{$voff}px #{$blur}px $color;
   }
