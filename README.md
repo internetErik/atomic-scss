@@ -90,7 +90,7 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
     * Height, Width, Padding, Margin, Top, Bottom, Left, Right (`h#@md`, `w#@md`, `p#@md`, `m#@md`, `t#@md`, `b#@md`, `l#@md`, `r#@md`)
       * Padding and Margin on sides (`pt#@md`, `pb#@md`, `pl#@md`, `pr#@md`, `p0-#@md`, `p#-0@md`, `mt#@md`, `mb#@md`, `ml#@md`, `mr#@md`, `m0-#@md`, `m#-0@md`) 
       * `Margin: 0 auto;` (`m0-auto@md`)
-      * values: `0, 1, 5, 10, 15, 20, 25, 30`
+      * values: `0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800`
     * Height, Width, Padding, Margin, Top, Bottom, Left, Right by percentage (`h#%@md`, `w#%@md`, `p#%@md`, `m#%@md`, `t#%@md`, `b#%@md`, `l#%@md`, `r#%@md`)
       * Min/Max Height and Width by percentage (`mih100%@md`, `mah100%@md`,`miw100%@md`, `maw100%@md`)
       * percentage values: `1, 2, 3, 4, 5, 10, 12.25, 15, 20, 25, 30, 33.3333, 35, 40, 45, 50, 55, 60, 65, 66.6666, 70, 75, 80, 85, 90, 95, 100, 110, 120 ,130 ,140 ,150`
@@ -110,7 +110,7 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
     * Height, Width, Padding, Margin, Top, Bottom, Left, Right (`h#@md`, `w#@md`, `p#@md`, `m#@sm`, `t#@sm`, `b#@sm`, `l#@sm`, `r#@sm`)
       * Padding and Margin on sides (`pt#@sm`, `pb#@sm`, `pl#@sm`, `pr#@sm`, `p0-#@sm`, `p#-0@sm`, `mt#@sm`, `mb#@sm`, `ml#@sm`, `mr#@sm`, `m0-#@sm`, `m#-0@sm`) 
       * `Margin: 0 auto;` (`m0-auto@sm`)
-      * values: `0, 1, 5, 10, 15, 20, 25, 30`
+      * values: `0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800`
     * Height, Width, Padding, Margin, Top, Bottom, Left, Right by percentage (`h#%@sm`, `w#%@sm`, `p#%@sm`, `m#%@sm`, `t#%@sm`, `b#%@sm`, `l#%@sm`, `r#%@sm`)
       * Min/Max Height and Width by percentage (`mih100%@sm`, `mah100%@sm`,`miw100%@sm`, `maw100%@sm`)
       * percentage values: `1, 2, 3, 4, 5, 10, 12.25, 15, 20, 25, 30, 33.3333, 35, 40, 45, 50, 55, 60, 65, 66.6666, 70, 75, 80, 85, 90, 95, 100, 110, 120 ,130 ,140 ,150`
