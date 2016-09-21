@@ -8,13 +8,13 @@ $tshs: (
 ) !default;
 
 @each $name,$value in $tts {
-  .tt#{name} {
+  .tt#{$name} {
     text-transform: $value;
   }
 }
 
 @each $name,$value in $tds {
-  .td#{name} {
+  .td#{$name} {
     text-decoration: $value;
   }
 }
