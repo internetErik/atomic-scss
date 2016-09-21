@@ -24,7 +24,7 @@ $jcs-md: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 's
 $jcs-sm: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around) !default;
 
 //align-items
-$ais: ('b': baseline, 'c': center) !default;
+$ais: ('fs': flex-start, 'fe': flex-end, 'b': baseline, 'c': center, 's': stretch) !default;
 
 //align-self
 $ass: ('b': baseline, 'c': center, 'a': auto) !default;

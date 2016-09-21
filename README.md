@@ -121,7 +121,7 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
     * Flex Direction (`fxdr@sm`, `fxdc@sm`, `fxdrr@sm`, `fxdcr@sm`)
     * Flex Wrap (`fxwn@sm`, `fxww@sm`, `fxwr@sm`)
     * Justify Content (`jcfs@sm`, `jcfe@sm`, `jcc@sm`, `jcsb@sm`, `jcsa@sm`)
-    * Align Items (`aib@sm`, `aic@sm`, `asa@sm`, `asb@sm`, `asc@sm`)
+    * Align Items (`aifs@sm`, `aife@sm`, `aib@sm`, `aic@sm`, `ais@sm`, `asa@sm`, `asb@sm`, `asc@sm`)
   * Position (`poss@sm`, `posa@sm`, `posr@sm`, `posf@sm`)
   * Float (`fll@sm`, `flr@sm`, `fln@sm`)
   * Font Size (`fz#@sm`)
