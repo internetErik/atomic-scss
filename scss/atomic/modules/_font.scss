@@ -26,11 +26,6 @@ $ffs: ('s': serif, 'ss': sans-serif) !default;
     font-size: #{$fz}px;
   }
 }
-@each $fw in $fws {
-  .fw#{$fw} {
-    font-weight: $fw;
-  }
-}
 
 @each $name,$value in $fss {
   .ff#{$name} {
