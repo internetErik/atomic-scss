@@ -19,9 +19,9 @@ $bgcs: ('white': $color-white, 'lightgray':$color-lightgray, 'gray':$color-gray,
 
 //borders
 $bds: (
-  (1, 's', 'solid', 'white', $color-white), 
-  (1, 's', 'solid', 'lightgray', $color-lightgray), 
-  (1, 's', 'solid', 'gray', $color-gray), 
+  (1, 's', 'solid', 'white', $color-white),
+  (1, 's', 'solid', 'lightgray', $color-lightgray),
+  (1, 's', 'solid', 'gray', $color-gray),
   (1, 's', 'solid', 'black', $color-black)
 ) !default;
 
