@@ -1,5 +1,3 @@
-$wobs: ('n': normal, 'k': keep-all, 'ba': break-all, 'nm': normal) !default;
-$wows: ('u': unrestricted, 's': suppress, 'b': break-word, 'n': none) !default;
 @each $name,$value in $wobs {
   .wob#{$name} {
     word-break: $value;

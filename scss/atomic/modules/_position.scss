@@ -1,7 +1,3 @@
-$poss: ('s': static, 'r': relative, 'a': absolute, 'f': fixed) !default;
-$poss-md: ('s': static, 'r': relative, 'a': absolute, 'f': fixed) !default;
-$poss-sm: ('s': static, 'r': relative, 'a': absolute, 'f': fixed) !default;
-
 @each $name,$value in $poss {
   .pos#{$name} {
     position: $value;

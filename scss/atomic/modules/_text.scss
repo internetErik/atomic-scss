@@ -1,12 +1,3 @@
-$tts: ('u': uppercase, 'n': none) !default;
-$tds: ('n': none, 'u': underline) !default;
-$tshs: (
-  (1, 1, 1, 'white', $color-white),
-  (1, 1, 1, 'lightgray', $color-lightgray),
-  (1, 1, 1, 'gray', $color-gray),
-  (1, 1, 1, 'black', $color-black),
-) !default;
-
 @each $name,$value in $tts {
   .tt#{$name} {
     text-transform: $value;

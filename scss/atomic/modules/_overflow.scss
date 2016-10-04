@@ -1,21 +1,17 @@
-$os: ('h': hidden, 'a': auto, 's': scroll) !default;
-$oxs: ('h': hidden, 'a': auto, 's': scroll) !default;
-$oys: ('h': hidden, 'a': auto, 's': scroll) !default;
-
 @each $name,$value in $os {
   .o#{$name} {
     overflow: $value;
-  } 
+  }
 }
 
 @each $name,$value in $oxs {
   .ox#{$name} {
     overflow-x: $value;
-  } 
+  }
 }
 
 @each $name,$value in $oys {
   .o-y#{$name} {
     overflow-y: $value;
-  } 
+  }
 }
