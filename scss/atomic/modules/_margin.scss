@@ -34,6 +34,14 @@
   margin: 0 auto;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
 @media all and (max-width: $bp-md) {
   @each $px in $ms-px-md {
     .m#{$px}\@md {
@@ -69,6 +77,14 @@
 
   .m0-auto\@md {
     margin: 0 auto;
+  }
+
+  .ml-auto\@md {
+    margin-left: auto;
+  }
+
+  .mr-auto\@md {
+    margin-right: auto;
   }
 }
 
@@ -107,5 +123,13 @@
 
   .m0-auto\@sm {
     margin: 0 auto;
+  }
+
+  .ml-auto\@sm {
+    margin-left: auto;
+  }
+
+  .mr-auto\@sm {
+    margin-right: auto;
   }
 }

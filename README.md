@@ -26,8 +26,8 @@ w100%@sm = width: 100%; //at the breakpoint defined by $bp-sm
 The class names follow emmet syntax (for the most part). ([cheat sheet](http://docs.emmet.io/cheat-sheet/))
 
 * Height, Width, Padding, Margin, Top, Bottom, Left, Right (`h#`, `w#`, `p#`, `m#`, `t#`, `b#`, `l#`, `r#`)
-  * Padding and Margin on sides (`pt#`, `pb#`, `pl#`, `pr#`, `p0-#`, `p#-0`, `mt#`, `mb#`, `ml#`, `mr#`, `m0-#`, `m#-0`) 
-  * `Margin: 0 auto;` (`m0-auto`)
+  * Padding and Margin on sides (`pt#`, `pb#`, `pl#`, `pr#`, `p0-#`, `p#-0`, `mt#`, `mb#`, `ml#`, `mr#`, `m0-#`, `m#-0`)
+  * `Margin: 0 auto;` (`m0-auto`), `margin-left: auto;` (`ml-auto`), `margin-right: auto;` (`mr-auto`)
   * values: `0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800`
 * Height, Width, Padding, Margin, Top, Bottom, Left, Right by percentage (`h#%`, `w#%`, `p#%`, `m#%`, `t#%`, `b#%`, `l#%`, `r#%`)
   * Min/Max Height and Width by percentage (`mih100%`, `mah100%`,`miw100%`, `maw100%`)
@@ -82,14 +82,14 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
 * Cursor (`curp`, `curc`)
 * List Style (`lsn`)
 * Borders (`bdn`, `bd1-s-<color>`)
-  * Borders on one side (`bt1-s-<color>`, `bb1-s-<color>`, `br1-s-<color>`, `br1-s-<color>`) 
+  * Borders on one side (`bt1-s-<color>`, `bb1-s-<color>`, `br1-s-<color>`, `br1-s-<color>`)
   * values: `white, lightgray, gray, black `
 * Border Radius (`bdrs#`)
   * values: `1, 2, 3, 4, 5, 6, 7, 8, 9, 10`
 * Breakpoint `@md` = `784px` by default
     * Height, Width, Padding, Margin, Top, Bottom, Left, Right (`h#@md`, `w#@md`, `p#@md`, `m#@md`, `t#@md`, `b#@md`, `l#@md`, `r#@md`)
-      * Padding and Margin on sides (`pt#@md`, `pb#@md`, `pl#@md`, `pr#@md`, `p0-#@md`, `p#-0@md`, `mt#@md`, `mb#@md`, `ml#@md`, `mr#@md`, `m0-#@md`, `m#-0@md`) 
-      * `Margin: 0 auto;` (`m0-auto@md`)
+      * Padding and Margin on sides (`pt#@md`, `pb#@md`, `pl#@md`, `pr#@md`, `p0-#@md`, `p#-0@md`, `mt#@md`, `mb#@md`, `ml#@md`, `mr#@md`, `m0-#@md`, `m#-0@md`)
+      * `Margin: 0 auto;` (`m0-auto@md`), `margin-left: auto;` (`ml-auto@sm`), `margin-right: auto;` (`mr-auto@sm`)
       * values: `0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800`
     * Height, Width, Padding, Margin, Top, Bottom, Left, Right by percentage (`h#%@md`, `w#%@md`, `p#%@md`, `m#%@md`, `t#%@md`, `b#%@md`, `l#%@md`, `r#%@md`)
       * Min/Max Height and Width by percentage (`mih100%@md`, `mah100%@md`,`miw100%@md`, `maw100%@md`)
@@ -108,8 +108,8 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
     * values: `10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 34, 36, 42, 48`
 * Breakpoint `@sm` = `560px` by default
     * Height, Width, Padding, Margin, Top, Bottom, Left, Right (`h#@md`, `w#@md`, `p#@md`, `m#@sm`, `t#@sm`, `b#@sm`, `l#@sm`, `r#@sm`)
-      * Padding and Margin on sides (`pt#@sm`, `pb#@sm`, `pl#@sm`, `pr#@sm`, `p0-#@sm`, `p#-0@sm`, `mt#@sm`, `mb#@sm`, `ml#@sm`, `mr#@sm`, `m0-#@sm`, `m#-0@sm`) 
-      * `Margin: 0 auto;` (`m0-auto@sm`)
+      * Padding and Margin on sides (`pt#@sm`, `pb#@sm`, `pl#@sm`, `pr#@sm`, `p0-#@sm`, `p#-0@sm`, `mt#@sm`, `mb#@sm`, `ml#@sm`, `mr#@sm`, `m0-#@sm`, `m#-0@sm`)
+      * `Margin: 0 auto;` (`m0-auto@sm`), `margin-left: auto;` (`ml-auto@sm`), `margin-right: auto;` (`mr-auto@sm`)
       * values: `0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800`
     * Height, Width, Padding, Margin, Top, Bottom, Left, Right by percentage (`h#%@sm`, `w#%@sm`, `p#%@sm`, `m#%@sm`, `t#%@sm`, `b#%@sm`, `l#%@sm`, `r#%@sm`)
       * Min/Max Height and Width by percentage (`mih100%@sm`, `mah100%@sm`,`miw100%@sm`, `maw100%@sm`)
@@ -133,11 +133,11 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
 * Truncate and add ellipsis to text (`truncate-text`)
 * Make an object into a circle (`round-element`)
 * Show and hide an element with checkbox
-  * `<input type="checkbox" class="toggle-sibling"><span class="toggle-sibling-target">Hidden Until Checkbox is on</span>` 
+  * `<input type="checkbox" class="toggle-sibling"><span class="toggle-sibling-target">Hidden Until Checkbox is on</span>`
 * Center Element Vertically
   * With relative position (`vertical-align`)
   * With absolute position (`vertical-align-absolute`)
-  * With fixed position (`vertical-align-fixed`) 
+  * With fixed position (`vertical-align-fixed`)
   * All of these at `@md` and `@sm`
     * `vertical-align@md`, `vertical-align@sm`
     * `vertical-align-absolute@md`, `vertical-align-absolute@sm`
@@ -145,7 +145,7 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
 * Center Element Horizontally
   * With relative position (`horizontal-align`)
   * With absolute position (`horizontal-align-absolute`)
-  * With fixed position (`horizontal-align-fixed`) 
+  * With fixed position (`horizontal-align-fixed`)
   * All of these at `@md` and `@sm`
     * `horizontal-align@md`, `horizontal-align@sm`
     * `horizontal-align-absolute@md`, `horizontal-align-absolute@sm`
@@ -159,16 +159,16 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
     * `transform-center-absolute@md`, `transform-center-absolute@sm`
     * `transform-center-fixed@md`, `transform-center-fixed@sm`
 * Transforms
-  * Rotate Z (`rotateZ#`) 
+  * Rotate Z (`rotateZ#`)
     * values: `45, 90, -45, -90`
-  * Scale (`scale#`) 
-    * values: `50, 150, 200` 
-* Transition with `.3s ease-in-out` (`transition-<property>`) 
+  * Scale (`scale#`)
+    * values: `50, 150, 200`
+* Transition with `.3s ease-in-out` (`transition-<property>`)
   * values: `opacity, color, background, transform, top, bottom, left, right, all`
 
 ## SCSS Variables (Should be overridden by user)
 
-There are sass variables for each group of styles. These may include too many (or too few) values, and can produce a large css file. These variables have been defined with `!default`* so they are easy to override. 
+There are sass variables for each group of styles. These may include too many (or too few) values, and can produce a large css file. These variables have been defined with `!default`* so they are easy to override.
 
 **Check the variables before you override them so you know if you need to override a list (single or multi-dimension), or a map.**
 
@@ -188,7 +188,7 @@ $hPx: 10, 20, 50, 100;
 //h10, h20, h50, h100
 ```
 
-Most variables are lists, but some are also maps (key/value pairs). 
+Most variables are lists, but some are also maps (key/value pairs).
 
 For example, widths in percentage use a key value pair:
 
@@ -484,7 +484,7 @@ Here is an [atomic-scss-starter-kit](https://github.com/internetErik/atomic-scss
 
 ## Thanks
 
-Thanks to yahoo for pioneering this technique (as far as I know).  
+Thanks to yahoo for pioneering this technique (as far as I know).
 
 Also see [acss](http://acss.io).
 
