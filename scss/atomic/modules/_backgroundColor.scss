@@ -1,8 +1,10 @@
-@each $name, $color in $bgcs {
-  .bgc-#{$name} {
-    background-color: $color;
-  }
-  .bgc-#{$name}\:h:hover {
-    background-color: $color;
+@if $bgcs-on {
+  @each $name, $color in $bgcs {
+    .bgc-#{$name} {
+      background-color: $color;
+    }
+    .bgc-#{$name}\:h:hover {
+      background-color: $color;
+    }
   }
 }

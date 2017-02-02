@@ -1,21 +1,23 @@
-@each $name,$value in $poss {
-  .pos#{$name} {
-    position: $value;
-  }
-}
-
-@media all and (max-width: $bp-md) {
-  @each $name,$value in $poss-md {
-    .pos#{$name}\@md {
+@if $poss-on {
+  @each $name,$value in $poss {
+    .pos#{$name} {
       position: $value;
     }
   }
-}
 
-@media all and (max-width: $bp-sm) {
-  @each $name,$value in $poss-sm {
-    .pos#{$name}\@sm {
-      position: $value;
+  @media all and (max-width: $bp-md) {
+    @each $name,$value in $poss-md {
+      .pos#{$name}\@md {
+        position: $value;
+      }
+    }
+  }
+
+  @media all and (max-width: $bp-sm) {
+    @each $name,$value in $poss-sm {
+      .pos#{$name}\@sm {
+        position: $value;
+      }
     }
   }
 }

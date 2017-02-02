@@ -1,36 +1,53 @@
-@each $px in $ls-px {
-  .l#{$px} {
-    left: #{$px}px;
+@if $left-on {
+  @if $ls-px-on {
+    @each $px in $ls-px {
+      .l#{$px} {
+        left: #{$px}px;
+      }
+    }
   }
-}
-@each $name, $value in $ls-perc {
-  .l#{$name}\% {
-    left: percentage($value);
-  }
-}
 
-@media all and (max-width: $bp-md) {
-  @each $px in $ls-px-md {
-    .l#{$px}\@md {
-      left: #{$px}px;
+  @if $ls-perc-on {
+    @each $name, $value in $ls-perc {
+      .l#{$name}\% {
+        left: percentage($value);
+      }
     }
   }
-  @each $name, $value in $ls-perc-md {
-    .l#{$name}\%\@md {
-      left: percentage($value);
-    }
-  }
-}
 
-@media all and (max-width: $bp-sm) {
-  @each $px in $ls-px-sm {
-    .l#{$px}\@sm {
-      left: #{$px}px;
+  @media all and (max-width: $bp-md) {
+    @if $ls-px-on {
+      @each $px in $ls-px-md {
+        .l#{$px}\@md {
+          left: #{$px}px;
+        }
+      }
+    }
+
+    @if $ls-perc-on {
+      @each $name, $value in $ls-perc-md {
+        .l#{$name}\%\@md {
+          left: percentage($value);
+        }
+      }
     }
   }
-  @each $name, $value in $ls-perc-sm {
-    .l#{$name}\%\@sm {
-      left: percentage($value);
+
+  @media all and (max-width: $bp-sm) {
+    @if $ls-px-on {
+      @each $px in $ls-px-sm {
+        .l#{$px}\@sm {
+          left: #{$px}px;
+        }
+      }
+    }
+
+    @if $ls-perc-on {
+      @each $name, $value in $ls-perc-sm {
+        .l#{$name}\%\@sm {
+          left: percentage($value);
+        }
+      }
     }
   }
 }

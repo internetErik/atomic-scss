@@ -1,37 +1,53 @@
-
-@each $px in $bs-px {
-  .b#{$px} {
-    bottom: #{$px}px;
-  }
-}
-@each $name, $value in $bs-perc {
-  .b#{$name}\% {
-    bottom: percentage($value);
-  }
-}
-
-@media all and (max-width: $bp-md) {
-  @each $px in $bs-px-md {
-    .b#{$px}\@md {
-      bottom: #{$px}px;
+@if $bottom-on {
+  @if $bs-px-on {
+    @each $px in $bs-px {
+      .b#{$px} {
+        bottom: #{$px}px;
+      }
     }
   }
-  @each $name, $value in $bs-perc-md {
-    .b#{$name}\%\@md {
-      bottom: percentage($value);
-    }
-  }
-}
 
-@media all and (max-width: $bp-sm) {
-  @each $px in $bs-px-sm {
-    .b#{$px}\@sm {
-      bottom: #{$px}px;
+  @if $bs-perc-on {
+    @each $name, $value in $bs-perc {
+      .b#{$name}\% {
+        bottom: percentage($value);
+      }
     }
   }
-  @each $name, $value in $bs-perc-sm {
-    .b#{$name}\%\@sm {
-      bottom: percentage($value);
+
+  @media all and (max-width: $bp-md) {
+    @if $bs-px-on {
+      @each $px in $bs-px-md {
+        .b#{$px}\@md {
+          bottom: #{$px}px;
+        }
+      }
+    }
+
+    @if $bs-perc-on {
+      @each $name, $value in $bs-perc-md {
+        .b#{$name}\%\@md {
+          bottom: percentage($value);
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: $bp-sm) {
+    @if $bs-px-on {
+      @each $px in $bs-px-sm {
+        .b#{$px}\@sm {
+          bottom: #{$px}px;
+        }
+      }
+    }
+
+    @if $bs-perc-on {
+      @each $name, $value in $bs-perc-sm {
+        .b#{$name}\%\@sm {
+          bottom: percentage($value);
+        }
+      }
     }
   }
 }

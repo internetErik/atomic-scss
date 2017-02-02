@@ -1,100 +1,131 @@
-@each $px in $ws-px {
-  .w#{$px} {
-    width: #{$px}px;
-  }
-}
-
-@each $name,$value in $ws-perc {
-  .w#{$name}\% {
-    width: percentage($value);
-  }
-}
-
-@each $vh in $ws-vh {
-  .w#{$vh}vh {
-    width: #{$vh}vh;
-  }
-}
-
-@each $vw in $ws-vw {
-  .w#{$vw}vw {
-    width: #{$vw}vw;
-  }
-}
-
-.miw100\% {
-  min-width: 100%;
-}
-
-.maw100\% {
-  max-width: 100%;
-}
-
-
-@media all and (max-width: $bp-md) {  
-  @each $px in $ws-px-md {
-    .w#{$px}\@md {
-      width: #{$px}px;
+@if $width-on {
+  @if $ws-px-on {
+      @each $px in $ws-px {
+      .w#{$px} {
+        width: #{$px}px;
+      }
     }
   }
 
-  @each $name,$value in $ws-perc-md {
-    .w#{$name}\%\@md {
-      width: percentage($value);
+  @if $ws-perc-on {
+    @each $name,$value in $ws-perc {
+      .w#{$name}\% {
+        width: percentage($value);
+      }
     }
   }
 
-  @each $vh in $ws-vh-md {
-    .w#{$vh}vh\@md {
-      width: #{$vh}vh;
+  @if $ws-vh-on {
+    @each $vh in $ws-vh {
+      .w#{$vh}vh {
+        width: #{$vh}vh;
+      }
     }
   }
 
-  @each $vw in $ws-vw-md {
-    .w#{$vw}vw\@md {
-      width: #{$vw}vw;
+  @if $ws-vw-on {
+    @each $vw in $ws-vw {
+      .w#{$vw}vw {
+        width: #{$vw}vw;
+      }
     }
   }
 
-  .miw100\%\@md {
-    min-width: 100%;
-  }
+  @if $ws-perc-on {
+    .miw100\% {
+      min-width: 100%;
+    }
 
-  .maw100\%\@md {
-    max-width: 100%;
-  }
-}
-
-@media all and (max-width: $bp-sm) {
-  @each $px in $ws-px-sm {
-    .w#{$px}\@sm {
-      width: #{$px}px;
+    .maw100\% {
+      max-width: 100%;
     }
   }
 
-  @each $name,$value in $ws-perc-sm {
-    .w#{$name}\%\@sm {
-      width: percentage($value);
+  @media all and (max-width: $bp-md) {
+    @if $ws-px-on {
+      @each $px in $ws-px-md {
+        .w#{$px}\@md {
+          width: #{$px}px;
+        }
+      }
+    }
+
+    @if $ws-perc-on {
+      @each $name,$value in $ws-perc-md {
+        .w#{$name}\%\@md {
+          width: percentage($value);
+        }
+      }
+    }
+
+    @if $ws-vh-on {
+      @each $vh in $ws-vh-md {
+        .w#{$vh}vh\@md {
+          width: #{$vh}vh;
+        }
+      }
+    }
+
+    @if $ws-vw-on {
+      @each $vw in $ws-vw-md {
+        .w#{$vw}vw\@md {
+          width: #{$vw}vw;
+        }
+      }
+    }
+
+    @if $ws-perc-on {
+      .miw100\%\@md {
+        min-width: 100%;
+      }
+
+      .maw100\%\@md {
+        max-width: 100%;
+      }
     }
   }
 
-  @each $vh in $ws-vh-sm {
-    .w#{$vh}vh\@sm {
-      width: #{$vh}vh;
+  @media all and (max-width: $bp-sm) {
+    @if $ws-px-on {
+      @each $px in $ws-px-sm {
+        .w#{$px}\@sm {
+          width: #{$px}px;
+        }
+      }
     }
-  }
 
-  @each $vw in $ws-vw-sm {
-    .w#{$vw}vw\@sm {
-      width: #{$vw}vw;
+    @if $ws-perc-on {
+      @each $name,$value in $ws-perc-sm {
+        .w#{$name}\%\@sm {
+          width: percentage($value);
+        }
+      }
     }
-  }
 
-  .miw100\%\@sm {
-    min-width: 100%;
-  }
+    @if $ws-vh-on {
+      @each $vh in $ws-vh-sm {
+        .w#{$vh}vh\@sm {
+          width: #{$vh}vh;
+        }
+      }
+    }
 
-  .maw100\%\@sm {
-    max-width: 100%;
+    @if $ws-vw-on {
+      @each $vw in $ws-vw-sm {
+        .w#{$vw}vw\@sm {
+          width: #{$vw}vw;
+        }
+      }
+    }
+
+    @if $ws-perc-on {
+      .miw100\%\@sm {
+        min-width: 100%;
+      }
+
+      .maw100\%\@sm {
+        max-width: 100%;
+      }
+    }
   }
 }

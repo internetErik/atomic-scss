@@ -1,271 +1,273 @@
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
-}
+@if $helpers-on {
+	.clearfix::after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
 
-.truncate-text {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+	.truncate-text {
+	  white-space: nowrap;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	}
 
-//use border-radius to create a circle shape
-.round-element {
-	border-radius: 100%;
-}
+	//use border-radius to create a circle shape
+	.round-element {
+		border-radius: 100%;
+	}
 
-// use a checkbox to show and hide sibling elements with target class
-.toggle-sibling {
-	display: none;
-}
+	// use a checkbox to show and hide sibling elements with target class
+	.toggle-sibling {
+		display: none;
+	}
 
-.toggle-sibling ~ .toggle-sibling-target {
-	display: none;
-}
+	.toggle-sibling ~ .toggle-sibling-target {
+		display: none;
+	}
 
-.toggle-sibling:checked ~ .toggle-sibling-target {
-	display: block;
-}
+	.toggle-sibling:checked ~ .toggle-sibling-target {
+		display: block;
+	}
 
-//center elements horizontally and/or vertically
-.vertical-align {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-.horizontal-align {
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-.transform-center {
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.horizontal-align-absolute {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-.vertical-align-absolute {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-.transform-center-absolute {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.horizontal-align-fixed {
-	position: fixed;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-.vertical-align-fixed {
-	position: fixed;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-.transform-center-fixed {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-@media all and (max-width: $bp-md) {
-	.vertical-align\@md {
+	//center elements horizontally and/or vertically
+	.vertical-align {
 		position: relative;
 		top: 50%;
 		transform: translateY(-50%);
 	}
 
-	.horizontal-align\@md {
+	.horizontal-align {
 		position: relative;
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
-	.transform-center\@md {
+	.transform-center {
 		position: relative;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
 
-	.horizontal-align-absolute\@md {
+	.horizontal-align-absolute {
 		position: absolute;
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
-	.vertical-align-absolute\@md {
+	.vertical-align-absolute {
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
 	}
 
-	.transform-center-absolute\@md {
+	.transform-center-absolute {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
 
-	.horizontal-align-fixed\@md {
+	.horizontal-align-fixed {
 		position: fixed;
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
-	.vertical-align-fixed\@md {
+	.vertical-align-fixed {
 		position: fixed;
 		top: 50%;
 		transform: translateY(-50%);
 	}
 
-	.transform-center-fixed\@md {
+	.transform-center-fixed {
 		position: fixed;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
-}
 
-@media all and (max-width: $bp-sm) {
-	.vertical-align\@sm {
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
+	@media all and (max-width: $bp-md) {
+		.vertical-align\@md {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.horizontal-align\@md {
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.transform-center\@md {
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.horizontal-align-absolute\@md {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.vertical-align-absolute\@md {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.transform-center-absolute\@md {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.horizontal-align-fixed\@md {
+			position: fixed;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.vertical-align-fixed\@md {
+			position: fixed;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.transform-center-fixed\@md {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 	}
 
-	.horizontal-align\@sm {
-		position: relative;
-		left: 50%;
-		transform: translateX(-50%);
+	@media all and (max-width: $bp-sm) {
+		.vertical-align\@sm {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.horizontal-align\@sm {
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.transform-center\@sm {
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.horizontal-align-absolute\@sm {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.vertical-align-absolute\@sm {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.transform-center-absolute\@sm {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.horizontal-align-fixed\@sm {
+			position: fixed;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.vertical-align-fixed\@sm {
+			position: fixed;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.transform-center-fixed\@sm {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 	}
 
-	.transform-center\@sm {
-		position: relative;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+	//transforms
+	.rotateZ45 {
+		transform: rotateZ(45deg);
 	}
 
-	.horizontal-align-absolute\@sm {
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
+	.rotateZ90 {
+		transform: rotateZ(90deg);
 	}
 
-	.vertical-align-absolute\@sm {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
+	.rotateZ-45 {
+		transform: rotateZ(-45deg);
 	}
 
-	.transform-center-absolute\@sm {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+	.rotateZ-90 {
+		transform: rotateZ(-90deg);
 	}
 
-	.horizontal-align-fixed\@sm {
-		position: fixed;
-		left: 50%;
-		transform: translateX(-50%);
+	.scale50 {
+		transform: scale(.5, .5);
 	}
 
-	.vertical-align-fixed\@sm {
-		position: fixed;
-		top: 50%;
-		transform: translateY(-50%);
+	.scale150 {
+		transform: scale(1.5, 1.5);
 	}
 
-	.transform-center-fixed\@sm {
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+	.scale200 {
+		transform: scale(2, 2);
 	}
-}
 
-//transforms
-.rotateZ45 {
-	transform: rotateZ(45deg);
-}
+	//transition settings
+	.transition-opacity {
+		transition: opacity .3s ease-in-out;
+	}
 
-.rotateZ90 {
-	transform: rotateZ(90deg);
-}
+	.transition-color {
+		transition: color .3s ease-in-out;
+	}
 
-.rotateZ-45 {
-	transform: rotateZ(-45deg);
-}
+	.transition-background {
+		transition: background .3s ease-in-out;
+	}
 
-.rotateZ-90 {
-	transform: rotateZ(-90deg);
-}
+	.transition-transform {
+		transition: transform .3s ease-in-out;
+	}
 
-.scale50 {
-	transform: scale(.5, .5);
-}
+	.transition-top {
+		transition: top .3s ease-in-out;
+	}
 
-.scale150 {
-	transform: scale(1.5, 1.5);
-}
+	.transition-bottom {
+		transition: bottom .3s ease-in-out;
+	}
 
-.scale200 {
-	transform: scale(2, 2);
-}
+	.transition-left {
+		transition: left .3s ease-in-out;
+	}
 
-//transition settings
-.transition-opacity {
-	transition: opacity .3s ease-in-out;
-}
+	.transition-right {
+		transition: right .3s ease-in-out;
+	}
 
-.transition-color {
-	transition: color .3s ease-in-out;
-}
-
-.transition-background {
-	transition: background .3s ease-in-out;
-}
-
-.transition-transform {
-	transition: transform .3s ease-in-out;
-}
-
-.transition-top {
-	transition: top .3s ease-in-out;
-}
-
-.transition-bottom {
-	transition: bottom .3s ease-in-out;
-}
-
-.transition-left {
-	transition: left .3s ease-in-out;
-}
-
-.transition-right {
-	transition: right .3s ease-in-out;
-}
-
-.transition-all {
-	transition: all .3s ease-in-out;
+	.transition-all {
+		transition: all .3s ease-in-out;
+	}
 }

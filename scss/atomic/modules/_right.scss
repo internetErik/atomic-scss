@@ -1,36 +1,53 @@
-@each $px in $rs-px {
-  .r#{$px} {
-    right: #{$px}px;
+@if $right-on {
+  @if $rs-px-on {
+    @each $px in $rs-px {
+      .r#{$px} {
+        right: #{$px}px;
+      }
+    }
   }
-}
-@each $name, $value in $rs-perc {
-  .r#{$name}\% {
-    right: percentage($value);
-  }
-}
 
-@media all and (max-width: $bp-md) {
-  @each $px in $rs-px-md {
-    .r#{$px}\@md {
-      right: #{$px}px;
+  @if $rs-perc-on {
+    @each $name, $value in $rs-perc {
+      .r#{$name}\% {
+        right: percentage($value);
+      }
     }
   }
-  @each $name, $value in $rs-perc-md {
-    .r#{$name}\%\@md {
-      right: percentage($value);
-    }
-  }
-}
 
-@media all and (max-width: $bp-sm) {
-  @each $px in $rs-px-sm {
-    .r#{$px}\@sm {
-      right: #{$px}px;
+  @media all and (max-width: $bp-md) {
+    @if $rs-px-on {
+      @each $px in $rs-px-md {
+        .r#{$px}\@md {
+          right: #{$px}px;
+        }
+      }
+    }
+
+    @if $rs-perc-on {
+      @each $name, $value in $rs-perc-md {
+        .r#{$name}\%\@md {
+          right: percentage($value);
+        }
+      }
     }
   }
-  @each $name, $value in $rs-perc-sm {
-    .r#{$name}\%\@sm {
-      right: percentage($value);
+
+  @media all and (max-width: $bp-sm) {
+    @if $rs-px-on {
+      @each $px in $rs-px-sm {
+        .r#{$px}\@sm {
+          right: #{$px}px;
+        }
+      }
+    }
+
+    @if $rs-perc-on {
+      @each $name, $value in $rs-perc-sm {
+        .r#{$name}\%\@sm {
+          right: percentage($value);
+        }
+      }
     }
   }
 }

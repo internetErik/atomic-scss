@@ -1,135 +1,137 @@
-@each $px in $ms-px {
-  .m#{$px} {
-    margin: #{$px}px;
-  }
-
-  .m#{$px}-0 {
-    margin: #{$px}px 0;
-  }
-
-  .m0-#{$px} {
-    margin: 0 #{$px}px;
-  }
-}
-
-@each $px in $ms-px {
-  .mt#{$px} {
-    margin-top: #{$px}px;
-  }
-
-  .mb#{$px} {
-    margin-bottom: #{$px}px;
-  }
-
-  .mr#{$px} {
-    margin-right: #{$px}px;
-  }
-
-  .ml#{$px} {
-    margin-left: #{$px}px;
-  }
-}
-
-.m0-auto {
-  margin: 0 auto;
-}
-
-.ml-auto {
-  margin-left: auto;
-}
-
-.mr-auto {
-  margin-right: auto;
-}
-
-@media all and (max-width: $bp-md) {
-  @each $px in $ms-px-md {
-    .m#{$px}\@md {
+@if $ms-on {
+  @each $px in $ms-px {
+    .m#{$px} {
       margin: #{$px}px;
     }
 
-    .m#{$px}-0\@md {
+    .m#{$px}-0 {
       margin: #{$px}px 0;
     }
 
-    .m0-#{$px}\@md {
+    .m0-#{$px} {
       margin: 0 #{$px}px;
     }
   }
 
-  @each $px in $ms-px-md {
-    .mt#{$px}\@md {
+  @each $px in $ms-px {
+    .mt#{$px} {
       margin-top: #{$px}px;
     }
 
-    .mb#{$px}\@md {
+    .mb#{$px} {
       margin-bottom: #{$px}px;
     }
 
-    .mr#{$px}\@md {
+    .mr#{$px} {
       margin-right: #{$px}px;
     }
 
-    .ml#{$px}\@md {
+    .ml#{$px} {
       margin-left: #{$px}px;
     }
   }
 
-  .m0-auto\@md {
+  .m0-auto {
     margin: 0 auto;
   }
 
-  .ml-auto\@md {
+  .ml-auto {
     margin-left: auto;
   }
 
-  .mr-auto\@md {
+  .mr-auto {
     margin-right: auto;
   }
-}
 
-@media all and (max-width: $bp-sm) {
-  @each $px in $ms-px-sm {
-    .m#{$px}\@sm {
-      margin: #{$px}px;
+  @media all and (max-width: $bp-md) {
+    @each $px in $ms-px-md {
+      .m#{$px}\@md {
+        margin: #{$px}px;
+      }
+
+      .m#{$px}-0\@md {
+        margin: #{$px}px 0;
+      }
+
+      .m0-#{$px}\@md {
+        margin: 0 #{$px}px;
+      }
     }
 
-    .m#{$px}-0\@sm {
-      margin: #{$px}px 0;
+    @each $px in $ms-px-md {
+      .mt#{$px}\@md {
+        margin-top: #{$px}px;
+      }
+
+      .mb#{$px}\@md {
+        margin-bottom: #{$px}px;
+      }
+
+      .mr#{$px}\@md {
+        margin-right: #{$px}px;
+      }
+
+      .ml#{$px}\@md {
+        margin-left: #{$px}px;
+      }
     }
 
-    .m0-#{$px}\@sm {
-      margin: 0 #{$px}px;
+    .m0-auto\@md {
+      margin: 0 auto;
+    }
+
+    .ml-auto\@md {
+      margin-left: auto;
+    }
+
+    .mr-auto\@md {
+      margin-right: auto;
     }
   }
 
-  @each $px in $ms-px-sm {
-    .mt#{$px}\@sm {
-      margin-top: #{$px}px;
+  @media all and (max-width: $bp-sm) {
+    @each $px in $ms-px-sm {
+      .m#{$px}\@sm {
+        margin: #{$px}px;
+      }
+
+      .m#{$px}-0\@sm {
+        margin: #{$px}px 0;
+      }
+
+      .m0-#{$px}\@sm {
+        margin: 0 #{$px}px;
+      }
     }
 
-    .mb#{$px}\@sm {
-      margin-bottom: #{$px}px;
+    @each $px in $ms-px-sm {
+      .mt#{$px}\@sm {
+        margin-top: #{$px}px;
+      }
+
+      .mb#{$px}\@sm {
+        margin-bottom: #{$px}px;
+      }
+
+      .mr#{$px}\@sm {
+        margin-right: #{$px}px;
+      }
+
+      .ml#{$px}\@sm {
+        margin-left: #{$px}px;
+      }
     }
 
-    .mr#{$px}\@sm {
-      margin-right: #{$px}px;
+    .m0-auto\@sm {
+      margin: 0 auto;
     }
 
-    .ml#{$px}\@sm {
-      margin-left: #{$px}px;
+    .ml-auto\@sm {
+      margin-left: auto;
     }
-  }
 
-  .m0-auto\@sm {
-    margin: 0 auto;
-  }
-
-  .ml-auto\@sm {
-    margin-left: auto;
-  }
-
-  .mr-auto\@sm {
-    margin-right: auto;
+    .mr-auto\@sm {
+      margin-right: auto;
+    }
   }
 }

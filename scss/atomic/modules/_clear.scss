@@ -1,5 +1,7 @@
-@each $name, $value in $cls {
-  .cl#{$name} {
-    clear: #{$value};
+@if $cls-on {
+  @each $name, $value in $cls {
+    .cl#{$name} {
+      clear: #{$value};
+    }
   }
 }

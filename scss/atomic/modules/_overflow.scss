@@ -1,17 +1,25 @@
-@each $name,$value in $os {
-  .o#{$name} {
-    overflow: $value;
+@if $overflow-on {
+  @if $os-on {
+    @each $name,$value in $os {
+      .o#{$name} {
+        overflow: $value;
+      }
+    }
   }
-}
 
-@each $name,$value in $oxs {
-  .ox#{$name} {
-    overflow-x: $value;
+  @if $oxs-on {
+    @each $name,$value in $oxs {
+      .ox#{$name} {
+        overflow-x: $value;
+      }
+    }
   }
-}
 
-@each $name,$value in $oys {
-  .o-y#{$name} {
-    overflow-y: $value;
+  @if $oys-on {
+    @each $name,$value in $oys {
+      .o-y#{$name} {
+        overflow-y: $value;
+      }
+    }
   }
 }

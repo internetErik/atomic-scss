@@ -1,100 +1,132 @@
-@each $px in $hs-px {
-  .h#{$px} {
-    height: #{$px}px;
-  }
-}
-
-@each $name,$value in $hs-perc {
-  .h#{$name}\% {
-    height: percentage($value);
-  }
-}
-
-@each $vh in $hs-vh {
-  .h#{$vh}vh {
-    height: #{$vh}vh;
-  }
-}
-
-@each $vw in $hs-vw {
-  .h#{$vw}vw {
-    height: #{$vw}vw;
-  }
-}
-
-.mih100\% {
-  min-height: 100%;
-}
-
-.mah100\% {
-  max-height: 100%;
-}
-
-
-@media all and (max-width: $bp-md) {
-  @each $px in $hs-px-md {
-    .h#{$px}\@md {
-      height: #{$px}px;
+@if $height-on {
+  @if $hs-px-on {
+    @each $px in $hs-px {
+      .h#{$px} {
+        height: #{$px}px;
+      }
     }
   }
 
-  @each $name,$value in $hs-perc-md {
-    .h#{$name}\%\@md {
-      height: percentage($value);
+  @if $hs-perc-on {
+    @each $name,$value in $hs-perc {
+      .h#{$name}\% {
+        height: percentage($value);
+      }
     }
   }
 
-  @each $vh in $hs-vh-md {
-    .h#{$vh}vh\@md {
-      height: #{$vh}vh;
+  @if $hs-vh-on {
+    @each $vh in $hs-vh {
+      .h#{$vh}vh {
+        height: #{$vh}vh;
+      }
     }
   }
 
-  @each $vw in $hs-vw-md {
-    .h#{$vw}vw\@md {
-      height: #{$vw}vw;
+  @if $hs-vw-on {
+    @each $vw in $hs-vw {
+      .h#{$vw}vw {
+        height: #{$vw}vw;
+      }
     }
   }
 
-  .mih100\%\@md {
-    min-height: 100%;
-  }
+  @if $hs-perc-on {
+    .mih100\% {
+      min-height: 100%;
+    }
 
-  .mah100\%\@md {
-    max-height: 100%;
-  }
-}
-
-@media all and (max-width: $bp-sm) {
-  @each $px in $hs-px-sm {
-    .h#{$px}\@sm {
-      height: #{$px}px;
+    .mah100\% {
+      max-height: 100%;
     }
   }
 
-  @each $name,$value in $hs-perc-sm {
-    .h#{$name}\%\@sm {
-      height: percentage($value);
+  @media all and (max-width: $bp-md) {
+
+    @if $hs-px-on {
+      @each $px in $hs-px-md {
+        .h#{$px}\@md {
+          height: #{$px}px;
+        }
+      }
+    }
+
+    @if $hs-perc-on {
+      @each $name,$value in $hs-perc-md {
+        .h#{$name}\%\@md {
+          height: percentage($value);
+        }
+      }
+    }
+
+    @if $hs-vh-on {
+      @each $vh in $hs-vh-md {
+        .h#{$vh}vh\@md {
+          height: #{$vh}vh;
+        }
+      }
+    }
+
+    @if $hs-vw-on {
+      @each $vw in $hs-vw-md {
+        .h#{$vw}vw\@md {
+          height: #{$vw}vw;
+        }
+      }
+    }
+
+    @if $hs-perc-on {
+      .mih100\%\@md {
+        min-height: 100%;
+      }
+
+      .mah100\%\@md {
+        max-height: 100%;
+      }
     }
   }
 
-  @each $vh in $hs-vh-sm {
-    .h#{$vh}vh\@sm {
-      height: #{$vh}vh;
+  @media all and (max-width: $bp-sm) {
+    @if $hs-px-on {
+      @each $px in $hs-px-sm {
+        .h#{$px}\@sm {
+          height: #{$px}px;
+        }
+      }
     }
-  }
 
-  @each $vw in $hs-vw-sm {
-    .h#{$vw}vw\@sm {
-      height: #{$vw}vw;
+    @if $hs-perc-on {
+      @each $name,$value in $hs-perc-sm {
+        .h#{$name}\%\@sm {
+          height: percentage($value);
+        }
+      }
     }
-  }
 
-  .mih100\%\@sm {
-    min-height: 100%;
-  }
+    @if $hs-vh-on {
+      @each $vh in $hs-vh-sm {
+        .h#{$vh}vh\@sm {
+          height: #{$vh}vh;
+        }
+      }
+    }
 
-  .mah100\%\@sm {
-    max-height: 100%;
+    @if $hs-vw-on {
+      @each $vw in $hs-vw-sm {
+        .h#{$vw}vw\@sm {
+          height: #{$vw}vw;
+        }
+      }
+    }
+
+    @if $hs-perc-on {
+      .mih100\%\@sm {
+        min-height: 100%;
+      }
+
+      .mah100\%\@sm {
+        max-height: 100%;
+      }
+    }
   }
 }

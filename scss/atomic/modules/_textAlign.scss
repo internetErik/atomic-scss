@@ -1,5 +1,7 @@
-@each $name,$value in $tas {
-  .ta#{$name} {
-    text-align: $value;
+@if $tas-on {
+  @each $name,$value in $tas {
+    .ta#{$name} {
+      text-align: $value;
+    }
   }
 }

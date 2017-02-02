@@ -1,5 +1,7 @@
-@each $name,$value in $lss {
-  .ls#{$name} {
-    list-style: #{$value};
+@if $lss-on {
+  @each $name,$value in $lss {
+    .ls#{$name} {
+      list-style: #{$value};
+    }
   }
 }

@@ -1,8 +1,10 @@
-@each $name,$color in $cs {
-  .c-#{$name} {
-    color: $color;
-  }
-  .c-#{$name}\:h:hover {
-    color: $color;
+@if $cs-on {
+  @each $name,$color in $cs {
+    .c-#{$name} {
+      color: $color;
+    }
+    .c-#{$name}\:h:hover {
+      color: $color;
+    }
   }
 }

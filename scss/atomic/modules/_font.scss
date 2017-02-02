@@ -1,39 +1,49 @@
-@each $name,$value in $fss {
-  .fs#{$name} {
-    font-style: $value;
-  }
-}
-
-@each $fw in $fws {
-  .fw#{$fw} {
-    font-weight: $fw;
-  }
-}
-
-@each $fz in $fzs {
-  .fz#{$fz} {
-    font-size: #{$fz}px;
-  }
-}
-
-@each $name,$value in $fss {
-  .ff#{$name} {
-    font-family: $value;
-  }
-}
-
-@media all and (max-width: $bp-md) {
-  @each $fz in $fzs-md {
-    .fz#{$fz}\@md {
-      font-size: #{$fz}px;
+@if $font-on {
+  @if $fss-on {
+    @each $name,$value in $fss {
+      .fs#{$name} {
+        font-style: $value;
+      }
     }
   }
-}
 
-@media all and (max-width: $bp-sm) {
-  @each $fz in $fzs-sm {
-    .fz#{$fz}\@sm {
-      font-size: #{$fz}px;
+  @if $fws-on {
+    @each $fw in $fws {
+      .fw#{$fw} {
+        font-weight: $fw;
+      }
+    }
+  }
+
+  @if $ffs-on {
+    @each $name,$value in $ffs {
+      .ff#{$name} {
+        font-family: $value;
+      }
+    }
+  }
+
+  @if $fzs-on {
+    @each $fz in $fzs {
+      .fz#{$fz} {
+        font-size: #{$fz}px;
+      }
+    }
+
+    @media all and (max-width: $bp-md) {
+      @each $fz in $fzs-md {
+        .fz#{$fz}\@md {
+          font-size: #{$fz}px;
+        }
+      }
+    }
+
+    @media all and (max-width: $bp-sm) {
+      @each $fz in $fzs-sm {
+        .fz#{$fz}\@sm {
+          font-size: #{$fz}px;
+        }
+      }
     }
   }
 }

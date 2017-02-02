@@ -1,83 +1,112 @@
-@each $name,$value in $fxdrs {
-  .fxd#{$name} {
-    flex-direction: $value;
-  }
-}
-
-@each $name,$value in $fxws {
-  .fxw#{$name} {
-    flex-wrap: $value;
-  }
-}
-
-@each $name,$value in $jcs {
-  .jc#{$name} {
-    justify-content: $value;
-  }
-}
-
-@each $name,$value in $ais {
-  .ai#{$name} {
-    align-items: $value;
-  }
-}
-
-@each $name,$value in $ass {
-  .as#{$name} {
-    align-self: $value;
-  }
-}
-
-@each $ord in $ords {
-  .ord#{$ord} {
-    order: $ord;
-  }
-}
-
-@each $fxg in $fxgs {
-  .fxg#{$fxg} {
-    flex-grow: $fxg;
-  }
-}
-
-@each $fxsh in $fxshs {
-  .fxsh#{$fxsh} {
-    flex-shrink: $fxsh;
-  }
-}
-
-@each $fxb in $fxbs {
-  .fxb#{$fxb} {
-    flex-basis: #{$fxb}px;
-  }
-}
-
-.fxba {
-  flex-basis: auto;
-}
-
-@media all and (max-width: $bp-md) {
-  @each $name,$value in $fxdrs-md {
-    .fxd#{$name}\@md {
-      flex-direction: $value;
+@if $flex-on {
+  @if $fxdrs-on {
+    @each $name,$value in $fxdrs {
+      .fxd#{$name} {
+        flex-direction: $value;
+      }
     }
   }
-  @each $name,$value in $jcs-md {
-    .jc#{$name}\@md {
-      justify-content: $value;
-    }
-  }
-}
 
-@media all and (max-width: $bp-sm) {
-  @each $name,$value in $fxdrs-sm {
-    .fxd#{$name}\@sm {
-      flex-direction: $value;
+  @if $fxws-on {
+    @each $name,$value in $fxws {
+      .fxw#{$name} {
+        flex-wrap: $value;
+      }
     }
   }
-  @each $name,$value in $jcs-sm {
-    .jc#{$name}\@sm {
-      justify-content: $value;
+
+  @if $jcs-on {
+    @each $name,$value in $jcs {
+      .jc#{$name} {
+        justify-content: $value;
+      }
+    }
+  }
+
+  @if $ais-on {
+    @each $name,$value in $ais {
+      .ai#{$name} {
+        align-items: $value;
+      }
+    }
+  }
+
+  @if $ass-on {
+    @each $name,$value in $ass {
+      .as#{$name} {
+        align-self: $value;
+      }
+    }
+  }
+
+  @if $ords-on {
+    @each $ord in $ords {
+      .ord#{$ord} {
+        order: $ord;
+      }
+    }
+  }
+
+  @if $fxgs-on {  @each $fxg in $fxgs {
+      .fxg#{$fxg} {
+        flex-grow: $fxg;
+      }
+    }
+  }
+
+  @if $fxshs-on {
+    @each $fxsh in $fxshs {
+      .fxsh#{$fxsh} {
+        flex-shrink: $fxsh;
+      }
+    }
+  }
+
+  @if $fxbs-on {
+    @each $fxb in $fxbs {
+      .fxb#{$fxb} {
+        flex-basis: #{$fxb}px;
+      }
+    }
+
+    .fxba {
+      flex-basis: auto;
+    }
+  }
+
+  @media all and (max-width: $bp-md) {
+    @if $fxdrs-on {
+      @each $name,$value in $fxdrs-md {
+        .fxd#{$name}\@md {
+          flex-direction: $value;
+        }
+      }
+    }
+
+    @if $jcs-on {
+      @each $name,$value in $jcs-md {
+        .jc#{$name}\@md {
+          justify-content: $value;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: $bp-sm) {
+    @if $fxdrs-on {
+      @each $name,$value in $fxdrs-sm {
+        .fxd#{$name}\@sm {
+          flex-direction: $value;
+        }
+      }
+    }
+
+    @if $jcs-on {
+      @each $name,$value in $jcs-sm {
+        .jc#{$name}\@sm {
+          justify-content: $value;
+        }
+      }
     }
   }
 }

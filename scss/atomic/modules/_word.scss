@@ -1,10 +1,17 @@
-@each $name,$value in $wobs {
-  .wob#{$name} {
-    word-break: $value;
+@if $word-on {
+  @if $wobs-on {
+    @each $name,$value in $wobs {
+      .wob#{$name} {
+        word-break: $value;
+      }
+    }
   }
-}
-@each $name,$value in $wows {
-  .wow#{$name} {
-    word-wrap: $value;
+
+  @if $wows-on {
+    @each $name,$value in $wows {
+      .wow#{$name} {
+        word-wrap: $value;
+      }
+    }
   }
 }

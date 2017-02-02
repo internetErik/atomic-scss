@@ -13,9 +13,11 @@ Import the scss into your own project from `node_modules` or copy the files into
 
 Now, atomic scss should be available in your project!
 
+**But you still need to import it!**
+
 ### Examples
 ```
-p20 = padding: 20px;
+<div class="p20"></div> <!-- div with padding: 20; -->
 fz12 = font-size: 12px;
 w50% = width: 50%;
 w100%@sm = width: 100%; //at the breakpoint defined by $bp-sm
@@ -471,6 +473,79 @@ $tshs: (
 ### Z-index (`_zIndex.scss`)
 
 `$zs` (List)
+
+## Class Toggles
+
+In order to help make it easier to turn groups of classes on and off, you also have access to the following variables that will turn on and off groups of classes:
+
+```
+$helpers-on: true !default; // this turns off all of the helper classes
+$bgcs-on: true !default;
+$border-on: true !default;
+$bds-on: true !default;
+$bdrs-on: true !default;
+$bottom-on: true !default;
+$bs-px-on: true !default;
+$bs-perc-on: true !default;
+$cls-on: true !default;
+$cs-on: true !default;
+$curs-on: true !default;
+$ds-on: true !default;
+$flex-on: true !default;
+$ords-on: true !default;
+$fxgs-on: true !default;
+$fxshs-on: true !default;
+$fxbs-on: true !default;
+$fxdrs-on: true !default;
+$fxws-on: true !default;
+$jcs-on: true !default;
+$ais-on: true !default;
+$ass-on: true !default;
+$fls-on: true !default;
+$font-on: true !default;
+$fws-on: true !default;
+$fzs-on: true !default;
+$fss-on: true !default;
+$ffs-on: true !default;
+$height-on: true !default;
+$hs-px-on: true !default;
+$hs-perc-on: true !default;
+$hs-vw-on: true !default;
+$hs-vh-on: true !default;
+$left-on: true !default;
+$ls-px-on: true !default;
+$ls-perc-on: true !default;
+$lhs-on: true !default;
+$lss-on: true !default;
+$ms-on: true !default;
+$ops-on: true !default;
+$overflow-on: true !default;
+$os-on: true !default;
+$oxs-on: true !default;
+$oys-on: true !default;
+$ps-on: true !default;
+$poss-on: true !default;
+$right-on: true !default;
+$rs-px-on: true !default;
+$rs-perc-on: true !default;
+$text-on: true !default;
+$tts-on: true !default;
+$tds-on: true !default;
+$tshs-on: true !default;
+$tas-on: true !default;
+$top-on: true !default;
+$ts-px-on: true !default;
+$ts-perc-on: true !default;
+$width-on: true !default;
+$ws-px-on: true !default;
+$ws-perc-on: true !default;
+$ws-vw-on: true !default;
+$ws-vh-on: true !default;
+$word-on: true !default;
+$wobs-on: true !default;
+$wows-on: true !default;
+$zs-on: true !default;
+```
 
 ## Recommendations
 

@@ -1,99 +1,101 @@
-@each $px in $ps-px {
-  .p#{$px} {
-    padding: #{$px}px;
-  }
-
-  .p#{$px}-0 {
-    padding: #{$px}px 0;
-  }
-
-  .p0-#{$px} {
-    padding: 0 #{$px}px;
-  }
-}
-
-@each $px in $ps-px {
-  .pt#{$px} {
-    padding-top: #{$px}px;
-  }
-
-  .pb#{$px} {
-    padding-bottom: #{$px}px;
-  }
-
-  .pr#{$px} {
-    padding-right: #{$px}px;
-  }
-
-  .pl#{$px} {
-    padding-left: #{$px}px;
-  }
-}
-
-@media all and (max-width: $bp-md) {
-  @each $px in $ps-px-md {
-    .p#{$px}\@md {
+@if $ps-on {
+  @each $px in $ps-px {
+    .p#{$px} {
       padding: #{$px}px;
     }
 
-    .p#{$px}-0\@md {
+    .p#{$px}-0 {
       padding: #{$px}px 0;
     }
 
-    .p0-#{$px}\@md {
+    .p0-#{$px} {
       padding: 0 #{$px}px;
     }
   }
 
-  @each $px in $ps-px-md {
-    .pt#{$px}\@md {
+  @each $px in $ps-px {
+    .pt#{$px} {
       padding-top: #{$px}px;
     }
 
-    .pb#{$px}\@md {
+    .pb#{$px} {
       padding-bottom: #{$px}px;
     }
 
-    .pr#{$px}\@md {
+    .pr#{$px} {
       padding-right: #{$px}px;
     }
 
-    .pl#{$px}\@md {
+    .pl#{$px} {
       padding-left: #{$px}px;
     }
   }
-}
 
-@media all and (max-width: $bp-sm) {
-  @each $px in $ps-px-sm {
-    .p#{$px}\@sm {
-      padding: #{$px}px;
+  @media all and (max-width: $bp-md) {
+    @each $px in $ps-px-md {
+      .p#{$px}\@md {
+        padding: #{$px}px;
+      }
+
+      .p#{$px}-0\@md {
+        padding: #{$px}px 0;
+      }
+
+      .p0-#{$px}\@md {
+        padding: 0 #{$px}px;
+      }
     }
 
-    .p#{$px}-0\@sm {
-      padding: #{$px}px 0;
-    }
+    @each $px in $ps-px-md {
+      .pt#{$px}\@md {
+        padding-top: #{$px}px;
+      }
 
-    .p0-#{$px}\@sm {
-      padding: 0 #{$px}px;
+      .pb#{$px}\@md {
+        padding-bottom: #{$px}px;
+      }
+
+      .pr#{$px}\@md {
+        padding-right: #{$px}px;
+      }
+
+      .pl#{$px}\@md {
+        padding-left: #{$px}px;
+      }
     }
   }
 
-  @each $px in $ps-px-sm {
-    .pt#{$px}\@sm {
-      padding-top: #{$px}px;
+  @media all and (max-width: $bp-sm) {
+    @each $px in $ps-px-sm {
+      .p#{$px}\@sm {
+        padding: #{$px}px;
+      }
+
+      .p#{$px}-0\@sm {
+        padding: #{$px}px 0;
+      }
+
+      .p0-#{$px}\@sm {
+        padding: 0 #{$px}px;
+      }
     }
 
-    .pb#{$px}\@sm {
-      padding-bottom: #{$px}px;
-    }
+    @each $px in $ps-px-sm {
+      .pt#{$px}\@sm {
+        padding-top: #{$px}px;
+      }
 
-    .pr#{$px}\@sm {
-      padding-right: #{$px}px;
-    }
+      .pb#{$px}\@sm {
+        padding-bottom: #{$px}px;
+      }
 
-    .pl#{$px}\@sm {
-      padding-left: #{$px}px;
+      .pr#{$px}\@sm {
+        padding-right: #{$px}px;
+      }
+
+      .pl#{$px}\@sm {
+        padding-left: #{$px}px;
+      }
     }
   }
 }
