@@ -41,8 +41,51 @@
     }
   }
 
-  @media all and (max-width: $bp-md) {
+  @media all and (max-width: $bp-lg) {
+    @if $hs-px-on {
+      @each $px in $hs-px-lg {
+        .h#{$px}\@lg {
+          height: #{$px}px;
+        }
+      }
+    }
 
+    @if $hs-perc-on {
+      @each $name,$value in $hs-perc-lg {
+        .h#{$name}\%\@lg {
+          height: percentage($value);
+        }
+      }
+    }
+
+    @if $hs-vh-on {
+      @each $vh in $hs-vh-lg {
+        .h#{$vh}vh\@lg {
+          height: #{$vh}vh;
+        }
+      }
+    }
+
+    @if $hs-vw-on {
+      @each $vw in $hs-vw-lg {
+        .h#{$vw}vw\@lg {
+          height: #{$vw}vw;
+        }
+      }
+    }
+
+    @if $hs-perc-on {
+      .mih100\%\@lg {
+        min-height: 100%;
+      }
+
+      .mah100\%\@lg {
+        max-height: 100%;
+      }
+    }
+  }
+
+  @media all and (max-width: $bp-md) {
     @if $hs-px-on {
       @each $px in $hs-px-md {
         .h#{$px}\@md {

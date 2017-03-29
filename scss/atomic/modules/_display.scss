@@ -5,6 +5,14 @@
     }
   }
 
+  @media all and (max-width: $bp-lg) {
+    @each $name,$value in $ds-lg {
+      .d#{$name}\@lg {
+        display: #{$value};
+      }
+    }
+  }
+
   @media all and (max-width: $bp-md) {
     @each $name,$value in $ds-md {
       .d#{$name}\@md {

@@ -5,6 +5,14 @@
     }
   }
 
+  @media all and (max-width: $bp-lg) {
+    @each $name,$value in $poss-lg {
+      .pos#{$name}\@lg {
+        position: $value;
+      }
+    }
+  }
+
   @media all and (max-width: $bp-md) {
     @each $name,$value in $poss-md {
       .pos#{$name}\@md {

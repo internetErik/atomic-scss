@@ -4,4 +4,29 @@
       text-align: $value;
     }
   }
+
+  @media all and (max-width: $bp-lg) {
+    @each $name,$value in $tas-lg {
+      .ta#{$name}\@lg {
+        text-align: $value;
+      }
+    }
+  }
+
+  @media all and (max-width: $bp-md) {
+    @each $name,$value in $tas-md {
+      .ta#{$name}\@md {
+        text-align: $value;
+      }
+    }
+  }
+
+  @media all and (max-width: $bp-sm) {
+    @each $name,$value in $tas-sm {
+      .ta#{$name}\@sm {
+        text-align: $value;
+      }
+    }
+  }
 }
+

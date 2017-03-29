@@ -15,6 +15,24 @@
     }
   }
 
+  @media all and (max-width: $bp-lg) {
+    @if $bs-px-on {
+      @each $px in $bs-px-lg {
+        .b#{$px}\@lg {
+          bottom: #{$px}px;
+        }
+      }
+    }
+
+    @if $bs-perc-on {
+      @each $name, $value in $bs-perc-lg {
+        .b#{$name}\%\@lg {
+          bottom: percentage($value);
+        }
+      }
+    }
+  }
+
   @media all and (max-width: $bp-md) {
     @if $bs-px-on {
       @each $px in $bs-px-md {

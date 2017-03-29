@@ -41,6 +41,50 @@
     }
   }
 
+  @media all and (max-width: $bp-lg) {
+    @if $ws-px-on {
+      @each $px in $ws-px-lg {
+        .w#{$px}\@lg {
+          width: #{$px}px;
+        }
+      }
+    }
+
+    @if $ws-perc-on {
+      @each $name,$value in $ws-perc-lg {
+        .w#{$name}\%\@lg {
+          width: percentage($value);
+        }
+      }
+    }
+
+    @if $ws-vh-on {
+      @each $vh in $ws-vh-lg {
+        .w#{$vh}vh\@lg {
+          width: #{$vh}vh;
+        }
+      }
+    }
+
+    @if $ws-vw-on {
+      @each $vw in $ws-vw-lg {
+        .w#{$vw}vw\@lg {
+          width: #{$vw}vw;
+        }
+      }
+    }
+
+    @if $ws-perc-on {
+      .miw100\%\@lg {
+        min-width: 100%;
+      }
+
+      .maw100\%\@lg {
+        max-width: 100%;
+      }
+    }
+  }
+
   @media all and (max-width: $bp-md) {
     @if $ws-px-on {
       @each $px in $ws-px-md {

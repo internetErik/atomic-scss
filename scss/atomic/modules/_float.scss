@@ -5,6 +5,14 @@
     }
   }
 
+  @media all and (max-width: $bp-lg) {
+    @each $name,$value in $fls-lg {
+      .fl#{$name}\@lg {
+        float: $value;
+      }
+    }
+  }
+
   @media all and (max-width: $bp-md) {
     @each $name,$value in $fls-md {
       .fl#{$name}\@md {

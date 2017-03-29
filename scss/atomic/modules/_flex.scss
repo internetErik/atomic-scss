@@ -74,6 +74,24 @@
     }
   }
 
+  @media all and (max-width: $bp-lg) {
+    @if $fxdrs-on {
+      @each $name,$value in $fxdrs-lg {
+        .fxd#{$name}\@lg {
+          flex-direction: $value;
+        }
+      }
+    }
+
+    @if $jcs-on {
+      @each $name,$value in $jcs-lg {
+        .jc#{$name}\@lg {
+          justify-content: $value;
+        }
+      }
+    }
+  }
+
   @media all and (max-width: $bp-md) {
     @if $fxdrs-on {
       @each $name,$value in $fxdrs-md {

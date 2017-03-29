@@ -43,6 +43,52 @@
     margin-right: auto;
   }
 
+  @media all and (max-width: $bp-lg) {
+    @each $px in $ms-px-lg {
+      .m#{$px}\@lg {
+        margin: #{$px}px;
+      }
+
+      .m#{$px}-0\@lg {
+        margin: #{$px}px 0;
+      }
+
+      .m0-#{$px}\@lg {
+        margin: 0 #{$px}px;
+      }
+    }
+
+    @each $px in $ms-px-lg {
+      .mt#{$px}\@lg {
+        margin-top: #{$px}px;
+      }
+
+      .mb#{$px}\@lg {
+        margin-bottom: #{$px}px;
+      }
+
+      .mr#{$px}\@lg {
+        margin-right: #{$px}px;
+      }
+
+      .ml#{$px}\@lg {
+        margin-left: #{$px}px;
+      }
+    }
+
+    .m0-auto\@lg {
+      margin: 0 auto;
+    }
+
+    .ml-auto\@lg {
+      margin-left: auto;
+    }
+
+    .mr-auto\@lg {
+      margin-right: auto;
+    }
+  }
+
   @media all and (max-width: $bp-md) {
     @each $px in $ms-px-md {
       .m#{$px}\@md {

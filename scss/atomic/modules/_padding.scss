@@ -31,6 +31,40 @@
     }
   }
 
+  @media all and (max-width: $bp-lg) {
+    @each $px in $ps-px-lg {
+      .p#{$px}\@lg {
+        padding: #{$px}px;
+      }
+
+      .p#{$px}-0\@lg {
+        padding: #{$px}px 0;
+      }
+
+      .p0-#{$px}\@lg {
+        padding: 0 #{$px}px;
+      }
+    }
+
+    @each $px in $ps-px-lg {
+      .pt#{$px}\@lg {
+        padding-top: #{$px}px;
+      }
+
+      .pb#{$px}\@lg {
+        padding-bottom: #{$px}px;
+      }
+
+      .pr#{$px}\@lg {
+        padding-right: #{$px}px;
+      }
+
+      .pl#{$px}\@lg {
+        padding-left: #{$px}px;
+      }
+    }
+  }
+
   @media all and (max-width: $bp-md) {
     @each $px in $ps-px-md {
       .p#{$px}\@md {
