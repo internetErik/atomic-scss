@@ -127,4 +127,22 @@
       }
     }
   }
+
+  @media all and (max-width: $bp-smx) {
+    @if $fxdrs-on {
+      @each $name,$value in $fxdrs-smx {
+        .fxd#{$name}\@smx {
+          flex-direction: $value;
+        }
+      }
+    }
+
+    @if $jcs-on {
+      @each $name,$value in $jcs-smx {
+        .jc#{$name}\@smx {
+          justify-content: $value;
+        }
+      }
+    }
+  }
 }

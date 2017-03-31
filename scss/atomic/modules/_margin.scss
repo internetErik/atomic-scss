@@ -180,4 +180,50 @@
       margin-right: auto;
     }
   }
+
+  @media all and (max-width: $bp-smx) {
+    @each $px in $ms-px-smx {
+      .m#{$px}\@smx {
+        margin: #{$px}px;
+      }
+
+      .m#{$px}-0\@smx {
+        margin: #{$px}px 0;
+      }
+
+      .m0-#{$px}\@smx {
+        margin: 0 #{$px}px;
+      }
+    }
+
+    @each $px in $ms-px-smx {
+      .mt#{$px}\@smx {
+        margin-top: #{$px}px;
+      }
+
+      .mb#{$px}\@smx {
+        margin-bottom: #{$px}px;
+      }
+
+      .mr#{$px}\@smx {
+        margin-right: #{$px}px;
+      }
+
+      .ml#{$px}\@smx {
+        margin-left: #{$px}px;
+      }
+    }
+
+    .m0-auto\@smx {
+      margin: 0 auto;
+    }
+
+    .ml-auto\@smx {
+      margin-left: auto;
+    }
+
+    .mr-auto\@smx {
+      margin-right: auto;
+    }
+  }
 }

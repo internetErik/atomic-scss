@@ -172,4 +172,48 @@
       }
     }
   }
+
+  @media all and (max-width: $bp-smx) {
+    @if $ws-px-on {
+      @each $px in $ws-px-smx {
+        .w#{$px}\@smx {
+          width: #{$px}px;
+        }
+      }
+    }
+
+    @if $ws-perc-on {
+      @each $name,$value in $ws-perc-smx {
+        .w#{$name}\%\@smx {
+          width: percentage($value);
+        }
+      }
+    }
+
+    @if $ws-vh-on {
+      @each $vh in $ws-vh-smx {
+        .w#{$vh}vh\@smx {
+          width: #{$vh}vh;
+        }
+      }
+    }
+
+    @if $ws-vw-on {
+      @each $vw in $ws-vw-smx {
+        .w#{$vw}vw\@smx {
+          width: #{$vw}vw;
+        }
+      }
+    }
+
+    @if $ws-perc-on {
+      .miw100\%\@smx {
+        min-width: 100%;
+      }
+
+      .maw100\%\@smx {
+        max-width: 100%;
+      }
+    }
+  }
 }

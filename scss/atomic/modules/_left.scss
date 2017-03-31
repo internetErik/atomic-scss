@@ -68,4 +68,22 @@
       }
     }
   }
+
+  @media all and (max-width: $bp-smx) {
+    @if $ls-px-on {
+      @each $px in $ls-px-smx {
+        .l#{$px}\@smx {
+          left: #{$px}px;
+        }
+      }
+    }
+
+    @if $ls-perc-on {
+      @each $name, $value in $ls-perc-smx {
+        .l#{$name}\%\@smx {
+          left: percentage($value);
+        }
+      }
+    }
+  }
 }

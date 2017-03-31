@@ -53,5 +53,13 @@
         }
       }
     }
+
+    @media all and (max-width: $bp-smx) {
+      @each $fz in $fzs-smx {
+        .fz#{$fz}\@smx {
+          font-size: #{$fz}px;
+        }
+      }
+    }
   }
 }

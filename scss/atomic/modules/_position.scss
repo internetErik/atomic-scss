@@ -28,4 +28,12 @@
       }
     }
   }
+
+  @media all and (max-width: $bp-smx) {
+    @each $name,$value in $poss-smx {
+      .pos#{$name}\@smx {
+        position: $value;
+      }
+    }
+  }
 }

@@ -22,8 +22,16 @@
   }
 
   @media all and (max-width: $bp-sm) {
-    @each $name,$value in $fls-md {
+    @each $name,$value in $fls-sm {
       .fl#{$name}\@sm {
+        float: $value;
+      }
+    }
+  }
+
+  @media all and (max-width: $bp-smx) {
+    @each $name,$value in $fls-smx {
+      .fl#{$name}\@smx {
         float: $value;
       }
     }

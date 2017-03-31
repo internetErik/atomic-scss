@@ -28,5 +28,13 @@
       }
     }
   }
+
+  @media all and (max-width: $bp-smx) {
+    @each $name,$value in $tas-smx {
+      .ta#{$name}\@smx {
+        text-align: $value;
+      }
+    }
+  }
 }
 

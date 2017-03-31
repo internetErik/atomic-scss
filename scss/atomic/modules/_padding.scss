@@ -132,4 +132,38 @@
       }
     }
   }
+
+  @media all and (max-width: $bp-smx) {
+    @each $px in $ps-px-smx {
+      .p#{$px}\@smx {
+        padding: #{$px}px;
+      }
+
+      .p#{$px}-0\@smx {
+        padding: #{$px}px 0;
+      }
+
+      .p0-#{$px}\@smx {
+        padding: 0 #{$px}px;
+      }
+    }
+
+    @each $px in $ps-px-smx {
+      .pt#{$px}\@smx {
+        padding-top: #{$px}px;
+      }
+
+      .pb#{$px}\@smx {
+        padding-bottom: #{$px}px;
+      }
+
+      .pr#{$px}\@smx {
+        padding-right: #{$px}px;
+      }
+
+      .pl#{$px}\@smx {
+        padding-left: #{$px}px;
+      }
+    }
+  }
 }
