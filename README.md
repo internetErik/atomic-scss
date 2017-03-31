@@ -88,6 +88,26 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
   * values: `white, lightgray, gray, black `
 * Border Radius (`bdrs#`)
   * values: `1, 2, 3, 4, 5, 6, 7, 8, 9, 10`
+* Breakpoint `@lg` = `1024px` by default
+    * Height, Width, Padding, Margin, Top, Bottom, Left, Right (`h#@lg`, `w#@lg`, `p#@lg`, `m#@lg`, `t#@lg`, `b#@lg`, `l#@lg`, `r#@lg`)
+      * Padding and Margin on sides (`pt#@lg`, `pb#@lg`, `pl#@lg`, `pr#@lg`, `p0-#@lg`, `p#-0@lg`, `mt#@lg`, `mb#@lg`, `ml#@lg`, `mr#@lg`, `m0-#@lg`, `m#-0@lg`)
+      * `Margin: 0 auto;` (`m0-auto@lg`), `margin-left: auto;` (`ml-auto@sm`), `margin-right: auto;` (`mr-auto@sm`)
+      * values: `0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800`
+    * Height, Width, Padding, Margin, Top, Bottom, Left, Right by percentage (`h#%@lg`, `w#%@lg`, `p#%@lg`, `m#%@lg`, `t#%@lg`, `b#%@lg`, `l#%@lg`, `r#%@lg`)
+      * Min/Max Height and Width by percentage (`mih100%@lg`, `mah100%@lg`,`miw100%@lg`, `maw100%@lg`)
+      * percentage values: `1, 2, 3, 4, 5, 10, 12.25, 15, 20, 25, 30, 33.3333, 35, 40, 45, 50, 55, 60, 65, 66.6666, 70, 75, 80, 85, 90, 95, 100, 110, 120 ,130 ,140 ,150`
+      * Height and Width by View Height and View Width (`h#vh`, `w#vh`, `h#vw`, `w#vw`)
+        * values: `5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100`
+  * Display (`dn@lg`, `db@lg`, `d-i@lg`, `dib@lg`)
+  * Flexbox (`df@lg`, `dif@lg`)
+    * Flex Direction (`fxdr@lg`, `fxdc@lg`, `fxdrr@lg`, `fxdcr@lg`)
+    * Flex Wrap (`fxwn@lg`, `fxww@lg`, `fxwr@lg`)
+    * Justify Content (`jcfs@lg`, `jcfe@lg`, `jcc@lg`, `jcsb@lg`, `jcsa@lg`)
+    * Align Items (`aib@lg`, `aic@lg`, `asa@lg`, `asb@lg`, `asc@lg`)
+  * Position (`poss@lg`, `posa@lg`, `posr@lg`, `posf@lg`)
+  * Float (`fll@lg`, `flr@lg`, `fln@lg`)
+  * Font Size (`fz#@lg`)
+    * values: `10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 34, 36, 42, 48`
 * Breakpoint `@md` = `784px` by default
     * Height, Width, Padding, Margin, Top, Bottom, Left, Right (`h#@md`, `w#@md`, `p#@md`, `m#@md`, `t#@md`, `b#@md`, `l#@md`, `r#@md`)
       * Padding and Margin on sides (`pt#@md`, `pb#@md`, `pl#@md`, `pr#@md`, `p0-#@md`, `p#-0@md`, `mt#@md`, `mb#@md`, `ml#@md`, `mr#@md`, `m0-#@md`, `m#-0@md`)
@@ -96,8 +116,8 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
     * Height, Width, Padding, Margin, Top, Bottom, Left, Right by percentage (`h#%@md`, `w#%@md`, `p#%@md`, `m#%@md`, `t#%@md`, `b#%@md`, `l#%@md`, `r#%@md`)
       * Min/Max Height and Width by percentage (`mih100%@md`, `mah100%@md`,`miw100%@md`, `maw100%@md`)
       * percentage values: `1, 2, 3, 4, 5, 10, 12.25, 15, 20, 25, 30, 33.3333, 35, 40, 45, 50, 55, 60, 65, 66.6666, 70, 75, 80, 85, 90, 95, 100, 110, 120 ,130 ,140 ,150`
-		  * Height and Width by View Height and View Width (`h#vh`, `w#vh`, `h#vw`, `w#vw`)
-		    * values: `5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100`
+      * Height and Width by View Height and View Width (`h#vh`, `w#vh`, `h#vw`, `w#vw`)
+        * values: `5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100`
   * Display (`dn@md`, `db@md`, `d-i@md`, `dib@md`)
   * Flexbox (`df@md`, `dif@md`)
     * Flex Direction (`fxdr@md`, `fxdc@md`, `fxdrr@md`, `fxdcr@md`)
@@ -116,8 +136,8 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
     * Height, Width, Padding, Margin, Top, Bottom, Left, Right by percentage (`h#%@sm`, `w#%@sm`, `p#%@sm`, `m#%@sm`, `t#%@sm`, `b#%@sm`, `l#%@sm`, `r#%@sm`)
       * Min/Max Height and Width by percentage (`mih100%@sm`, `mah100%@sm`,`miw100%@sm`, `maw100%@sm`)
       * percentage values: `1, 2, 3, 4, 5, 10, 12.25, 15, 20, 25, 30, 33.3333, 35, 40, 45, 50, 55, 60, 65, 66.6666, 70, 75, 80, 85, 90, 95, 100, 110, 120 ,130 ,140 ,150`
-		  * Height and Width by View Height and View Width (`h#vh`, `w#vh`, `h#vw`, `w#vw`)
-		    * values: `5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100`
+      * Height and Width by View Height and View Width (`h#vh`, `w#vh`, `h#vw`, `w#vw`)
+        * values: `5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100`
   * Display (`dn@sm`, `db@sm`, `d-i@sm`, `dib@sm`)
   * Flexbox (`df@sm`, `dif@sm`)
     * Flex Direction (`fxdr@sm`, `fxdc@sm`, `fxdrr@sm`, `fxdcr@sm`)
@@ -127,6 +147,26 @@ The class names follow emmet syntax (for the most part). ([cheat sheet](http://d
   * Position (`poss@sm`, `posa@sm`, `posr@sm`, `posf@sm`)
   * Float (`fll@sm`, `flr@sm`, `fln@sm`)
   * Font Size (`fz#@sm`)
+    * values: `10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 34, 36, 42, 48`
+* Breakpoint `@smx` = `400px` by default
+    * Height, Width, Padding, Margin, Top, Bottom, Left, Right (`h#@md`, `w#@md`, `p#@md`, `m#@smx`, `t#@smx`, `b#@smx`, `l#@smx`, `r#@smx`)
+      * Padding and Margin on sides (`pt#@smx`, `pb#@smx`, `pl#@smx`, `pr#@smx`, `p0-#@smx`, `p#-0@smx`, `mt#@smx`, `mb#@smx`, `ml#@smx`, `mr#@smx`, `m0-#@smx`, `m#-0@smx`)
+      * `Margin: 0 auto;` (`m0-auto@smx`), `margin-left: auto;` (`ml-auto@smx`), `margin-right: auto;` (`mr-auto@smx`)
+      * values: `0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800`
+    * Height, Width, Padding, Margin, Top, Bottom, Left, Right by percentage (`h#%@smx`, `w#%@smx`, `p#%@smx`, `m#%@smx`, `t#%@smx`, `b#%@smx`, `l#%@smx`, `r#%@smx`)
+      * Min/Max Height and Width by percentage (`mih100%@smx`, `mah100%@smx`,`miw100%@smx`, `maw100%@smx`)
+      * percentage values: `1, 2, 3, 4, 5, 10, 12.25, 15, 20, 25, 30, 33.3333, 35, 40, 45, 50, 55, 60, 65, 66.6666, 70, 75, 80, 85, 90, 95, 100, 110, 120 ,130 ,140 ,150`
+      * Height and Width by View Height and View Width (`h#vh`, `w#vh`, `h#vw`, `w#vw`)
+        * values: `5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100`
+  * Display (`dn@smx`, `db@smx`, `d-i@smx`, `dib@smx`)
+  * Flexbox (`df@smx`, `dif@smx`)
+    * Flex Direction (`fxdr@smx`, `fxdc@smx`, `fxdrr@smx`, `fxdcr@smx`)
+    * Flex Wrap (`fxwn@smx`, `fxww@smx`, `fxwr@smx`)
+    * Justify Content (`jcfs@smx`, `jcfe@smx`, `jcc@smx`, `jcsb@smx`, `jcsa@smx`)
+    * Align Items (`aifs@smx`, `aife@smx`, `aib@smx`, `aic@smx`, `ais@smx`, `asa@smx`, `asb@smx`, `asc@smx`)
+  * Position (`poss@smx`, `posa@smx`, `posr@smx`, `posf@smx`)
+  * Float (`fll@smx`, `flr@smx`, `fln@smx`)
+  * Font Size (`fz#@smx`)
     * values: `10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 34, 36, 42, 48`
 
 ## Available Helper Classes
@@ -221,9 +261,13 @@ $tshs: (
 
 ### Breakpoints (_`_variables.scss`_)
 
+`$bp-lg : 1024px !default;`
+
 `$bp-md : 784px !default;`
 
 `$bp-sm : 560px !default;`
+
+`$bp-smx: 400px !default;`
 
 ### Colors  (_`_variables.scss`_)
 
@@ -554,6 +598,8 @@ Import atomic into your scss at a fairly high level so the classes are easier to
 This framework comes with some variables it defines for colors and breakpoints (see above). But you can override them by defining them **before** the import of the atomic.
 
 Pair with [unCSS](https://github.com/giakki/uncss) in some form in order to remove unused styles in the end. However, if you don't do this the added weight isn't all too bad.
+
+If you're using webpack and want to remove unused styles, try the [purifycss-webpack](https://github.com/webpack-contrib/purifycss-webpack) plugin.
 
 Here is an [atomic-scss-starter-kit](https://github.com/internetErik/atomic-scss-starter-kit/) that I also maintain that can provide some sample usage.
 
