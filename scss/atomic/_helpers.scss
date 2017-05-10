@@ -15,7 +15,7 @@
 
 	// All direct children will be justified
 	.justify-children {
-		text-justify: justify;
+		text-align: justify;
 
 		&::after {
 			content: "";
