@@ -1,14 +1,43 @@
 @if $helpers-on {
+	// obligatory clearfix
 	.clearfix::after {
 	  content: "";
 	  display: table;
 	  clear: both;
 	}
 
+	// converts overflow text to ellipsis
 	.truncate-text {
 	  white-space: nowrap;
 	  overflow: hidden;
 	  text-overflow: ellipsis;
+	}
+
+	// All direct children will be justified
+	.justify-children {
+		text-justify: justify;
+
+		&::after {
+			content: "";
+			display: inline-block;
+			width: 100%;
+			height: 0;
+		}
+
+		& > * {
+			display: inline-block;
+		}
+	}
+
+	// use a checkbox to show and hide sibling elements with target class
+	.toggle-sibling {
+		& ~ .toggle-sibling-target {
+			display: none;
+		}
+
+		&:checked ~ .toggle-sibling-target {
+			display: block;
+		}
 	}
 
 	//use border-radius to create a circle shape
@@ -16,18 +45,6 @@
 		border-radius: 100%;
 	}
 
-	// use a checkbox to show and hide sibling elements with target class
-	.toggle-sibling {
-		display: none;
-	}
-
-	.toggle-sibling ~ .toggle-sibling-target {
-		display: none;
-	}
-
-	.toggle-sibling:checked ~ .toggle-sibling-target {
-		display: block;
-	}
 
 	//center elements horizontally and/or vertically
 	.vertical-align {
