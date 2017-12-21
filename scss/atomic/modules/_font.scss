@@ -23,6 +23,14 @@
     }
   }
 
+  @if $ltss-on {
+    @each $lts in $ltss {
+      .lts#{$lts} {
+        letter-spacing: #{$lts}px;
+      }
+    }
+  }
+
   @if $fzs-on {
     @each $fz in $fzs {
       .fz#{$fz} {
@@ -58,6 +66,46 @@
       @each $fz in $fzs-smx {
         .fz#{$fz}\@smx {
           font-size: #{$fz}px;
+        }
+      }
+    }
+  }
+
+  @if $fzs-vw-on {
+    @each $name,$value in $fzs-vw {
+      .fz#{$name}vw {
+        font-size: #{$value}vw;
+      }
+    }
+
+    @media all and (max-width: $bp-lg) {
+      @each $name,$value in $fzs-vw-lg {
+        .fz#{$name}vw\@lg {
+          font-size: #{$value}vw;
+        }
+      }
+    }
+
+    @media all and (max-width: $bp-md) {
+      @each $name,$value in $fzs-vw-md {
+        .fz#{$name}vw\@md {
+          font-size: #{$value}vw;
+        }
+      }
+    }
+
+    @media all and (max-width: $bp-sm) {
+      @each $name,$value in $fzs-vw-sm {
+        .fz#{$name}vw\@sm {
+          font-size: #{$value}vw;
+        }
+      }
+    }
+
+    @media all and (max-width: $bp-smx) {
+      @each $name,$value in $fzs-vw-smx {
+        .fz#{$name}vw\@smx {
+          font-size: #{$value}vw;
         }
       }
     }

@@ -1,0 +1,169 @@
+@if $min-width-on {
+  @if $miws-px-on {
+      @each $px in $miws-px {
+      .miw#{$px} {
+        min-width: #{$px}px;
+      }
+    }
+  }
+
+  @if $miws-perc-on {
+    @each $name,$value in $miws-perc {
+      .miw#{$name}\% {
+        min-width: percentage($value);
+      }
+    }
+  }
+
+  @if $miws-vh-on {
+    @each $vh in $miws-vh {
+      .miw#{$vh}vh {
+        min-width: #{$vh}vh;
+      }
+    }
+  }
+
+  @if $miws-vw-on {
+    @each $vw in $miws-vw {
+      .miw#{$vw}vw {
+        min-width: #{$vw}vw;
+      }
+    }
+  }
+
+  @media all and (max-width: $bp-lg) {
+    @if $miws-px-on {
+      @each $px in $miws-px-lg {
+        .miw#{$px}\@lg {
+          min-width: #{$px}px;
+        }
+      }
+    }
+
+    @if $miws-perc-on {
+      @each $name,$value in $miws-perc-lg {
+        .miw#{$name}\%\@lg {
+          min-width: percentage($value);
+        }
+      }
+    }
+
+    @if $miws-vh-on {
+      @each $vh in $miws-vh-lg {
+        .miw#{$vh}vh\@lg {
+          min-width: #{$vh}vh;
+        }
+      }
+    }
+
+    @if $miws-vw-on {
+      @each $vw in $miws-vw-lg {
+        .miw#{$vw}vw\@lg {
+          min-width: #{$vw}vw;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: $bp-md) {
+    @if $miws-px-on {
+      @each $px in $miws-px-md {
+        .miw#{$px}\@md {
+          min-width: #{$px}px;
+        }
+      }
+    }
+
+    @if $miws-perc-on {
+      @each $name,$value in $miws-perc-md {
+        .miw#{$name}\%\@md {
+          min-width: percentage($value);
+        }
+      }
+    }
+
+    @if $miws-vh-on {
+      @each $vh in $miws-vh-md {
+        .miw#{$vh}vh\@md {
+          min-width: #{$vh}vh;
+        }
+      }
+    }
+
+    @if $miws-vw-on {
+      @each $vw in $miws-vw-md {
+        .miw#{$vw}vw\@md {
+          min-width: #{$vw}vw;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: $bp-sm) {
+    @if $miws-px-on {
+      @each $px in $miws-px-sm {
+        .miw#{$px}\@sm {
+          min-width: #{$px}px;
+        }
+      }
+    }
+
+    @if $miws-perc-on {
+      @each $name,$value in $miws-perc-sm {
+        .miw#{$name}\%\@sm {
+          min-width: percentage($value);
+        }
+      }
+    }
+
+    @if $miws-vh-on {
+      @each $vh in $miws-vh-sm {
+        .miw#{$vh}vh\@sm {
+          min-width: #{$vh}vh;
+        }
+      }
+    }
+
+    @if $miws-vw-on {
+      @each $vw in $miws-vw-sm {
+        .miw#{$vw}vw\@sm {
+          min-width: #{$vw}vw;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: $bp-smx) {
+    @if $miws-px-on {
+      @each $px in $miws-px-smx {
+        .miw#{$px}\@smx {
+          min-width: #{$px}px;
+        }
+      }
+    }
+
+    @if $miws-perc-on {
+      @each $name,$value in $miws-perc-smx {
+        .miw#{$name}\%\@smx {
+          min-width: percentage($value);
+        }
+      }
+    }
+
+    @if $miws-vh-on {
+      @each $vh in $miws-vh-smx {
+        .miw#{$vh}vh\@smx {
+          min-width: #{$vh}vh;
+        }
+      }
+    }
+
+    @if $miws-vw-on {
+      @each $vw in $miws-vw-smx {
+        .miw#{$vw}vw\@smx {
+          min-width: #{$vw}vw;
+        }
+      }
+    }
+  }
+}

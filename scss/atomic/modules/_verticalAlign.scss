@@ -1,0 +1,7 @@
+@if $vas-on {
+  @each $name,$value in $vas {
+    .va#{$name} {
+      vertical-align: $value;
+    }
+  }
+}

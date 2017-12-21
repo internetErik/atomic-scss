@@ -1,5 +1,9 @@
 @import "./modules/height";
+@import "./modules/maxHeight";
+@import "./modules/minHeight";
 @import "./modules/width";
+@import "./modules/maxWidth";
+@import "./modules/minWidth";
 @import "./modules/padding";
 @import "./modules/margin";
 @import "./modules/top";
@@ -12,6 +16,7 @@
 @import "./modules/position";
 @import "./modules/overflow";
 @import "./modules/float";
+@import "./modules/verticalAlign";
 @import "./modules/clear";
 @import "./modules/textAlign";
 @import "./modules/word";

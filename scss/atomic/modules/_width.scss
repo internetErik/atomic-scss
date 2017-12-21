@@ -31,16 +31,6 @@
     }
   }
 
-  @if $ws-perc-on {
-    .miw100\% {
-      min-width: 100%;
-    }
-
-    .maw100\% {
-      max-width: 100%;
-    }
-  }
-
   @media all and (max-width: $bp-lg) {
     @if $ws-px-on {
       @each $px in $ws-px-lg {
@@ -71,16 +61,6 @@
         .w#{$vw}vw\@lg {
           width: #{$vw}vw;
         }
-      }
-    }
-
-    @if $ws-perc-on {
-      .miw100\%\@lg {
-        min-width: 100%;
-      }
-
-      .maw100\%\@lg {
-        max-width: 100%;
       }
     }
   }
@@ -117,16 +97,6 @@
         }
       }
     }
-
-    @if $ws-perc-on {
-      .miw100\%\@md {
-        min-width: 100%;
-      }
-
-      .maw100\%\@md {
-        max-width: 100%;
-      }
-    }
   }
 
   @media all and (max-width: $bp-sm) {
@@ -161,16 +131,6 @@
         }
       }
     }
-
-    @if $ws-perc-on {
-      .miw100\%\@sm {
-        min-width: 100%;
-      }
-
-      .maw100\%\@sm {
-        max-width: 100%;
-      }
-    }
   }
 
   @media all and (max-width: $bp-smx) {
@@ -203,16 +163,6 @@
         .w#{$vw}vw\@smx {
           width: #{$vw}vw;
         }
-      }
-    }
-
-    @if $ws-perc-on {
-      .miw100\%\@smx {
-        min-width: 100%;
-      }
-
-      .maw100\%\@smx {
-        max-width: 100%;
       }
     }
   }

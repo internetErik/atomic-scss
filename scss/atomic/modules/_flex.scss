@@ -7,6 +7,14 @@
     }
   }
 
+  @if $flxs-on {
+    @each $flx in $flxs {
+      .flx#{$flx} {
+        flex: $flx;
+      }
+    }
+  }
+
   @if $fxws-on {
     @each $name,$value in $fxws {
       .fxw#{$name} {
