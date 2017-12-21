@@ -1,6 +1,9 @@
 @mixin atomicClasses ($attr, $cname, $cpost, $mod, $styles){
   @each $style in $styles {
     @if length($style) == 1 {
+      @if(length(nth($style, 1)) == 1) {
+        @warn Problem with formatting of $attr
+      }
       $vals: nth(nth($style, 1), 2);
       @each $val in $vals {
         @include atomicClass($cname, $cpost, $attr, $mod, $val);
@@ -9,6 +12,9 @@
   }
   @each $style in $styles {
     @if length($style) > 1 {
+      @if(length(nth($style, 1)) == 1) {
+        @warn Problem with formatting of $attr
+      }
       $vals: nth(nth($style, 1), 2);
       $bp: nth(nth($style, 2), 2);
       $bp-name: nth(nth($bp, 1), 2);

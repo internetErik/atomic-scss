@@ -105,6 +105,16 @@ $color : (
   )),
 ) !default;
 
+//box-shadow txsh
+$boxShadow: (
+  (vals: (
+    '1-1-1-1-white'    : 1px 1px 1px 1px $color-white,
+    '1-1-1-1-lightgray': 1px 1px 1px 1px $color-lightgray,
+    '1-1-1-1-gray'     : 1px 1px 1px 1px $color-gray,
+    '1-1-1-1-black'    : 1px 1px 1px 1px $color-black,
+  ),),
+) !default;
+
 // cursor cur
 $cursor: (
   (vals: ('p': pointer, 'c': crosshair, 'm': move, 'ha': hand, 'he': help)),
@@ -122,9 +132,9 @@ $display: (
 // flex-box
 //********************
 
-// order ord
-$order: (
-  (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '99': 99,)),
+// flex flx
+$flex: (
+  (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5,)),
 ) !default;
 
 // flex-grow fxg
@@ -155,14 +165,6 @@ $flexWrap: (
   (vals: ('n': nowrap, 'w': wrap, 'r': wrap-reverse),),
 ) !default;
 
-// justify-content jc
-$justifyContent: (
-  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around),),
-  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-lg),
-  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-md),
-  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-sm),
-) !default;
-
 // align-items ai
 $alignItems: (
   (vals: ('fs': flex-start, 'fe': flex-end, 'b': baseline, 'c': center, 's': stretch),),
@@ -171,6 +173,19 @@ $alignItems: (
 // align-self as
 $alignSelf: (
   (vals: ('b': baseline, 'c': center, 'a': auto),),
+) !default;
+
+// justify-content jc
+$justifyContent: (
+  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around),),
+  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-lg),
+  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-md),
+  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-sm),
+) !default;
+
+// order ord
+$order: (
+  (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '99': 99,)),
 ) !default;
 //********************
 // end flexbox
@@ -195,11 +210,19 @@ $fontFamily: (
 
 // font-size fz
 $fzs: ('0': 0, '10': 10px, '12': 12px, '13': 13px, '14': 14px, '15': 15px, '16': 16px, '17': 17px, '18': 18px, '19': 19px, '20': 20px, '21': 21px, '22': 22px, '23': 23px, '24': 24px, '25': 25px, '26': 26px, '27': 27px, '28': 28px, '32': 32px, '34': 34px, '36': 36px, '42': 42px, '48': 48px,) !default;
+$fzs-vw: ('0': 0vw, '1': 1vw, '1\\.3': 1.3vw, '2': 2vw, '2\\.5': 2.5vw, '3': 3vw, '4': 4vw, '5': 5vw, '10': 10vw, '15': 15vw,) !default;
 $fontSize: (
   (vals: $fzs),
   (vals: $fzs, bp: $bp-lg, ),
   (vals: $fzs, bp: $bp-md, ),
   (vals: $fzs, bp: $bp-sm, ),
+) !default;
+
+$fontSize-vw: (
+  (vals: $fzs-vw),
+  (vals: $fzs-vw, bp: $bp-lg, ),
+  (vals: $fzs-vw, bp: $bp-md, ),
+  (vals: $fzs-vw, bp: $bp-sm, ),
 ) !default;
 
 // font-style fs
@@ -210,6 +233,11 @@ $fontStyle: (
 // font-weight fw
 $fontWeight: (
   (vals: ('100': 100, '200': 200, '300': 300, '400': 400, '500': 500, '600': 600, '700': 700, '800': 800, '900': 900,),),
+) !default;
+
+// letter-spacing lts
+$letterSpacing: (
+  (vals: ('1': 1px, '2': 2px, '3': 3px, '4': 4px,  '5': 5px,)),
 ) !default;
 //********************
 // end font
@@ -237,14 +265,9 @@ $height-perc: (
   (vals: $perc-map, bp: $bp-sm,),
 ) !default;
 
-// line-height lh
-$lineHeight: (
-  (vals: ('1': 1, '1\\.2': 1.2, '1\\.3': 1.3, '1\\.4': 1.4, '1\\.5': 1.5, '2': 2,),),
-) !default;
-
 // list-style ls
 $listStyle: (
-  (vals: ('n': none,),),
+  (vals: ('n': none,)),
 ) !default;
 
 // margin m, margin-top mt, margin-bottom mb, margin-left ml, margin-right mr
@@ -310,43 +333,72 @@ $position: (
   (vals: ('s': static, 'r': relative, 'a': absolute, 'f': fixed), bp: $bp-sm,),
 ) !default;
 
+//********************
+// svg
+//********************
+
+// stroke stroke
+$stroke : (
+  (vals: (
+    'black'    : $color-black,
+    'white'    : $color-white,
+    'lightgray': $color-lightgray,
+    'gray'     : $color-gray,
+  )),
+) !default;
+
+// fill fill
+$fill : (
+  (vals: (
+    'black'    : $color-black,
+    'white'    : $color-white,
+    'lightgray': $color-lightgray,
+    'gray'     : $color-gray,
+  )),
+) !default;
+//********************
+// end svg
+//********************
 
 //********************
 // text
 //********************
+
+// text-align ta
+$textAlign: (
+  (vals: ('l': left, 'c': center, 'r': right, 'j': justify),),
+  (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-lg,),
+  (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-md,),
+  (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-sm,),
+) !default;
+
+// text-decoration td
+$textDecoration: (
+  (vals: ('n': none, 'u': underline),),
+) !default;
+
+//text-shadow txsh
+$textShadow: (
+  (vals: (
+    '1-1-1-white'    : 1px 1px 1px $color-white,
+    '1-1-1-lightgray': 1px 1px 1px $color-lightgray,
+    '1-1-1-gray'     : 1px 1px 1px $color-gray,
+    '1-1-1-black'    : 1px 1px 1px $color-black,
+  ),),
+) !default;
+
 // text-transform tt
 $textTransform: (
   (vals: ('u': uppercase, 'n': none),),
 ) !default;
 
+// line-height lh
+$lineHeight: (
+  (vals: ('1': 1, '1\\.2': 1.2, '1\\.3': 1.3, '1\\.4': 1.4, '1\\.5': 1.5, '2': 2,),),
+) !default;
 //********************
 // end text
 //********************
-// $tts-on: true !default;
-// $tts:  !default;
-
-// // text-decoration
-// $tds-on: true !default;
-// $tds: ('n': none, 'u': underline) !default;
-
-// // text-shadow
-// $tshs-on: true !default;
-// $tshs: (
-//   (1, 1, 1, 'white', $color-white),
-//   (1, 1, 1, 'lightgray', $color-lightgray),
-//   (1, 1, 1, 'gray', $color-gray),
-//   (1, 1, 1, 'black', $color-black),
-// ) !default;
-
-// // text-align
-// $tas-on: true !default;
-// $tas: ('l': left, 'c': center, 'r': right, 'j': justify) !default;
-// $tas-lg : ('l': left, 'c': center, 'r': right, 'j': justify) !default;
-// $tas-md : ('l': left, 'c': center, 'r': right, 'j': justify) !default;
-// $tas-sm : ('l': left, 'c': center, 'r': right, 'j': justify) !default;
-// $tas-smx: ('l': left, 'c': center, 'r': right, 'j': justify) !default;
-
-
 
 // width w
 $width: (
@@ -370,6 +422,26 @@ $width-perc: (
   (vals: $perc-map, bp: $bp-sm,),
 ) !default;
 
+// vertical-align va
+$verticalAlign: (
+  (vals: ('t': top, 'b': bottom, 'm': middle, 'sup': super, 'sub': sub, 'base': base,),),
+) !default;
+
+// word-break wob
+$wordBreak: (
+  (vals: ('n': normal, 'k': keep-all, 'ba': break-all, 'nm': normal,),),
+) !default;
+
+// word-wrap wow
+$wordWrap: (
+  (vals: ('u': unrestricted, 's': suppress, 'b': break-word, 'n': none,),),
+) !default;
+
+//z-index z
+$zIndex: (
+  (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '99': 99,),),
+) !default;
+
 // atomic generation configuration
 $atomic-config:(
 //(attribute,         className,  postfix , modifier, style variants)
@@ -380,50 +452,61 @@ $atomic-config:(
   ('border-left',       'bl',      '',         '',        $border),
   ('border-right',      'br',      '',         '',        $border),
   // top bottom left right
-  ('top',            't',      '',            '',         $tblr),
-  ('top',            't',      'vw',          '',         $tblr-vw),
-  ('top',            't',      '\\%',         '',         $tblr-perc),
-  ('bottom',         'b',      '',            '',         $tblr),
-  ('bottom',         'b',      'vw',          '',         $tblr-vw),
-  ('bottom',         'b',      '\\%',         '',         $tblr-perc),
-  ('left',           'l',      '',            '',         $tblr),
-  ('left',           'l',      'vw',          '',         $tblr-vw),
-  ('left',           'l',      '\\%',         '',         $tblr-perc),
-  ('right',          'r',      '',            '',         $tblr),
-  ('right',          'r',      'vw',          '',         $tblr-vw),
-  ('right',          'r',      '\\%',         '',         $tblr-perc),
+  ('top',               't',       '',         '',        $tblr),
+  ('top',               't',       'vw',       '',        $tblr-vw),
+  ('top',               't',       '\\%',      '',        $tblr-perc),
+  ('bottom',            'b',       '',         '',        $tblr),
+  ('bottom',            'b',       'vw',       '',        $tblr-vw),
+  ('bottom',            'b',       '\\%',      '',        $tblr-perc),
+  ('left',              'l',       '',         '',        $tblr),
+  ('left',              'l',       'vw',       '',        $tblr-vw),
+  ('left',              'l',       '\\%',      '',        $tblr-perc),
+  ('right',             'r',       '',         '',        $tblr),
+  ('right',             'r',       'vw',       '',        $tblr-vw),
+  ('right',             'r',       '\\%',      '',        $tblr-perc),
   // end top bottom left right
+  ('box-shadow',        'bxsh',    '',         '',        $boxShadow),
   ('cursor',            'cur',     '',         '',        $cursor),
   ('clear',             'cl',      '',         '',        $clear),
   ('color',             'c-',      '',         '',        $color),
   ('color',             'c-',      '\\:h',     ':hover',  $color),
   ('display',           'd',       '',         '',        $display),
   // start flexbox
-  ('order',             'ord',     '',         '',        $order),
+  ('flex',              'flx',     '',         '',        $flex),
   ('flex-grow',         'fxg',     '',         '',        $flexGrow),
   ('flex-shring',       'fxsh',    '',         '',        $flexShrink),
   ('flex-basis',        'fxb',     '',         '',        $flexBasis),
   ('flex-direction',    'fxdr',    '',         '',        $flexDirection),
   ('flex-wrap',         'fxw',     '',         '',        $flexWrap),
-  ('justify-content',   'jc',      '',         '',        $justifyContent),
   ('align-items',       'ai',      '',         '',        $alignItems),
   ('align-self',        'as',      '',         '',        $alignSelf),
+  ('justify-content',   'jc',      '',         '',        $justifyContent),
+  ('order',             'ord',     '',         '',        $order),
   // end flex-box
   ('float',             'fl',      '',         '',        $fontSize),
   // font
   ('font-family',       'ff',      '',         '',        $fontFamily),
   ('font-size',         'fz',      '',         '',        $fontSize),
+  ('font-size',         'fz',      'vw',       '',        $fontSize-vw),
   ('font-style',        'fs',      '',         '',        $fontStyle),
   ('font-Weight',       'fw',      '',         '',        $fontWeight),
+  ('letter-spacing',    'lts',     '',         '',        $letterSpacing),
   // end font
   // grid
   // ???
   // end grid
-  ('height',            'w',       '',         '',        $height),
-  ('height',            'w',       'vw',       '',        $height-vw),
-  ('height',            'w',       '\\%',      '',        $height-perc),
-  ('line-height'        'lh'       ''          '',        $lineHeight),
-  ('list-style'         'ls'       ''          '',        $listStyle),
+  // height
+  ('height',            'h',       '',         '',        $height),
+  ('height',            'h',       'vw',       '',        $height-vw),
+  ('height',            'h',       '\\%',      '',        $height-perc),
+  ('max-height',        'mah',     '',         '',        $height),
+  ('max-height',        'mah',     'vw',       '',        $height-vw),
+  ('max-height',        'mah',     '\\%',      '',        $height-perc),
+  ('min-height',        'mih',     '',         '',        $height),
+  ('min-height',        'mih',     'vw',       '',        $height-vw),
+  ('min-height',        'mih',     '\\%',      '',        $height-perc),
+  // end height
+  ('list-style',        'ls',      '',         '',        $listStyle),
   // margin
   ('margin',            'm',       '',         '',        $margin),
   ('margin',            'm',       'vw',       '',        $margin-vw),
@@ -463,26 +546,31 @@ $atomic-config:(
   ('padding-right',     'pr',      '\\%',      '',        $padding-perc),
   // end padding
   ('position',          'pos',     '',         '',        $position),
+  ('stroke',            'stroke-', '',         '',        $stroke),
+  ('fill',              'fill-',   '',         '',        $fill),
   // text
+  ('text-align',        'ta',      '',         '',        $textAlign),
+  ('text-decoration',   'td',      '',         '',        $textDecoration),
+  ('text-shadow',       'txsh',    '',         '',        $textShadow),
+  ('text-transform',    'tt',      '',         '',        $textTransform),
+  ('line-height',       'lh',      '',         '',        $lineHeight),
   // end text
+  // width
   ('width',             'w',       '',         '',        $width),
   ('width',             'w',       'vw',       '',        $width-vw),
   ('width',             'w',       '\\%',      '',        $width-perc),
+  ('max-width',         'maw',     '',         '',        $width),
+  ('max-width',         'maw',     'vw',       '',        $width-vw),
+  ('max-width',         'maw',     '\\%',      '',        $width-perc),
+  ('min-width',         'miw',     '',         '',        $width),
+  ('min-width',         'miw',     'vw',       '',        $width-vw),
+  ('min-width',         'miw',     '\\%',      '',        $width-perc),
+  // end width
+  ('vertical-align',    'va',      '',         '',        $verticalAlign),
+  ('word-break',        'wob',     '',         '',        $wordBreak),
+  ('word-wrap',         'wow',     '',         '',        $wordWrap),
+  ('z-index',           'z',       '',         '',        $zIndex),
 ) !default;
 
 /// toggle for helpers
 $helpers-on: true !default;
-
-// /// word related
-// $word-on: true !default;
-// // word-break
-// $wobs-on: true !default;
-// $wobs: ('n': normal, 'k': keep-all, 'ba': break-all, 'nm': normal) !default;
-
-// // word-wrap
-// $wows-on: true !default;
-// $wows: ('u': unrestricted, 's': suppress, 'b': break-word, 'n': none) !default;
-
-// //z-index
-// $zs-on: true !default;
-// $zs: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 99 !default;
