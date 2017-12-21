@@ -1,7 +1,0 @@
-@if $zs-on {
-  @each $z in $zs {
-    .z#{$z} {
-      z-index: $z;
-    }
-  }
-}

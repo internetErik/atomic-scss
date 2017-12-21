@@ -1,7 +1,0 @@
-@if $ops-on {
-  @each $name, $value in $ops {
-    .op#{$name} {
-      opacity: #{$value};
-    }
-  }
-}

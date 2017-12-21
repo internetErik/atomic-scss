@@ -1,26 +1,36 @@
-@import "./modules/height";
-@import "./modules/width";
-@import "./modules/padding";
-@import "./modules/margin";
-@import "./modules/top";
-@import "./modules/bottom";
-@import "./modules/left";
-@import "./modules/right";
-@import "./modules/zIndex";
-@import "./modules/display";
-@import "./modules/flex";
-@import "./modules/position";
-@import "./modules/overflow";
-@import "./modules/float";
-@import "./modules/clear";
-@import "./modules/textAlign";
-@import "./modules/word";
-@import "./modules/lineHeight";
-@import "./modules/font";
-@import "./modules/text";
-@import "./modules/color";
-@import "./modules/backgroundColor";
-@import "./modules/opacity";
-@import "./modules/cursor";
-@import "./modules/listStyle";
-@import "./modules/border";
+@mixin atomicClasses ($attr, $cname, $cpost, $mod, $styles){
+  @each $style in $styles {
+    @if length($style) == 1 {
+      $vals: nth(nth($style, 1), 2);
+      @each $val in $vals {
+        @include atomicClass($cname, $cpost, $attr, $mod, $val);
+      }
+    }
+  }
+  @each $style in $styles {
+    @if length($style) > 1 {
+      $vals: nth(nth($style, 1), 2);
+      $bp: nth(nth($style, 2), 2);
+      $bp-name: nth(nth($bp, 1), 2);
+      $bp-cond: nth(nth($bp, 2), 2);
+      $post: #{$cpost + '\\@' + $bp-name};
+      @media all and (#{$bp-cond}) {
+        @each $val in $vals {
+          @include atomicClass($cname, $post, $attr, $mod, $val);
+        }
+      }
+    }
+  }
+}
+
+@mixin atomicClass($className, $postfix, $attribute, $modifier, $val) {
+  $valueDisp: nth($val, 1);
+  $value    : nth($val, 2);
+  .#{$className}#{$valueDisp}#{$postfix}#{$modifier} {
+    #{$attribute}: #{$value};
+  }
+}
+
+@each $attr, $cname, $cpost, $mod, $styles in $atomic-config {
+  @include atomicClasses($attr, $cname, $cpost, $mod, $styles)
+}
