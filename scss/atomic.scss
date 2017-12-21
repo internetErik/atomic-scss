@@ -1,11 +1,8 @@
-//variables that can be overridden external to atomic
+// variables that can be overridden external to atomic-scss
 @import "config/variables";
 
-//collection of single style classes
-	// the goal is to allow wireframing to (mostly) be accomplished
-	// with atomic styles and for the finished design styles to be in
-	// component css (mostly in media queries)
+// generates atomic css
 @import "atomic/atomic";
 
-//styles that can be reused
+// collection of helper classes accomplish one thing, but are more complex than atomic classes
 @import "atomic/helpers";

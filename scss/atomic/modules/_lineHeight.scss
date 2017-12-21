@@ -1,7 +1,0 @@
-@if $lhs-on {
-  @each $name,$value in $lhs {
-    .lh#{$name} {
-      line-height: $value;
-    }
-  }
-}

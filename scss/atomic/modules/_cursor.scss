@@ -1,7 +1,0 @@
-@if $curs-on {
-  @each $name,$value in $curs {
-    .cur#{$name} {
-      cursor: $value;
-    }
-  }
-}

@@ -1,543 +1,576 @@
-// variable naming
-// use $<property>-description: value
-	// ex.
-	// $color-light-blue
-	// $width-large
+//
+// All default breakpoints
+//
+$bp-lgx: (name: 'lgx', cond: 'max-width: 1500px') !default;
+$bp-lg : (name: 'lg' , cond: 'max-width: 1024px') !default;
+$bp-md : (name: 'md' , cond: 'max-width: 768px') !default;
+$bp-sm : (name: 'sm' , cond: 'max-width: 500px') !default;
+$bp-smx: (name: 'smx', cond: 'max-width: 400px') !default;
+
+$bp-lgx-mn: (name: 'lgx-mn', cond: 'min-width: 1500px') !default;
+$bp-lg-mn : (name: 'lg-mn', cond: 'min-width: 1024px') !default;
+$bp-md-mn : (name: 'md-mn', cond: 'min-width: 768px') !default;
+$bp-sm-mn : (name: 'sm-mn', cond: 'min-width: 500px') !default;
+$bp-smx-mn: (name: 'smx-mn', cond: 'min-width: 400px') !default;
 
 // wire framing colors
-$color-black    : #101010 !default;
-$color-white    : #fefefe !default;
+$color-white    : #ffffff !default;
 $color-lightgray: lightgray !default;
 $color-gray     : gray !default;
+$color-black    : #000000 !default;
 
-// breakpoints
-$bp-lg : 1024px !default;
-$bp-md : 784px !default;
-$bp-sm : 560px !default;
-$bp-smx: 400px !default;
+// some default ranges
+$px-map: ('0': 0, '1': 1px, '5': 5px, '10': 10px, '15': 15px, '20': 20px, '25': 25px, '30': 30px, '40': 40px, '44': 44px, '50': 50px, '60': 60px, '70': 70px, '75': 75px, '80': 80px, '90': 90px, '100': 100px, '125': 125px, '150': 150px, '175': 175px, '200': 200px, '225': 225px, '250': 250px, '275': 275px, '300': 300px, '325': 325px, '350': 350px, '375': 375px, '400': 400px, '500': 500px, '600': 600px, '700': 700px, '800': 800px,) !default;
+$perc-map: ('1': 1%, '2': 2%, '3': 3%, '4': 4%, '5': 5%, '10': 10%, '12\\.25': 12.25%, '15': 15%, '20': 20%, '25': 25%, '33': 30%, '33\\.3333': 33.3333%, '35': 35%, '40': 40%, '45': 45%, '50': 50%, '55': 55%, '60': 60%, '65': 65%, '66\\.6666': 66.6666%, '70': 70%, '75': 75%, '80': 80%, '85': 85%, '90': 90%, '95': 95%, '100': 100%, '110': 110%, '120': 120%, '130': 130%, '140': 140%, '150': 150%,) !default;
+$vw-map: ('0': 0vw, '1': 1vw, '5': 5vw, '10': 10vw, '15': 15vw, '20': 20vw, '25': 25vw, '30': 30vw, '40': 40vw, '44': 44vw, '50': 50vw, '60': 60vw, '70': 70vw, '75': 75vw, '80': 80vw, '90': 90vw, '100': 100vw, '150': 150vw, '200': 200vw,) !default;
+$vh-map: ('0': 0vh, '1': 1vh, '5': 5vh, '10': 10vh, '15': 15vh, '20': 20vh, '25': 25vh, '30': 30vh, '40': 40vh, '44': 44vh, '50': 50vh, '60': 60vh, '70': 70vh, '75': 75vh, '80': 80vh, '90': 90vh, '100': 100vh, '150': 150vh, '200': 200vh,) !default;
+
+// breakpoints used for generating helpers
+$helper-bps: (
+  $bp-lgx,
+  $bp-lg ,
+  $bp-md ,
+  $bp-sm ,
+  $bp-smx,
+  $bp-lgx-mn,
+  $bp-lg-mn ,
+  $bp-md-mn ,
+  $bp-sm-mn ,
+  $bp-smx-mn,
+) !default;
+
+//
+// Start style config variables
+//
+
+// background-color bgc
+$backgroundColor : (
+  (vals: (
+    'white': $color-white,
+    'lightgray': $color-lightgray,
+    'gray': $color-gray,
+    'black': $color-black,
+  )),
+) !default;
+
+// border bd, bt, bb, bl, br
+$border: (
+  (vals:(
+    '1-s-white'    : '1px solid ' + $color-white,
+    '1-s-lightgray': '1px solid ' + $color-lightgray,
+    '1-s-gray'     : '1px solid ' + $color-gray,
+    '1-s-black'    : '1px solid ' + $color-black,
+  )),
+) !default;
+
+// border-radius bdrs
+$borderRadius: (
+  (vals: ('0': 0, '1': 1px,'2': 2px,'3': 3px,'4': 4px, '5': 5px, '6': 6px, '7': 7px, '8': 8px, '9': 9px, '10': 10px,)),
+) !default;
+
+// top t, bottom b, left l, right r
+$tblr: (
+  (vals: $px-map),
+  (vals: $px-map, bp: $bp-lg,),
+  (vals: $px-map, bp: $bp-md,),
+  (vals: $px-map, bp: $bp-sm,),
+) !default;
+
+$tblr-vw: (
+  (vals: $vw-map),
+  (vals: $vw-map, bp: $bp-lg,),
+  (vals: $vw-map, bp: $bp-md,),
+  (vals: $vw-map, bp: $bp-sm,),
+) !default;
+
+$tblr-perc: (
+  (vals: $perc-map),
+  (vals: $perc-map, bp: $bp-lg,),
+  (vals: $perc-map, bp: $bp-md,),
+  (vals: $perc-map, bp: $bp-sm,),
+) !default;
+
+// clear cl
+$clear: (
+  (vals: ('b': 'both', 'l': 'left', 'r': 'right')),
+) !default;
+
+// color c
+$color : (
+  (vals: (
+    'black'    : $color-black,
+    'white'    : $color-white,
+    'lightgray': $color-lightgray,
+    'gray'     : $color-gray,
+  )),
+) !default;
+
+//box-shadow txsh
+$boxShadow: (
+  (vals: (
+    '1-1-1-1-white'    : 1px 1px 1px 1px $color-white,
+    '1-1-1-1-lightgray': 1px 1px 1px 1px $color-lightgray,
+    '1-1-1-1-gray'     : 1px 1px 1px 1px $color-gray,
+    '1-1-1-1-black'    : 1px 1px 1px 1px $color-black,
+  ),),
+) !default;
+
+// cursor cur
+$cursor: (
+  (vals: ('p': pointer, 'c': crosshair, 'm': move, 'ha': hand, 'he': help)),
+) !default;
+
+// display d
+$display: (
+  (vals: ('n': none, '-i': inline, 'b': block, 'ib': 'inline-block', 'f': flex, 'if': inline-flex, 'g': grid)),
+  (vals: ('n': none, '-i': inline, 'b': block, 'ib': 'inline-block', 'f': flex, 'if': inline-flex, 'g': grid), bp: $bp-lg),
+  (vals: ('n': none, '-i': inline, 'b': block, 'ib': 'inline-block', 'f': flex, 'if': inline-flex, 'g': grid), bp: $bp-md),
+  (vals: ('n': none, '-i': inline, 'b': block, 'ib': 'inline-block', 'f': flex, 'if': inline-flex, 'g': grid), bp: $bp-sm),
+) !default;
+
+//********************
+// flex-box
+//********************
+
+// flex flx
+$flex: (
+  (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5,)),
+) !default;
+
+// flex-grow fxg
+$flexGrow: (
+  (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5,)),
+) !default;
+
+// flex-Shring fxsh
+$flexShrink: (
+  (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5,)),
+) !default;
+
+// flex-basis fxb
+$flexBasis: (
+  (vals: $px-map,),
+) !default;
+
+// flex-direction fxdr
+$flexDirection: (
+  (vals: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse),),
+  (vals: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse), bp: $bp-lg),
+  (vals: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse), bp: $bp-md),
+  (vals: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse), bp: $bp-sm),
+) !default;
+
+// flex-wrap fxw
+$flexWrap: (
+  (vals: ('n': nowrap, 'w': wrap, 'r': wrap-reverse),),
+) !default;
+
+// align-items ai
+$alignItems: (
+  (vals: ('fs': flex-start, 'fe': flex-end, 'b': baseline, 'c': center, 's': stretch),),
+) !default;
+
+// align-self as
+$alignSelf: (
+  (vals: ('b': baseline, 'c': center, 'a': auto),),
+) !default;
+
+// justify-content jc
+$justifyContent: (
+  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around),),
+  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-lg),
+  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-md),
+  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-sm),
+) !default;
+
+// order ord
+$order: (
+  (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '99': 99,)),
+) !default;
+//********************
+// end flexbox
+//********************
+
+// float
+$float: (
+  (vals: ('l': left, 'r': right, 'n': none),),
+  (vals: ('l': left, 'r': right, 'n': none), bp: $bp-lg),
+  (vals: ('l': left, 'r': right, 'n': none), bp: $bp-md),
+  (vals: ('l': left, 'r': right, 'n': none), bp: $bp-sm),
+) !default;
+
+//********************
+// font
+//********************
+
+// font-family ff
+$fontFamily: (
+  (vals: ('s': serif, 'ss': sans-serif),),
+) !default;
+
+// font-size fz
+$fzs: ('0': 0, '10': 10px, '12': 12px, '13': 13px, '14': 14px, '15': 15px, '16': 16px, '17': 17px, '18': 18px, '19': 19px, '20': 20px, '21': 21px, '22': 22px, '23': 23px, '24': 24px, '25': 25px, '26': 26px, '27': 27px, '28': 28px, '32': 32px, '34': 34px, '36': 36px, '42': 42px, '48': 48px,) !default;
+$fzs-vw: ('0': 0vw, '1': 1vw, '1\\.3': 1.3vw, '2': 2vw, '2\\.5': 2.5vw, '3': 3vw, '4': 4vw, '5': 5vw, '10': 10vw, '15': 15vw,) !default;
+$fontSize: (
+  (vals: $fzs),
+  (vals: $fzs, bp: $bp-lg, ),
+  (vals: $fzs, bp: $bp-md, ),
+  (vals: $fzs, bp: $bp-sm, ),
+) !default;
+
+$fontSize-vw: (
+  (vals: $fzs-vw),
+  (vals: $fzs-vw, bp: $bp-lg, ),
+  (vals: $fzs-vw, bp: $bp-md, ),
+  (vals: $fzs-vw, bp: $bp-sm, ),
+) !default;
+
+// font-style fs
+$fontStyle: (
+  (vals: ('i': italic, 'o': oblique),),
+) !default;
+
+// font-weight fw
+$fontWeight: (
+  (vals: ('100': 100, '200': 200, '300': 300, '400': 400, '500': 500, '600': 600, '700': 700, '800': 800, '900': 900,),),
+) !default;
+
+// letter-spacing lts
+$letterSpacing: (
+  (vals: ('1': 1px, '2': 2px, '3': 3px, '4': 4px,  '5': 5px,)),
+) !default;
+//********************
+// end font
+//********************
+
+// height h
+$height: (
+  (vals: $px-map),
+  (vals: $px-map, bp: $bp-lg,),
+  (vals: $px-map, bp: $bp-md,),
+  (vals: $px-map, bp: $bp-sm,),
+) !default;
+
+$height-vw: (
+  (vals: $vw-map),
+  (vals: $vw-map, bp: $bp-lg,),
+  (vals: $vw-map, bp: $bp-md,),
+  (vals: $vw-map, bp: $bp-sm,),
+) !default;
+
+$height-perc: (
+  (vals: $perc-map),
+  (vals: $perc-map, bp: $bp-lg,),
+  (vals: $perc-map, bp: $bp-md,),
+  (vals: $perc-map, bp: $bp-sm,),
+) !default;
+
+// list-style ls
+$listStyle: (
+  (vals: ('n': none,)),
+) !default;
+
+// margin m, margin-top mt, margin-bottom mb, margin-left ml, margin-right mr
+$margin: (
+  (vals: $px-map),
+  (vals: $px-map, bp: $bp-lg,),
+  (vals: $px-map, bp: $bp-md,),
+  (vals: $px-map, bp: $bp-sm,),
+) !default;
+
+$margin-vw: (
+  (vals: $vw-map),
+  (vals: $vw-map, bp: $bp-lg,),
+  (vals: $vw-map, bp: $bp-md,),
+  (vals: $vw-map, bp: $bp-sm,),
+) !default;
+
+$margin-perc: (
+  (vals: $perc-map),
+  (vals: $perc-map, bp: $bp-lg,),
+  (vals: $perc-map, bp: $bp-md,),
+  (vals: $perc-map, bp: $bp-sm,),
+) !default;
+
+// opacity op
+$opacity: (
+  (vals: ('0': 0, '\\.1': .1, '\\.2': .2, '\\.3': .3, '\\.4': .4, '\\.5': .5, '\\.6': .6, '\\.7': .7, '\\.8': .8, '\\.9': .9, '1': 1,),),
+) !default;
+
+// overflow o, overflow-x ox, overflow-y oy
+$overflow: (
+  (vals: ('h': hidden, 'a': auto, 's': scroll),),
+) !default;
+
+
+// padding p, padding-top pt, padding-bottom pb, padding-left pl, padding-right pr
+$padding: (
+  (vals: $px-map),
+  (vals: $px-map, bp: $bp-lg,),
+  (vals: $px-map, bp: $bp-md,),
+  (vals: $px-map, bp: $bp-sm,),
+) !default;
+
+$padding-vw: (
+  (vals: $vw-map),
+  (vals: $vw-map, bp: $bp-lg,),
+  (vals: $vw-map, bp: $bp-md,),
+  (vals: $vw-map, bp: $bp-sm,),
+) !default;
+
+$padding-perc: (
+  (vals: $perc-map),
+  (vals: $perc-map, bp: $bp-lg,),
+  (vals: $perc-map, bp: $bp-md,),
+  (vals: $perc-map, bp: $bp-sm,),
+) !default;
+
+// position pos
+$position: (
+  (vals: ('s': static, 'r': relative, 'a': absolute, 'f': fixed)),
+  (vals: ('s': static, 'r': relative, 'a': absolute, 'f': fixed), bp: $bp-lg,),
+  (vals: ('s': static, 'r': relative, 'a': absolute, 'f': fixed), bp: $bp-md,),
+  (vals: ('s': static, 'r': relative, 'a': absolute, 'f': fixed), bp: $bp-sm,),
+) !default;
+
+//********************
+// svg
+//********************
+
+// stroke stroke
+$stroke : (
+  (vals: (
+    'black'    : $color-black,
+    'white'    : $color-white,
+    'lightgray': $color-lightgray,
+    'gray'     : $color-gray,
+  )),
+) !default;
+
+// fill fill
+$fill : (
+  (vals: (
+    'black'    : $color-black,
+    'white'    : $color-white,
+    'lightgray': $color-lightgray,
+    'gray'     : $color-gray,
+  )),
+) !default;
+//********************
+// end svg
+//********************
+
+//********************
+// text
+//********************
+
+// text-align ta
+$textAlign: (
+  (vals: ('l': left, 'c': center, 'r': right, 'j': justify),),
+  (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-lg,),
+  (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-md,),
+  (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-sm,),
+) !default;
+
+// text-decoration td
+$textDecoration: (
+  (vals: ('n': none, 'u': underline),),
+) !default;
+
+//text-shadow txsh
+$textShadow: (
+  (vals: (
+    '1-1-1-white'    : 1px 1px 1px $color-white,
+    '1-1-1-lightgray': 1px 1px 1px $color-lightgray,
+    '1-1-1-gray'     : 1px 1px 1px $color-gray,
+    '1-1-1-black'    : 1px 1px 1px $color-black,
+  ),),
+) !default;
+
+// text-transform tt
+$textTransform: (
+  (vals: ('u': uppercase, 'n': none),),
+) !default;
+
+// line-height lh
+$lineHeight: (
+  (vals: ('1': 1, '1\\.2': 1.2, '1\\.3': 1.3, '1\\.4': 1.4, '1\\.5': 1.5, '2': 2,),),
+) !default;
+//********************
+// end text
+//********************
+
+// width w
+$width: (
+  (vals: $px-map),
+  (vals: $px-map, bp: $bp-lg,),
+  (vals: $px-map, bp: $bp-md,),
+  (vals: $px-map, bp: $bp-sm,),
+) !default;
+
+$width-vw: (
+  (vals: $vw-map),
+  (vals: $vw-map, bp: $bp-lg,),
+  (vals: $vw-map, bp: $bp-md,),
+  (vals: $vw-map, bp: $bp-sm,),
+) !default;
+
+$width-perc: (
+  (vals: $perc-map),
+  (vals: $perc-map, bp: $bp-lg,),
+  (vals: $perc-map, bp: $bp-md,),
+  (vals: $perc-map, bp: $bp-sm,),
+) !default;
+
+// vertical-align va
+$verticalAlign: (
+  (vals: ('t': top, 'b': bottom, 'm': middle, 'sup': super, 'sub': sub, 'base': base,),),
+) !default;
+
+// word-break wob
+$wordBreak: (
+  (vals: ('n': normal, 'k': keep-all, 'ba': break-all, 'nm': normal,),),
+) !default;
+
+// word-wrap wow
+$wordWrap: (
+  (vals: ('u': unrestricted, 's': suppress, 'b': break-word, 'n': none,),),
+) !default;
+
+//z-index z
+$zIndex: (
+  (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '99': 99,),),
+) !default;
+
+// atomic generation configuration
+$atomic-config:(
+//(attribute,         className,  postfix , modifier, style variants)
+  ('background-color',  'bgc-',    '',         '',        $backgroundColor),
+  ('border',            'bd',      '',         '',        $border),
+  ('border-top',        'bt',      '',         '',        $border),
+  ('border-bottom',     'bb',      '',         '',        $border),
+  ('border-left',       'bl',      '',         '',        $border),
+  ('border-right',      'br',      '',         '',        $border),
+  // top bottom left right
+  ('top',               't',       '',         '',        $tblr),
+  ('top',               't',       'vw',       '',        $tblr-vw),
+  ('top',               't',       '\\%',      '',        $tblr-perc),
+  ('bottom',            'b',       '',         '',        $tblr),
+  ('bottom',            'b',       'vw',       '',        $tblr-vw),
+  ('bottom',            'b',       '\\%',      '',        $tblr-perc),
+  ('left',              'l',       '',         '',        $tblr),
+  ('left',              'l',       'vw',       '',        $tblr-vw),
+  ('left',              'l',       '\\%',      '',        $tblr-perc),
+  ('right',             'r',       '',         '',        $tblr),
+  ('right',             'r',       'vw',       '',        $tblr-vw),
+  ('right',             'r',       '\\%',      '',        $tblr-perc),
+  // end top bottom left right
+  ('box-shadow',        'bxsh',    '',         '',        $boxShadow),
+  ('cursor',            'cur',     '',         '',        $cursor),
+  ('clear',             'cl',      '',         '',        $clear),
+  ('color',             'c-',      '',         '',        $color),
+  ('color',             'c-',      '\\:h',     ':hover',  $color),
+  ('display',           'd',       '',         '',        $display),
+  // start flexbox
+  ('flex',              'flx',     '',         '',        $flex),
+  ('flex-grow',         'fxg',     '',         '',        $flexGrow),
+  ('flex-shring',       'fxsh',    '',         '',        $flexShrink),
+  ('flex-basis',        'fxb',     '',         '',        $flexBasis),
+  ('flex-direction',    'fxdr',    '',         '',        $flexDirection),
+  ('flex-wrap',         'fxw',     '',         '',        $flexWrap),
+  ('align-items',       'ai',      '',         '',        $alignItems),
+  ('align-self',        'as',      '',         '',        $alignSelf),
+  ('justify-content',   'jc',      '',         '',        $justifyContent),
+  ('order',             'ord',     '',         '',        $order),
+  // end flex-box
+  ('float',             'fl',      '',         '',        $fontSize),
+  // font
+  ('font-family',       'ff',      '',         '',        $fontFamily),
+  ('font-size',         'fz',      '',         '',        $fontSize),
+  ('font-size',         'fz',      'vw',       '',        $fontSize-vw),
+  ('font-style',        'fs',      '',         '',        $fontStyle),
+  ('font-Weight',       'fw',      '',         '',        $fontWeight),
+  ('letter-spacing',    'lts',     '',         '',        $letterSpacing),
+  // end font
+  // grid
+  // ???
+  // end grid
+  // height
+  ('height',            'h',       '',         '',        $height),
+  ('height',            'h',       'vw',       '',        $height-vw),
+  ('height',            'h',       '\\%',      '',        $height-perc),
+  ('max-height',        'mah',     '',         '',        $height),
+  ('max-height',        'mah',     'vw',       '',        $height-vw),
+  ('max-height',        'mah',     '\\%',      '',        $height-perc),
+  ('min-height',        'mih',     '',         '',        $height),
+  ('min-height',        'mih',     'vw',       '',        $height-vw),
+  ('min-height',        'mih',     '\\%',      '',        $height-perc),
+  // end height
+  ('list-style',        'ls',      '',         '',        $listStyle),
+  // margin
+  ('margin',            'm',       '',         '',        $margin),
+  ('margin',            'm',       'vw',       '',        $margin-vw),
+  ('margin',            'm',       '\\%',      '',        $margin-perc),
+  ('margin-top',        'mt',      '',         '',        $margin),
+  ('margin-top',        'mt',      'vw',       '',        $margin-vw),
+  ('margin-top',        'mt',      '\\%',      '',        $margin-perc),
+  ('margin-bottom',     'mb',      '',         '',        $margin),
+  ('margin-bottom',     'mb',      'vw',       '',        $margin-vw),
+  ('margin-bottom',     'mb',      '\\%',      '',        $margin-perc),
+  ('margin-left',       'ml',      '',         '',        $margin),
+  ('margin-left',       'ml',      'vw',       '',        $margin-vw),
+  ('margin-left',       'ml',      '\\%',      '',        $margin-perc),
+  ('margin-right',      'mr',      '',         '',        $margin),
+  ('margin-right',      'mr',      'vw',       '',        $margin-vw),
+  ('margin-right',      'mr',      '\\%',      '',        $margin-perc),
+  // end margin
+  ('opacity',           'op',      '',         '',        $opacity),
+  ('overflow',          'o',       '',         '',        $overflow),
+  ('overflow-x',        'ox',       '',         '',       $overflow),
+  ('overflow-y',        'oy',       '',         '',       $overflow),
+  // padding
+  ('padding',           'p',       '',         '',        $padding),
+  ('padding',           'p',       'vw',       '',        $padding-vw),
+  ('padding',           'p',       '\\%',      '',        $padding-perc),
+  ('padding-top',       'pt',      '',         '',        $padding),
+  ('padding-top',       'pt',      'vw',       '',        $padding-vw),
+  ('padding-top',       'pt',      '\\%',      '',        $padding-perc),
+  ('padding-bottom',    'pb',      '',         '',        $padding),
+  ('padding-bottom',    'pb',      'vw',       '',        $padding-vw),
+  ('padding-bottom',    'pb',      '\\%',      '',        $padding-perc),
+  ('padding-left',      'pl',      '',         '',        $padding),
+  ('padding-left',      'pl',      'vw',       '',        $padding-vw),
+  ('padding-left',      'pl',      '\\%',      '',        $padding-perc),
+  ('padding-right',     'pr',      '',         '',        $padding),
+  ('padding-right',     'pr',      'vw',       '',        $padding-vw),
+  ('padding-right',     'pr',      '\\%',      '',        $padding-perc),
+  // end padding
+  ('position',          'pos',     '',         '',        $position),
+  ('stroke',            'stroke-', '',         '',        $stroke),
+  ('fill',              'fill-',   '',         '',        $fill),
+  // text
+  ('text-align',        'ta',      '',         '',        $textAlign),
+  ('text-decoration',   'td',      '',         '',        $textDecoration),
+  ('text-shadow',       'txsh',    '',         '',        $textShadow),
+  ('text-transform',    'tt',      '',         '',        $textTransform),
+  ('line-height',       'lh',      '',         '',        $lineHeight),
+  // end text
+  // width
+  ('width',             'w',       '',         '',        $width),
+  ('width',             'w',       'vw',       '',        $width-vw),
+  ('width',             'w',       '\\%',      '',        $width-perc),
+  ('max-width',         'maw',     '',         '',        $width),
+  ('max-width',         'maw',     'vw',       '',        $width-vw),
+  ('max-width',         'maw',     '\\%',      '',        $width-perc),
+  ('min-width',         'miw',     '',         '',        $width),
+  ('min-width',         'miw',     'vw',       '',        $width-vw),
+  ('min-width',         'miw',     '\\%',      '',        $width-perc),
+  // end width
+  ('vertical-align',    'va',      '',         '',        $verticalAlign),
+  ('word-break',        'wob',     '',         '',        $wordBreak),
+  ('word-wrap',         'wow',     '',         '',        $wordWrap),
+  ('z-index',           'z',       '',         '',        $zIndex),
+) !default;
 
 /// toggle for helpers
 $helpers-on: true !default;
-
-// background-colors
-$bgcs-on: true !default;
-$bgcs: ('white': $color-white, 'lightgray':$color-lightgray, 'gray':$color-gray, 'black':$color-black, 't': transparent) !default;
-
-/// borders properties
-$border-on: true !default;
-// borders
-$bds-on: true !default;
-$bds: (
-  (1, 's', 'solid', 'white', $color-white),
-  (1, 's', 'solid', 'lightgray', $color-lightgray),
-  (1, 's', 'solid', 'gray', $color-gray),
-  (1, 's', 'solid', 'black', $color-black)
-) !default;
-
-// border-radius
-$bdrs-on: true !default;
-$bdrss: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 !default;
-
-/// bottom
-$bottom-on: true !default;
-// bottom pixels
-$bs-px-on: true !default;
-$bs-px: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$bs-px-lg : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$bs-px-md : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$bs-px-sm : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$bs-px-smx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-
-// bottom percentages
-$bs-perc-on: true !default;
-$bs-perc: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$bs-perc-lg : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$bs-perc-md : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$bs-perc-sm : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$bs-perc-smx: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-
-// clear
-$cls-on: true !default;
-$cls: ('b': 'both', 'l': 'left', 'r': 'right') !default;
-
-// color
-$cs-on: true !default;
-$cs: ('white': $color-white, 'lightgray':$color-lightgray, 'gray':$color-gray, 'black':$color-black) !default;
-
-// cursor
-$curs-on: true !default;
-$curs: ('p': pointer, 'c': crosshair, 'm': move, 'ha': hand, 'he': help) !default;
-
-// display
-$ds-on: true !default;
-$ds: ('n': none, '-i': inline, 'b': block, 'ib': 'inline-block', 'f': flex, 'if': inline-flex, 'g': grid) !default;
-$ds-lg : ('n': none, '-i': inline, 'b': block, 'ib': inline-block, 'f': flex, 'if': inline-flex, 'g': grid) !default;
-$ds-md : ('n': none, '-i': inline, 'b': block, 'ib': inline-block, 'f': flex, 'if': inline-flex, 'g': grid) !default;
-$ds-sm : ('n': none, '-i': inline, 'b': block, 'ib': inline-block, 'f': flex, 'if': inline-flex, 'g': grid) !default;
-$ds-smx: ('n': none, '-i': inline, 'b': block, 'ib': inline-block, 'f': flex, 'if': inline-flex, 'g': grid) !default;
-
-/// flex
-$flex-on: true !default;
-// order
-$ords-on: true !default;
-$ords: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 99 !default;
-
-// flex
-$flxs-on: true !default;
-$flxs: 1, 2, 3, 4, 5 !default;
-
-// flex-grow
-$fxgs-on: true !default;
-$fxgs: 1, 2, 3, 4, 5 !default;
-
-// flex-shrink
-$fxshs-on: true !default;
-$fxshs: 1, 2, 3, 4, 5 !default;
-
-// flex-basis
-$fxbs-on: true !default;
-$fxbs: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-
-// flex-direction
-$fxdrs-on: true !default;
-$fxdrs: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse) !default;
-$fxdrs-lg : ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse) !default;
-$fxdrs-md : ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse) !default;
-$fxdrs-sm : ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse) !default;
-$fxdrs-smx: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse) !default;
-
-// flex-wrap
-$fxws-on: true !default;
-$fxws: ('n': nowrap, 'w': wrap, 'r': wrap-reverse) !default;
-
-// justify-content
-$jcs-on: true !default;
-$jcs: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around) !default;
-$jcs-lg : ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around) !default;
-$jcs-md : ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around) !default;
-$jcs-sm : ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around) !default;
-$jcs-smx: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around) !default;
-
-// align-items
-$ais-on: true !default;
-$ais: ('fs': flex-start, 'fe': flex-end, 'b': baseline, 'c': center, 's': stretch) !default;
-
-// align-self
-$ass-on: true !default;
-$ass: ('b': baseline, 'c': center, 'a': auto) !default;
-
-// grid
-$grid-on: true !default;
-// grid-area
-// grid-auto-columns
-// grid-auto-flow
-// grid-auto-rows
-// grid-column
-// grid-column-end
-// grid-column-gap
-// grid-column-start
-// grid-gap
-// grid-row
-// grid-row-end
-// grid-row-gap
-// grid-row-start
-// grid-template
-// grid-template-areas
-// grid-template-columns
-// grid-template-rows
-
-// float
-$fls-on: true !default;
-$fls: ('l': left, 'r': right, 'n': none) !default;
-$fls-lg : ('l': left, 'r': right, 'n': none) !default;
-$fls-md : ('l': left, 'r': right, 'n': none) !default;
-$fls-sm : ('l': left, 'r': right, 'n': none) !default;
-$fls-smx: ('l': left, 'r': right, 'n': none) !default;
-
-// vertical-align
-$vas-on: true !default;
-vam, vat, vab, vatt, vatb, vasup, vasub, vabase
-$vas: ('m': middle, 't': top, 'b': bottom, 'sup': super, 'sub': sub, 'base': baseline) !default;
-
-/// font
-$font-on: true !default;
-// font-weight
-$fws-on: true !default;
-$fws: 100, 200, 300, 400, 500, 600, 700, 800, 900 !default;
-
-// font-size
-$fzs-on: true !default;
-$fzs:  10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 34, 36, 42, 48 !default;
-$fzs-lg :  10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 34, 36, 42, 48 !default;
-$fzs-md :  10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 34, 36, 42, 48 !default;
-$fzs-sm :  10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 34, 36, 42, 48 !default;
-$fzs-smx:  10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 32, 34, 36, 42, 48 !default;
-
-$fzs-vw-on: true !default;
-$fzs-vw:  ('1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '11': 11, '12': 12, '13': 13, '14': 14, '15': 15, '16': 16, '17': 17, '18': 18, '19': 19, '20': 20, '11': 11) !default;
-$fzs-vw-lg :  ('1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '11': 11, '12': 12, '13': 13, '14': 14, '15': 15, '16': 16, '17': 17, '18': 18, '19': 19, '20': 20, '11': 11) !default;
-$fzs-vw-md :  ('1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '11': 11, '12': 12, '13': 13, '14': 14, '15': 15, '16': 16, '17': 17, '18': 18, '19': 19, '20': 20, '11': 11) !default;
-$fzs-vw-sm :  ('1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '11': 11, '12': 12, '13': 13, '14': 14, '15': 15, '16': 16, '17': 17, '18': 18, '19': 19, '20': 20, '11': 11) !default;
-$fzs-vw-smx:  ('1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '11': 11, '12': 12, '13': 13, '14': 14, '15': 15, '16': 16, '17': 17, '18': 18, '19': 19, '20': 20, '11': 11) !default;
-
-// letter-spacing
-$ltss-on: true !default;
-$ltss: 0, 1, 2, 3, 4, 5;
-
-// font-style
-$fss-on: true !default;
-$fss: ('i': italic, 'o': oblique) !default;
-
-// font-family
-$ffs-on: true !default;
-$ffs: ('s': serif, 'ss': sans-serif) !default;
-
-// height
-$height-on: true !default;
-// height pixels
-$hs-px-on: true !default;
-$hs-px: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$hs-px-lg : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$hs-px-md : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$hs-px-sm : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$hs-px-smx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-
-// height percentages
-$hs-perc-on: true !default;
-$hs-perc: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$hs-perc-lg : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$hs-perc-md : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$hs-perc-sm : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$hs-perc-smx: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-
-// height view widths
-$hs-vw-on: true !default;
-$hs-vw: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$hs-vw-lg : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$hs-vw-md : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$hs-vw-sm : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$hs-vw-smx: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-
-// height view heights
-$hs-vh-on: true !default;
-$hs-vh: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$hs-vh-lg : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$hs-vh-md : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$hs-vh-sm : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$hs-vh-smx: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-
-// max-height
-$max-height-on: true !default;
-// max-height pixels
-$mahs-px-on: true !default;
-$mahs-px: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$mahs-px-lg : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$mahs-px-md : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$mahs-px-sm : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$mahs-px-smx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-
-// max-height percentages
-$mahs-perc-on: true !default;
-$mahs-perc: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$mahs-perc-lg : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$mahs-perc-md : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$mahs-perc-sm : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$mahs-perc-smx: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-
-// max-height view widths
-$mahs-vw-on: true !default;
-$mahs-vw: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mahs-vw-lg : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mahs-vw-md : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mahs-vw-sm : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mahs-vw-smx: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-
-// max-height view heights
-$mahs-vh-on: true !default;
-$mahs-vh: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mahs-vh-lg : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mahs-vh-md : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mahs-vh-sm : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mahs-vh-smx: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-
-// min-height
-$min-height-on: true !default;
-// min-height pixels
-$mihs-px-on: true !default;
-$mihs-px: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$mihs-px-lg : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$mihs-px-md : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$mihs-px-sm : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$mihs-px-smx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-
-// min-height percentages
-$mihs-perc-on: true !default;
-$mihs-perc: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$mihs-perc-lg : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$mihs-perc-md : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$mihs-perc-sm : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$mihs-perc-smx: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-
-// min-height view widths
-$mihs-vw-on: true !default;
-$mihs-vw: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mihs-vw-lg : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mihs-vw-md : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mihs-vw-sm : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mihs-vw-smx: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-
-// min-height view heights
-$mihs-vh-on: true !default;
-$mihs-vh: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mihs-vh-lg : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mihs-vh-md : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mihs-vh-sm : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$mihs-vh-smx: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-
-// left
-$left-on: true !default;
-// left pixels
-$ls-px-on: true !default;
-$ls-px: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ls-px-lg : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ls-px-md : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ls-px-sm : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ls-px-smx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-
-// left percentages
-$ls-perc-on: true !default;
-$ls-perc: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$ls-perc-lg : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$ls-perc-md : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$ls-perc-sm : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$ls-perc-smx: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-
-// line-height
-$lhs-on: true !default;
-$lhs: ('1': 1, '1\\.2': 1.2, '1\\.3': 1.3, '1\\.4': 1.4, '1\\.5': 1.5, '2': 2) !default;
-
-// list-style
-$lss-on: true !default;
-$lss: ('n': none) !default;
-
-// margin
-$ms-on: true !default;
-$ms-px: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ms-px-lg : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ms-px-md : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ms-px-sm : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ms-px-smx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-
-// opacity
-$ops-on: true !default;
-$ops: ('0': 0, '\\.1': .1, '\\.2': .2, '\\.3': .3, '\\.4': .4, '\\.5': .5, '\\.6': .6, '\\.7': .7, '\\.8': .8, '\\.9': .9, '1': 1) !default;
-
-/// overflow properties
-$overflow-on: true !default;
-// overflow
-$os-on: true !default;
-$os: ('h': hidden, 'a': auto, 's': scroll) !default;
-
-// overflow-x
-$oxs-on: true !default;
-$oxs: ('h': hidden, 'a': auto, 's': scroll) !default;
-
-// overflow-y
-$oys-on: true !default;
-$oys: ('h': hidden, 'a': auto, 's': scroll) !default;
-
-// padding
-$ps-on: true !default;
-$ps-px: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ps-px-lg : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ps-px-md : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ps-px-sm : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ps-px-smx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-
-// position
-$poss-on: true !default;
-$poss: ('s': static, 'r': relative, 'a': absolute, 'f': fixed) !default;
-$poss-lg : ('s': static, 'r': relative, 'a': absolute, 'f': fixed) !default;
-$poss-md : ('s': static, 'r': relative, 'a': absolute, 'f': fixed) !default;
-$poss-sm : ('s': static, 'r': relative, 'a': absolute, 'f': fixed) !default;
-$poss-smx: ('s': static, 'r': relative, 'a': absolute, 'f': fixed) !default;
-
-// right
-$right-on: true !default;
-// right pixels
-$rs-px-on: true !default;
-$rs-px: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$rs-px-lg : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$rs-px-md : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$rs-px-sm : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$rs-px-smx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-
-// right percentages
-$rs-perc-on: true !default;
-$rs-perc: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$rs-perc-lg : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$rs-perc-md : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$rs-perc-sm : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$rs-perc-smx: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-
-/// text
-$text-on: true !default;
-// text-transform
-$tts-on: true !default;
-$tts: ('u': uppercase, 'n': none) !default;
-
-// text-decoration
-$tds-on: true !default;
-$tds: ('n': none, 'u': underline) !default;
-
-// text-shadow
-$tshs-on: true !default;
-$tshs: (
-  (1, 1, 1, 'white', $color-white),
-  (1, 1, 1, 'lightgray', $color-lightgray),
-  (1, 1, 1, 'gray', $color-gray),
-  (1, 1, 1, 'black', $color-black),
-) !default;
-
-// text-align
-$tas-on: true !default;
-$tas: ('l': left, 'c': center, 'r': right, 'j': justify) !default;
-$tas-lg : ('l': left, 'c': center, 'r': right, 'j': justify) !default;
-$tas-md : ('l': left, 'c': center, 'r': right, 'j': justify) !default;
-$tas-sm : ('l': left, 'c': center, 'r': right, 'j': justify) !default;
-$tas-smx: ('l': left, 'c': center, 'r': right, 'j': justify) !default;
-
-/// top
-$top-on: true !default;
-// top pixels
-$ts-px-on: true !default;
-$ts-px: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ts-px-lg : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ts-px-md : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ts-px-sm : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ts-px-smx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-
-// top percentages
-$ts-perc-on: true !default;
-$ts-perc: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$ts-perc-lg : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$ts-perc-md : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$ts-perc-sm : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$ts-perc-smx: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '33': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-
-/// width
-$width-on: true !default;
-// width pixels
-$ws-px-on: true !default;
-$ws-px: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ws-px-lg : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ws-px-md : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ws-px-sm : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$ws-px-smx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-
-// width percentages
-$ws-perc-on: true !default;
-$ws-perc: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$ws-perc-lg : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$ws-perc-md : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$ws-perc-sm : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$ws-perc-smx: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-
-// width view widths
-$ws-vw-on: true !default;
-$ws-vw: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$ws-vw-lg : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$ws-vw-md : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$ws-vw-sm : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$ws-vw-smx: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-
-// width view widths
-$ws-vh-on: true !default;
-$ws-vh: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$ws-vh-lg : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$ws-vh-md : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$ws-vh-sm : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$ws-vh-smx: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-
-// max-width
-$max-width-on: true !default;
-// max-width pixels
-$maws-px-on: true !default;
-$maws-px: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$maws-px-lg : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$maws-px-md : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$maws-px-sm : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$maws-px-smx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-
-// max-width percentages
-$maws-perc-on: true !default;
-$maws-perc: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$maws-perc-lg : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$maws-perc-md : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$maws-perc-sm : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$maws-perc-smx: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-
-// max-width view widths
-$maws-vw-on: true !default;
-$maws-vw: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$maws-vw-lg : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$maws-vw-md : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$maws-vw-sm : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$maws-vw-smx: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-
-// max-width view widths
-$maws-vh-on: true !default;
-$maws-vh: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$maws-vh-lg : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$maws-vh-md : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$maws-vh-sm : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$maws-vh-smx: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-
-// min-width
-$min-width-on: true !default;
-// min-width pixels
-$miws-px-on: true !default;
-$miws-px: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$miws-px-lg : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$miws-px-md : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$miws-px-sm : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-$miws-px-smx: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800 !default;
-
-// min-width percentages
-$miws-perc-on: true !default;
-$miws-perc: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$miws-perc-lg : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$miws-perc-md : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$miws-perc-sm : ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-$miws-perc-smx: ('1': .01, '2': .02, '3': .03, '4': .04, '5': .05, '10': .10, '12\\.25': .1225, '15': .15, '20': .20, '25': .25, '30': .30, '33\\.3333': .333333, '35': .35, '40': .40, '45': .45, '50': .50, '55': .55, '60': .60, '65': .65, '66\\.6666': .666666, '70': .70, '75': .75, '80': .80, '85': .85, '90': .90, '95': .95, '100': 1, '110': 1.1, '120': 1.2, '130': 1.3, '140': 1.4, '150': 1.5) !default;
-
-// min-width view widths
-$miws-vw-on: true !default;
-$miws-vw: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$miws-vw-lg : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$miws-vw-md : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$miws-vw-sm : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$miws-vw-smx: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-
-// min-width view widths
-$miws-vh-on: true !default;
-$miws-vh: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$miws-vh-lg : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$miws-vh-md : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$miws-vh-sm : 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-$miws-vh-smx: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 !default;
-
-
-/// word related
-$word-on: true !default;
-// word-break
-$wobs-on: true !default;
-$wobs: ('n': normal, 'k': keep-all, 'ba': break-all, 'nm': normal) !default;
-
-// word-wrap
-$wows-on: true !default;
-$wows: ('u': unrestricted, 's': suppress, 'b': break-word, 'n': none) !default;
-
-//z-index
-$zs-on: true !default;
-$zs: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 99 !default;

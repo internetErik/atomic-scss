@@ -38,6 +38,10 @@
 		&:checked ~ .toggle-sibling-target {
 			display: block;
 		}
+
+		&:checked ~ .toggle-sibling-target-ib {
+			display: inline-block;
+		}
 	}
 
 	//use border-radius to create a circle shape
@@ -47,244 +51,189 @@
 
 
 	//center elements horizontally and/or vertically
-	.vertical-align {
+	.center-vert {
 		position: relative;
 		top: 50%;
 		transform: translateY(-50%);
 	}
 
-	.horizontal-align {
+	.center-hori {
 		position: relative;
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
-	.transform-center {
+	.center {
 		position: relative;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
 
-	.horizontal-align-absolute {
+	.center-hori-abs {
 		position: absolute;
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
-	.vertical-align-absolute {
+	.center-vert-abs {
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
 	}
 
-	.transform-center-absolute {
+	.center-abs {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
 
-	.horizontal-align-fixed {
+	.center-hori-fix {
 		position: fixed;
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
-	.vertical-align-fixed {
+	.center-vert-fix {
 		position: fixed;
 		top: 50%;
 		transform: translateY(-50%);
 	}
 
-	.transform-center-fixed {
+	.center-fix {
 		position: fixed;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
 
-	@media all and (max-width: $bp-md) {
-		.vertical-align\@md {
-			position: relative;
-			top: 50%;
-			transform: translateY(-50%);
-		}
+	@each $bp in $helper-bps {
+		$name: nth(nth($bp, 1), 2);
+		$cond: nth(nth($bp, 2), 2);
+		@media all and (#{$cond}) {
+			.center-vert\@#{$name} {
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+			}
 
-		.horizontal-align\@md {
-			position: relative;
-			left: 50%;
-			transform: translateX(-50%);
-		}
+			.center-hori\@#{$name} {
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+			}
 
-		.transform-center\@md {
-			position: relative;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
+			.center\@#{$name} {
+				position: relative;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
 
-		.horizontal-align-absolute\@md {
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-		}
+			.center-hori-abs\@#{$name} {
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+			}
 
-		.vertical-align-absolute\@md {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-		}
+			.center-vert-abs\@#{$name} {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
 
-		.transform-center-absolute\@md {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
+			.center-abs\@#{$name} {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
 
-		.horizontal-align-fixed\@md {
-			position: fixed;
-			left: 50%;
-			transform: translateX(-50%);
-		}
+			.center-hori-fix\@#{$name} {
+				position: fixed;
+				left: 50%;
+				transform: translateX(-50%);
+			}
 
-		.vertical-align-fixed\@md {
-			position: fixed;
-			top: 50%;
-			transform: translateY(-50%);
-		}
+			.center-vert-fix\@#{$name} {
+				position: fixed;
+				top: 50%;
+				transform: translateY(-50%);
+			}
 
-		.transform-center-fixed\@md {
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
-	}
-
-	@media all and (max-width: $bp-sm) {
-		.vertical-align\@sm {
-			position: relative;
-			top: 50%;
-			transform: translateY(-50%);
-		}
-
-		.horizontal-align\@sm {
-			position: relative;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-
-		.transform-center\@sm {
-			position: relative;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
-
-		.horizontal-align-absolute\@sm {
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-
-		.vertical-align-absolute\@sm {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-		}
-
-		.transform-center-absolute\@sm {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
-
-		.horizontal-align-fixed\@sm {
-			position: fixed;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-
-		.vertical-align-fixed\@sm {
-			position: fixed;
-			top: 50%;
-			transform: translateY(-50%);
-		}
-
-		.transform-center-fixed\@sm {
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+			.center-fix\@#{$name} {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
 		}
 	}
 
 	//transforms
-	.rotateZ45 {
+	.rotZ45 {
 		transform: rotateZ(45deg);
 	}
 
-	.rotateZ90 {
+	.rotZ90 {
 		transform: rotateZ(90deg);
 	}
 
-	.rotateZ-45 {
+	.rotZ-45 {
 		transform: rotateZ(-45deg);
 	}
 
-	.rotateZ-90 {
+	.rotZ-90 {
 		transform: rotateZ(-90deg);
 	}
 
-	.scale50 {
+	.sca50 {
 		transform: scale(.5, .5);
 	}
 
-	.scale150 {
+	.sca150 {
 		transform: scale(1.5, 1.5);
 	}
 
-	.scale200 {
+	.sca200 {
 		transform: scale(2, 2);
 	}
 
 	//transition settings
-	.transition-opacity {
+	.trans-op {
 		transition: opacity .3s ease-in-out;
 	}
 
-	.transition-color {
+	.trans-c {
 		transition: color .3s ease-in-out;
 	}
 
-	.transition-background {
+	.trans-bg {
 		transition: background .3s ease-in-out;
 	}
 
-	.transition-transform {
+	.trans-transf {
 		transition: transform .3s ease-in-out;
 	}
 
-	.transition-top {
+	.trans-t {
 		transition: top .3s ease-in-out;
 	}
 
-	.transition-bottom {
+	.trans-b {
 		transition: bottom .3s ease-in-out;
 	}
 
-	.transition-left {
+	.trans-l {
 		transition: left .3s ease-in-out;
 	}
 
-	.transition-right {
+	.trans-r {
 		transition: right .3s ease-in-out;
 	}
 
-	.transition-all {
+	.trans-all {
 		transition: all .3s ease-in-out;
 	}
 }
