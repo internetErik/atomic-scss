@@ -15,6 +15,66 @@ It is highly recommended that you also copy the scss from `node_modules/atomic-s
 
 ## Configuring
 
+When you are generating atomic scss you aren't just generating styles, but an API that your application will use for styles (the css class names). Part of the configuration is for generating these class names, while another part is for providing the values that are going to be used.
+
+Here is the abstract syntax for adding a style.
+
+```scss
+//        : (name: '<api-media-query>', cond: '<media-query-condition>');
+$bp-sm-mx : (name: '\\@sm',             cond: 'all and (max-width: 500px)');
+
+$width: (
+//(vals: ('<api-value>': <value>,), bp: $<breakpoint-variable>),
+  (vals: ('1': 1px, '2': 2px,)),
+  (vals: ('1': 1px, '2': 2px), bp: $bp-sm-mx,),
+);
+
+// This is the variable atomic-scss uses to generate the styles
+$atomic-config:(
+//('<attribute>', '<api-base>', '<api-unit>','<api-post>', $<sass-variable>),
+  ('width',       'w',          '',          '',           $width),
+);
+
+```
+
+Classes are generated on this formula:
+
+```
+// styles generated without media queries
+.<api-base><api-unit><api-post> {
+  <attribute>: <value>;
+}
+
+// and for styles generated in media queries
+@media <media-query-condition> {
+  .<api-base><api-unit><api-media-query><api-post> {
+    <attribute>: <value>;
+  }
+}
+```
+
+This would generate:
+
+```css
+.w1 {
+  width: 1px;
+}
+.w2 {
+  width: 2px;
+}
+
+@media all and (max-width: 500px) {
+  .w1\@sm {
+    width: 1px;
+  }
+  .w2\@sm {
+    width: 2px;
+  }
+}
+```
+
+## On Version 2
+
 In this version 2 release configuration is a bit more complicated, but the trade off was:
 
 * Now extensible
@@ -25,40 +85,6 @@ In this version 2 release configuration is a bit more complicated, but the trade
 * Now you can control the syntax of the classNames generated
   * I use `p10` for `padding: 10px`, but maybe you want `p(10px)` or `p-small`. Now you can do this.
 * (Self-servicing bonus: code is much shorter and so easier to maintain for me.)
-
-### How to add a set of classes
-
-Here is the abstract syntax for adding a style.
-
-```
-//$sample-bp: (name: '<class name modifer>')
-$bp-lg-mx : (name: 'lg' , cond: 'max-width: 1024px');
-$bp-md-mx : (name: 'md' , cond: 'max-width: 768px');
-$bp-sm-mx : (name: 'sm' , cond: 'max-width: 500px');
-
-$width: (
-  (vals: ('1': 1px, '2': 2px, /*'<display value>': <value>*/)),
-  (vals: ('1': 1px, '2': 2px), bp: $bp-lg-mx,),
-  (vals: ('1': 1px, '2': 2px), bp: $bp-md-mx,),
-  (vals: ('1': 1px, '2': 2px), bp: $bp-sm-mx,),
-);
-
-$atomic-config:(
-//('<attribute>',   '<class name base>',       '<display unit>',         '<modifier at end of classname>',        $<sass variable>),
-  ('width',             'w',       '',         '',        $width),
-);
-
-```
-
-Classes are generated on this formula:
-
-```
-.<class name base><display value><><modifier>
-
-  .#{$className}#{$valueDisp}#{$postfix}#{$modifier} {
-    #{$attribute}: #{$value};
-  }
-```
 
 ## Why use this library `atomic-scss`?
 

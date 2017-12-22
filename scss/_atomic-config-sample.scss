@@ -8,17 +8,17 @@ $bp-md : 784px;
 $bp-sm : 560px;
 $bp-smx: 400px;
 
-$bp-lgx-mx: (name: '@lgx', cond: 'max-width: ' + $bp-lgx);
-$bp-lg-mx : (name: '@lg' , cond: 'max-width: ' + $bp-lg);
-$bp-md-mx : (name: '@md' , cond: 'max-width: ' + $bp-md);
-$bp-sm-mx : (name: '@sm' , cond: 'max-width: ' + $bp-sm);
-$bp-smx-mx: (name: '@smx', cond: 'max-width: ' + $bp-smx);
+$bp-lgx-mx: (name: '\\@lgx', cond: 'all and (max-width: ' + $bp-lgx + ')');
+$bp-lg-mx : (name: '\\@lg' , cond: 'all and (max-width: ' + $bp-lg + ')');
+$bp-md-mx : (name: '\\@md' , cond: 'all and (max-width: ' + $bp-md + ')');
+$bp-sm-mx : (name: '\\@sm' , cond: 'all and (max-width: ' + $bp-sm + ')');
+$bp-smx-mx: (name: '\\@smx', cond: 'all and (max-width: ' + $bp-smx + ')');
 
-$bp-lgx-mn: (name: '@lgx-mn', cond: 'min-width: ' + $bp-lgx);
-$bp-lg-mn : (name: '@lg-mn',  cond: 'min-width: ' + $bp-lg);
-$bp-md-mn : (name: '@md-mn',  cond: 'min-width: ' + $bp-md);
-$bp-sm-mn : (name: '@sm-mn',  cond: 'min-width: ' + $bp-sm);
-$bp-smx-mn: (name: '@smx-mn', cond: 'min-width: ' + $bp-smx);
+$bp-lgx-mn: (name: '\\@lgx-mn', cond: 'all and (min-width: ' + $bp-lgx + ')');
+$bp-lg-mn : (name: '\\@lg-mn',  cond: 'all and (min-width: ' + $bp-lg + ')');
+$bp-md-mn : (name: '\\@md-mn',  cond: 'all and (min-width: ' + $bp-md + ')');
+$bp-sm-mn : (name: '\\@sm-mn',  cond: 'all and (min-width: ' + $bp-sm + ')');
+$bp-smx-mn: (name: '\\@smx-mn', cond: 'all and (min-width: ' + $bp-smx + ')');
 
 // some default ranges
 $px-map: ('0': 0, '1': 1px, '5': 5px, '10': 10px, '15': 15px, '20': 20px, '25': 25px, '30': 30px, '40': 40px, '44': 44px, '50': 50px, '60': 60px, '70': 70px, '75': 75px, '80': 80px, '90': 90px, '100': 100px, '125': 125px, '150': 150px, '175': 175px, '200': 200px, '225': 225px, '250': 250px, '275': 275px, '300': 300px, '325': 325px, '350': 350px, '375': 375px, '400': 400px, '500': 500px, '600': 600px, '700': 700px, '800': 800px,);

@@ -1,5 +1,5 @@
-var gulp         = require('gulp'),
-    sass         = require('gulp-sass');
+var gulp = require('gulp'),
+    sass = require('gulp-sass');
 
 /*
  * Create variables for our project paths so we can change in one place

@@ -1,17 +1,17 @@
 //
 // All default breakpoints
 //
-$bp-lgx: (name: '@lgx', cond: 'max-width: 1500px') !default;
-$bp-lg : (name: '@lg' , cond: 'max-width: 1024px') !default;
-$bp-md : (name: '@md' , cond: 'max-width: 768px') !default;
-$bp-sm : (name: '@sm' , cond: 'max-width: 500px') !default;
-$bp-smx: (name: '@smx', cond: 'max-width: 400px') !default;
+$bp-lgx: (name: '\\@lgx', cond: 'all and (max-width: 1500px)') !default;
+$bp-lg : (name: '\\@lg' , cond: 'all and (max-width: 1024px)') !default;
+$bp-md : (name: '\\@md' , cond: 'all and (max-width: 768px)') !default;
+$bp-sm : (name: '\\@sm' , cond: 'all and (max-width: 500px)') !default;
+$bp-smx: (name: '\\@smx', cond: 'all and (max-width: 400px)') !default;
 
-$bp-lgx-mn: (name: '@lgx-mn', cond: 'min-width: 1500px') !default;
-$bp-lg-mn : (name: '@lg-mn', cond: 'min-width: 1024px') !default;
-$bp-md-mn : (name: '@md-mn', cond: 'min-width: 768px') !default;
-$bp-sm-mn : (name: '@sm-mn', cond: 'min-width: 500px') !default;
-$bp-smx-mn: (name: '@smx-mn', cond: 'min-width: 400px') !default;
+$bp-lgx-mn: (name: '\\@lgx-mn', cond: 'all and (min-width: 1500px)') !default;
+$bp-lg-mn : (name: '\\@lg-mn',  cond: 'all and (min-width: 1024px)') !default;
+$bp-md-mn : (name: '\\@md-mn',  cond: 'all and (min-width: 768px)') !default;
+$bp-sm-mn : (name: '\\@sm-mn',  cond: 'all and (min-width: 500px)') !default;
+$bp-smx-mn: (name: '\\@smx-mn', cond: 'all and (min-width: 400px)') !default;
 
 // wire framing colors
 $color-white    : #ffffff !default;

@@ -16,11 +16,11 @@
         @warn Problem with formatting of $attr
       }
       $vals: nth(nth($style, 1), 2);
-      $bp: nth(nth($style, 2), 2);
+      $bp  : nth(nth($style, 2), 2);
       $bp-name: nth(nth($bp, 1), 2);
       $bp-cond: nth(nth($bp, 2), 2);
-      $post: #{$cpost + $bp-name};
-      @media all and (#{$bp-cond}) {
+      $post: $cpost + $bp-name;
+      @media #{$bp-cond} {
         @each $val in $vals {
           @include atomicClass($cname, $post, $attr, $mod, $val);
         }
@@ -30,9 +30,9 @@
 }
 
 @mixin atomicClass($className, $postfix, $attribute, $modifier, $val) {
-  $valueDisp: nth($val, 1);
-  $value    : nth($val, 2);
-  .#{$className}#{$valueDisp}#{$postfix}#{$modifier} {
+  $apiValue: nth($val, 1);
+  $value   : nth($val, 2);
+  .#{$className}#{$apiValue}#{$postfix}#{$modifier} {
     #{$attribute}: #{$value};
   }
 }

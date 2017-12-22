@@ -111,7 +111,7 @@
 	@each $bp in $helper-bps {
 		$name: nth(nth($bp, 1), 2);
 		$cond: nth(nth($bp, 2), 2);
-		@media all and (#{$cond}) {
+		@media #{$cond} {
 			.center-vert\@#{$name} {
 				position: relative;
 				top: 50%;
