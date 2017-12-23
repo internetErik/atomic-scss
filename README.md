@@ -11,13 +11,13 @@ Import the scss into your own project from `node_modules` or copy the files into
 
 *(See example usage [here](https://github.com/internetErik/atomic-scss-starter-kit/blob/master/client/scss/atomic.scss))*
 
-It is highly recommended that you also copy the scss from `node_modules/atomic-scss/scss/[_atomic-config-sample.scss](_atomic-config-sample.scss)` into your project and use it as a starting point to configure atomic scss.
+It is highly recommended that you also copy the scss from [_atomic-config-sample.scss](_atomic-config-sample.scss) into your project and use it as a starting point to configure `atomic-scss`.
 
 ## Configuring
 
-When you are generating atomic scss you aren't just generating styles, but an API that your application will use for styles (the css class names). Part of the configuration is for generating these class names, while another part is for providing the values that are going to be used.
+When you are generating atomic classes think of as generating an API that your application will use for styles (the css class names). Part of the configuration is for generating these class names, while another part is for providing the values that are going to be used.
 
-Here is the abstract syntax for adding a style.
+Here is some sample configuration:
 
 ```scss
 //        : (name: '<api-media-query>', cond: '<media-query-condition>');
@@ -161,6 +161,9 @@ Here are some projects I have that use `atomic-scss` so you can work by example:
 
 * [static-site-boilerplate](https://github.com/internetErik/static-site-boilerplate)
   * A boilerplate for making static websites
+
+Older versions of `atomic-scss` used in these projects:
+
 * [keystone4-universal-react](https://github.com/internetErik/keystone4-universal-react)
   * A boilerplate for universal react websites/apps on keystone
 * [atomic-scss-starter-kit](https://github.com/internetErik/atomic-scss-starter-kit/)
