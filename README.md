@@ -11,7 +11,7 @@ Import the scss into your own project from `node_modules` or copy the files into
 
 *(See example usage [here](https://github.com/internetErik/atomic-scss-starter-kit/blob/master/client/scss/atomic.scss))*
 
-It is highly recommended that you also copy the scss from `node_modules/atomic-scss/scss/_atomic-config-sample.scss` into your project and use it as a starting point to configure atomic scss.
+It is highly recommended that you also copy the scss from `node_modules/atomic-scss/scss/[_atomic-config-sample.scss](_atomic-config-sample.scss)` into your project and use it as a starting point to configure atomic scss.
 
 ## Configuring
 
@@ -29,12 +29,75 @@ $width: (
   (vals: ('1': 1px, '2': 2px), bp: $bp-sm-mx,),
 );
 
+$width-perc: (
+  (vals: ('10': 10%, '20': 20%,)),
+  (vals: ('10': 10%, '20': 20%,), bp: $bp-sm-mx,),
+);
+
 // This is the variable atomic-scss uses to generate the styles
 $atomic-config:(
 //('<attribute>', '<api-base>', '<api-unit>','<api-post>', $<sass-variable>),
   ('width',       'w',          '',          '',           $width),
+  // generate percentages
+  ('width',       'w',          '\\%',       '',           $width-perc),
+  // generate hover styles
+  ('width',       'w',          '\\%\\:h',   ':hover',     $width-perc),
 );
 
+```
+
+This would generate:
+
+```css
+.w1 {
+  width: 1px;
+}
+
+.w2 {
+  width: 2px;
+}
+
+.w10\% {
+  width: 10%;
+}
+
+.w20\% {
+  width: 20%;
+}
+
+.w10\%\:h:hover {
+  width: 10%;
+}
+
+.w20\%\:h:hover {
+  width: 20%;
+}
+
+@media all and (max-width: 500px) {
+  .w1\@sm {
+    width: 1px;
+  }
+
+  .w2\@sm {
+    width: 2px;
+  }
+
+  .w10\%\@sm {
+    width: 10%;
+  }
+
+  .w20\%\@sm {
+    width: 20%;
+  }
+
+  .w10\%\:h\@sm:hover {
+    width: 10%;
+  }
+
+  .w20\%\:h\@sm:hover {
+    width: 20%;
+  }
+}
 ```
 
 Classes are generated on this formula:
@@ -49,26 +112,6 @@ Classes are generated on this formula:
 @media <media-query-condition> {
   .<api-base><api-unit><api-media-query><api-post> {
     <attribute>: <value>;
-  }
-}
-```
-
-This would generate:
-
-```css
-.w1 {
-  width: 1px;
-}
-.w2 {
-  width: 2px;
-}
-
-@media all and (max-width: 500px) {
-  .w1\@sm {
-    width: 1px;
-  }
-  .w2\@sm {
-    width: 2px;
   }
 }
 ```
