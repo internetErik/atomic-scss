@@ -11,7 +11,7 @@ Import the scss into your own project from `node_modules` or copy the files into
 
 *(See example usage [here](https://github.com/internetErik/atomic-scss-starter-kit/blob/master/client/scss/atomic.scss))*
 
-It is highly recommended that you also copy the scss from [_atomic-config-sample.scss](_atomic-config-sample.scss) into your project and use it as a starting point to configure `atomic-scss`.
+It is highly recommended that you also copy the scss from [_atomic-config-sample.scss](scss/_atomic-config-sample.scss) into your project and use it as a starting point to configure `atomic-scss`.
 
 ## Configuring
 
