@@ -26,6 +26,19 @@ $perc-map: ('1': 1%, '2': 2%, '3': 3%, '4': 4%, '5': 5%, '10': 10%, '12\\.25': 1
 $vw-map: ('0': 0vw, '1': 1vw, '5': 5vw, '10': 10vw, '15': 15vw, '20': 20vw, '25': 25vw, '30': 30vw, '40': 40vw, '44': 44vw, '50': 50vw, '60': 60vw, '70': 70vw, '75': 75vw, '80': 80vw, '90': 90vw, '100': 100vw, '150': 150vw, '200': 200vw,);
 $vh-map: ('0': 0vh, '1': 1vh, '5': 5vh, '10': 10vh, '15': 15vh, '20': 20vh, '25': 25vh, '30': 30vh, '40': 40vh, '44': 44vh, '50': 50vh, '60': 60vh, '70': 70vh, '75': 75vh, '80': 80vh, '90': 90vh, '100': 100vh, '150': 150vh, '200': 200vh,);
 
+$breakpoint-order: (
+  $bp-lgx-mx,
+  $bp-lg-mx ,
+  $bp-md-mx ,
+  $bp-sm-mx ,
+  $bp-smx-mx,
+  $bp-lgx-mn,
+  $bp-lg-mn ,
+  $bp-md-mn ,
+  $bp-sm-mn ,
+  $bp-smx-mn,
+);
+
 // toggle for helper classes
 $helpers-on: true;
 
