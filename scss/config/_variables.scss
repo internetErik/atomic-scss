@@ -1,11 +1,11 @@
 //
 // All default breakpoints
 //
-$bp-lgx: (name: '\\@lgx', cond: 'all and (max-width: 1500px)') !default;
-$bp-lg : (name: '\\@lg' , cond: 'all and (max-width: 1024px)') !default;
-$bp-md : (name: '\\@md' , cond: 'all and (max-width: 768px)') !default;
-$bp-sm : (name: '\\@sm' , cond: 'all and (max-width: 500px)') !default;
-$bp-smx: (name: '\\@smx', cond: 'all and (max-width: 400px)') !default;
+$bp-lgx-mx: (name: '\\@lgx', cond: 'all and (max-width: 1500px)') !default;
+$bp-lg-mx : (name: '\\@lg' , cond: 'all and (max-width: 1024px)') !default;
+$bp-md-mx : (name: '\\@md' , cond: 'all and (max-width: 768px)') !default;
+$bp-sm-mx : (name: '\\@sm' , cond: 'all and (max-width: 500px)') !default;
+$bp-smx-mx: (name: '\\@smx', cond: 'all and (max-width: 400px)') !default;
 
 $bp-lgx-mn: (name: '\\@lgx-mn', cond: 'all and (min-width: 1500px)') !default;
 $bp-lg-mn : (name: '\\@lg-mn',  cond: 'all and (min-width: 1024px)') !default;
@@ -26,11 +26,11 @@ $vw-map: ('0': 0vw, '1': 1vw, '5': 5vw, '10': 10vw, '15': 15vw, '20': 20vw, '25'
 $vh-map: ('0': 0vh, '1': 1vh, '5': 5vh, '10': 10vh, '15': 15vh, '20': 20vh, '25': 25vh, '30': 30vh, '40': 40vh, '44': 44vh, '50': 50vh, '60': 60vh, '70': 70vh, '75': 75vh, '80': 80vh, '90': 90vh, '100': 100vh, '150': 150vh, '200': 200vh,) !default;
 
 $breakpoint-order: (
-  $bp-lgx,
-  $bp-lg,
-  $bp-md,
-  $bp-sm,
-  $bp-smx,
+  $bp-lgx-mx,
+  $bp-lg-mx,
+  $bp-md-mx,
+  $bp-sm-mx,
+  $bp-smx-mx,
   $bp-lgx-mn,
   $bp-lg-mn ,
   $bp-md-mn ,
@@ -43,11 +43,11 @@ $helpers-on: true !default;
 
 // breakpoints used for generating helpers
 $helper-bps: (
-  $bp-lgx,
-  $bp-lg ,
-  $bp-md ,
-  $bp-sm ,
-  $bp-smx,
+  $bp-lgx-mx,
+  $bp-lg-mx ,
+  $bp-md-mx ,
+  $bp-sm-mx ,
+  $bp-smx-mx,
   $bp-lgx-mn,
   $bp-lg-mn ,
   $bp-md-mn ,
@@ -87,23 +87,23 @@ $borderRadius: (
 // top t, bottom b, left l, right r
 $tblr: (
   (vals: $px-map),
-  (vals: $px-map, bp: $bp-lg,),
-  (vals: $px-map, bp: $bp-md,),
-  (vals: $px-map, bp: $bp-sm,),
+  (vals: $px-map, bp: $bp-lg-mx,),
+  (vals: $px-map, bp: $bp-md-mx,),
+  (vals: $px-map, bp: $bp-sm-mx,),
 ) !default;
 
 $tblr-vw: (
   (vals: $vw-map),
-  (vals: $vw-map, bp: $bp-lg,),
-  (vals: $vw-map, bp: $bp-md,),
-  (vals: $vw-map, bp: $bp-sm,),
+  (vals: $vw-map, bp: $bp-lg-mx,),
+  (vals: $vw-map, bp: $bp-md-mx,),
+  (vals: $vw-map, bp: $bp-sm-mx,),
 ) !default;
 
 $tblr-perc: (
   (vals: $perc-map),
-  (vals: $perc-map, bp: $bp-lg,),
-  (vals: $perc-map, bp: $bp-md,),
-  (vals: $perc-map, bp: $bp-sm,),
+  (vals: $perc-map, bp: $bp-lg-mx,),
+  (vals: $perc-map, bp: $bp-md-mx,),
+  (vals: $perc-map, bp: $bp-sm-mx,),
 ) !default;
 
 // clear cl
@@ -139,9 +139,9 @@ $cursor: (
 // display d
 $display: (
   (vals: ('n': none, '-i': inline, 'b': block, 'ib': 'inline-block', 'f': flex, 'if': inline-flex, 'g': grid)),
-  (vals: ('n': none, '-i': inline, 'b': block, 'ib': 'inline-block', 'f': flex, 'if': inline-flex, 'g': grid), bp: $bp-lg),
-  (vals: ('n': none, '-i': inline, 'b': block, 'ib': 'inline-block', 'f': flex, 'if': inline-flex, 'g': grid), bp: $bp-md),
-  (vals: ('n': none, '-i': inline, 'b': block, 'ib': 'inline-block', 'f': flex, 'if': inline-flex, 'g': grid), bp: $bp-sm),
+  (vals: ('n': none, '-i': inline, 'b': block, 'ib': 'inline-block', 'f': flex, 'if': inline-flex, 'g': grid), bp: $bp-lg-mx),
+  (vals: ('n': none, '-i': inline, 'b': block, 'ib': 'inline-block', 'f': flex, 'if': inline-flex, 'g': grid), bp: $bp-md-mx),
+  (vals: ('n': none, '-i': inline, 'b': block, 'ib': 'inline-block', 'f': flex, 'if': inline-flex, 'g': grid), bp: $bp-sm-mx),
 ) !default;
 
 //********************
@@ -171,9 +171,9 @@ $flexBasis: (
 // flex-direction fxdr
 $flexDirection: (
   (vals: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse),),
-  (vals: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse), bp: $bp-lg),
-  (vals: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse), bp: $bp-md),
-  (vals: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse), bp: $bp-sm),
+  (vals: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse), bp: $bp-lg-mx),
+  (vals: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse), bp: $bp-md-mx),
+  (vals: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse), bp: $bp-sm-mx),
 ) !default;
 
 // flex-wrap fxw
@@ -194,9 +194,9 @@ $alignSelf: (
 // justify-content jc
 $justifyContent: (
   (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around),),
-  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-lg),
-  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-md),
-  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-sm),
+  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-lg-mx),
+  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-md-mx),
+  (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-sm-mx),
 ) !default;
 
 // order ord
@@ -210,9 +210,9 @@ $order: (
 // float
 $float: (
   (vals: ('l': left, 'r': right, 'n': none),),
-  (vals: ('l': left, 'r': right, 'n': none), bp: $bp-lg),
-  (vals: ('l': left, 'r': right, 'n': none), bp: $bp-md),
-  (vals: ('l': left, 'r': right, 'n': none), bp: $bp-sm),
+  (vals: ('l': left, 'r': right, 'n': none), bp: $bp-lg-mx),
+  (vals: ('l': left, 'r': right, 'n': none), bp: $bp-md-mx),
+  (vals: ('l': left, 'r': right, 'n': none), bp: $bp-sm-mx),
 ) !default;
 
 //********************
@@ -229,16 +229,16 @@ $fzs: ('0': 0, '10': 10px, '12': 12px, '13': 13px, '14': 14px, '15': 15px, '16':
 $fzs-vw: ('0': 0vw, '1': 1vw, '1\\.3': 1.3vw, '2': 2vw, '2\\.5': 2.5vw, '3': 3vw, '4': 4vw, '5': 5vw, '10': 10vw, '15': 15vw,) !default;
 $fontSize: (
   (vals: $fzs),
-  (vals: $fzs, bp: $bp-lg, ),
-  (vals: $fzs, bp: $bp-md, ),
-  (vals: $fzs, bp: $bp-sm, ),
+  (vals: $fzs, bp: $bp-lg-mx, ),
+  (vals: $fzs, bp: $bp-md-mx, ),
+  (vals: $fzs, bp: $bp-sm-mx, ),
 ) !default;
 
 $fontSize-vw: (
   (vals: $fzs-vw),
-  (vals: $fzs-vw, bp: $bp-lg, ),
-  (vals: $fzs-vw, bp: $bp-md, ),
-  (vals: $fzs-vw, bp: $bp-sm, ),
+  (vals: $fzs-vw, bp: $bp-lg-mx, ),
+  (vals: $fzs-vw, bp: $bp-md-mx, ),
+  (vals: $fzs-vw, bp: $bp-sm-mx, ),
 ) !default;
 
 // font-style fs
@@ -262,23 +262,23 @@ $letterSpacing: (
 // height h
 $height: (
   (vals: $px-map),
-  (vals: $px-map, bp: $bp-lg,),
-  (vals: $px-map, bp: $bp-md,),
-  (vals: $px-map, bp: $bp-sm,),
+  (vals: $px-map, bp: $bp-lg-mx,),
+  (vals: $px-map, bp: $bp-md-mx,),
+  (vals: $px-map, bp: $bp-sm-mx,),
 ) !default;
 
 $height-vw: (
   (vals: $vw-map),
-  (vals: $vw-map, bp: $bp-lg,),
-  (vals: $vw-map, bp: $bp-md,),
-  (vals: $vw-map, bp: $bp-sm,),
+  (vals: $vw-map, bp: $bp-lg-mx,),
+  (vals: $vw-map, bp: $bp-md-mx,),
+  (vals: $vw-map, bp: $bp-sm-mx,),
 ) !default;
 
 $height-perc: (
   (vals: $perc-map),
-  (vals: $perc-map, bp: $bp-lg,),
-  (vals: $perc-map, bp: $bp-md,),
-  (vals: $perc-map, bp: $bp-sm,),
+  (vals: $perc-map, bp: $bp-lg-mx,),
+  (vals: $perc-map, bp: $bp-md-mx,),
+  (vals: $perc-map, bp: $bp-sm-mx,),
 ) !default;
 
 // list-style ls
@@ -289,23 +289,23 @@ $listStyle: (
 // margin m, margin-top mt, margin-bottom mb, margin-left ml, margin-right mr
 $margin: (
   (vals: $px-map),
-  (vals: $px-map, bp: $bp-lg,),
-  (vals: $px-map, bp: $bp-md,),
-  (vals: $px-map, bp: $bp-sm,),
+  (vals: $px-map, bp: $bp-lg-mx,),
+  (vals: $px-map, bp: $bp-md-mx,),
+  (vals: $px-map, bp: $bp-sm-mx,),
 ) !default;
 
 $margin-vw: (
   (vals: $vw-map),
-  (vals: $vw-map, bp: $bp-lg,),
-  (vals: $vw-map, bp: $bp-md,),
-  (vals: $vw-map, bp: $bp-sm,),
+  (vals: $vw-map, bp: $bp-lg-mx,),
+  (vals: $vw-map, bp: $bp-md-mx,),
+  (vals: $vw-map, bp: $bp-sm-mx,),
 ) !default;
 
 $margin-perc: (
   (vals: $perc-map),
-  (vals: $perc-map, bp: $bp-lg,),
-  (vals: $perc-map, bp: $bp-md,),
-  (vals: $perc-map, bp: $bp-sm,),
+  (vals: $perc-map, bp: $bp-lg-mx,),
+  (vals: $perc-map, bp: $bp-md-mx,),
+  (vals: $perc-map, bp: $bp-sm-mx,),
 ) !default;
 
 // opacity op
@@ -322,31 +322,31 @@ $overflow: (
 // padding p, padding-top pt, padding-bottom pb, padding-left pl, padding-right pr
 $padding: (
   (vals: $px-map),
-  (vals: $px-map, bp: $bp-lg,),
-  (vals: $px-map, bp: $bp-md,),
-  (vals: $px-map, bp: $bp-sm,),
+  (vals: $px-map, bp: $bp-lg-mx,),
+  (vals: $px-map, bp: $bp-md-mx,),
+  (vals: $px-map, bp: $bp-sm-mx,),
 ) !default;
 
 $padding-vw: (
   (vals: $vw-map),
-  (vals: $vw-map, bp: $bp-lg,),
-  (vals: $vw-map, bp: $bp-md,),
-  (vals: $vw-map, bp: $bp-sm,),
+  (vals: $vw-map, bp: $bp-lg-mx,),
+  (vals: $vw-map, bp: $bp-md-mx,),
+  (vals: $vw-map, bp: $bp-sm-mx,),
 ) !default;
 
 $padding-perc: (
   (vals: $perc-map),
-  (vals: $perc-map, bp: $bp-lg,),
-  (vals: $perc-map, bp: $bp-md,),
-  (vals: $perc-map, bp: $bp-sm,),
+  (vals: $perc-map, bp: $bp-lg-mx,),
+  (vals: $perc-map, bp: $bp-md-mx,),
+  (vals: $perc-map, bp: $bp-sm-mx,),
 ) !default;
 
 // position pos
 $position: (
   (vals: ('s': static, 'r': relative, 'a': absolute, 'f': fixed)),
-  (vals: ('s': static, 'r': relative, 'a': absolute, 'f': fixed), bp: $bp-lg,),
-  (vals: ('s': static, 'r': relative, 'a': absolute, 'f': fixed), bp: $bp-md,),
-  (vals: ('s': static, 'r': relative, 'a': absolute, 'f': fixed), bp: $bp-sm,),
+  (vals: ('s': static, 'r': relative, 'a': absolute, 'f': fixed), bp: $bp-lg-mx,),
+  (vals: ('s': static, 'r': relative, 'a': absolute, 'f': fixed), bp: $bp-md-mx,),
+  (vals: ('s': static, 'r': relative, 'a': absolute, 'f': fixed), bp: $bp-sm-mx,),
 ) !default;
 
 //********************
@@ -383,9 +383,9 @@ $fill : (
 // text-align ta
 $textAlign: (
   (vals: ('l': left, 'c': center, 'r': right, 'j': justify),),
-  (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-lg,),
-  (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-md,),
-  (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-sm,),
+  (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-lg-mx,),
+  (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-md-mx,),
+  (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-sm-mx,),
 ) !default;
 
 // text-decoration td
@@ -419,23 +419,23 @@ $lineHeight: (
 // width w
 $width: (
   (vals: $px-map),
-  (vals: $px-map, bp: $bp-lg,),
-  (vals: $px-map, bp: $bp-md,),
-  (vals: $px-map, bp: $bp-sm,),
+  (vals: $px-map, bp: $bp-lg-mx,),
+  (vals: $px-map, bp: $bp-md-mx,),
+  (vals: $px-map, bp: $bp-sm-mx,),
 ) !default;
 
 $width-vw: (
   (vals: $vw-map),
-  (vals: $vw-map, bp: $bp-lg,),
-  (vals: $vw-map, bp: $bp-md,),
-  (vals: $vw-map, bp: $bp-sm,),
+  (vals: $vw-map, bp: $bp-lg-mx,),
+  (vals: $vw-map, bp: $bp-md-mx,),
+  (vals: $vw-map, bp: $bp-sm-mx,),
 ) !default;
 
 $width-perc: (
   (vals: $perc-map),
-  (vals: $perc-map, bp: $bp-lg,),
-  (vals: $perc-map, bp: $bp-md,),
-  (vals: $perc-map, bp: $bp-sm,),
+  (vals: $perc-map, bp: $bp-lg-mx,),
+  (vals: $perc-map, bp: $bp-md-mx,),
+  (vals: $perc-map, bp: $bp-sm-mx,),
 ) !default;
 
 // vertical-align va
