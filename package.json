@@ -1,7 +1,7 @@
 {
   "name": "atomic-scss",
-  "version": "2.1.0",
-  "description": "Atomic SCSS library with additional helpers",
+  "version": "3.0.0",
+  "description": "Atomic SCSS library",
   "main": "gulpfile.js",
   "scripts": {
     "build": "gulp"

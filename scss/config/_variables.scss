@@ -38,23 +38,6 @@ $breakpoint-order: (
   $bp-smx-mn,
 ) !default;
 
-// toggle for helpers
-$helpers-on: true !default;
-
-// breakpoints used for generating helpers
-$helper-bps: (
-  $bp-lgx,
-  $bp-lg ,
-  $bp-md ,
-  $bp-sm ,
-  $bp-smx,
-  $bp-lgx-mn,
-  $bp-lg-mn ,
-  $bp-md-mn ,
-  $bp-sm-mn ,
-  $bp-smx-mn,
-) !default;
-
 //
 // Start style config variables
 //
