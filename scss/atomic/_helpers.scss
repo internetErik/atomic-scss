@@ -42,6 +42,81 @@
 		&:checked ~ .toggle-sibling-target-ib {
 			display: inline-block;
 		}
+
+		&:checked ~ .toggle-sibling-target-dn {
+			display: none;
+		}
+	}
+
+	.toggle-sibling\:h {
+		& ~ .toggle-sibling-target {
+			display: none;
+		}
+
+		&:hover ~ .toggle-sibling-target,
+		.toggle-sibling-target:hover {
+			display: block;
+		}
+
+		&:hover ~ .toggle-sibling-target-ib,
+		.toggle-sibling-target-ib:hover {
+			display: inline-block;
+		}
+
+		&:hover ~ .toggle-sibling-target-dn {
+			display: none;
+		}
+	}
+
+	.toggle-children\:h {
+	  .toggle-children-target {
+	    display: none;
+	  }
+
+	  &:hover .toggle-children-target,
+	  .toggle-children-target:hover {
+	    display: block;
+	  }
+
+	  &:hover .toggle-children-target-ib,
+	  .toggle-children-target-ib:hover {
+	    display: inline-block;
+	  }
+
+	  &:hover .toggle-children-target-dn {
+	    display: none;
+	  }
+	}
+
+	@each $bp in $helper-bps {
+		$name: nth(nth($bp, 1), 2);
+		$cond: nth(nth($bp, 2), 2);
+
+		@media #{$cond} {
+			.toggle-sibling\:h\@#{$name} {
+				& ~ .toggle-sibling-target {
+					display: none;
+				}
+
+				&:hover ~ .toggle-sibling-target,
+				.toggle-sibling-target:hover {
+					display: block;
+				}
+
+				&:hover ~ .toggle-sibling-target-ib,
+				.toggle-sibling-target-ib:hover {
+					display: inline-block;
+				}
+
+				&:hover ~ .toggle-sibling-target-dn {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.hide-last-child *:last-child {
+		display: none;
 	}
 
 	//use border-radius to create a circle shape
@@ -49,60 +124,18 @@
 		border-radius: 100%;
 	}
 
-
 	//center elements horizontally and/or vertically
 	.center-vert {
-		position: relative;
 		top: 50%;
 		transform: translateY(-50%);
 	}
 
 	.center-hori {
-		position: relative;
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
 	.center {
-		position: relative;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-
-	.center-hori-abs {
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-
-	.center-vert-abs {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.center-abs {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-
-	.center-hori-fix {
-		position: fixed;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-
-	.center-vert-fix {
-		position: fixed;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.center-fix {
-		position: fixed;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
@@ -111,62 +144,28 @@
 	@each $bp in $helper-bps {
 		$name: nth(nth($bp, 1), 2);
 		$cond: nth(nth($bp, 2), 2);
+
 		@media #{$cond} {
 			.center-vert\@#{$name} {
-				position: relative;
 				top: 50%;
 				transform: translateY(-50%);
 			}
 
-			.center-hori\@#{$name} {
-				position: relative;
+			.center-hori\@#{$name} {=
 				left: 50%;
 				transform: translateX(-50%);
 			}
 
 			.center\@#{$name} {
-				position: relative;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
 			}
 
-			.center-hori-abs\@#{$name} {
-				position: absolute;
-				left: 50%;
-				transform: translateX(-50%);
-			}
-
-			.center-vert-abs\@#{$name} {
-				position: absolute;
-				top: 50%;
-				transform: translateY(-50%);
-			}
-
-			.center-abs\@#{$name} {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
-
-			.center-hori-fix\@#{$name} {
-				position: fixed;
-				left: 50%;
-				transform: translateX(-50%);
-			}
-
-			.center-vert-fix\@#{$name} {
-				position: fixed;
-				top: 50%;
-				transform: translateY(-50%);
-			}
-
-			.center-fix\@#{$name} {
-				position: fixed;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
+			.center-off\@#{$name} {
+				top: auto;
+				left: auto;
+				transform: initial;
 			}
 		}
 	}
