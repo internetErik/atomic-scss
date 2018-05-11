@@ -1,6 +1,6 @@
 {
   "name": "atomic-scss",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Atomic SCSS library",
   "main": "gulpfile.js",
   "scripts": {
@@ -14,6 +14,8 @@
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^4.0.1"
+  },
+  "dependencies": {
   }
 }

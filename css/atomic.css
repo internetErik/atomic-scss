@@ -1396,77 +1396,14 @@
 .ord99 {
   order: 99; }
 
-.fl0 {
-  float: 0; }
+.fll {
+  float: left; }
 
-.fl10 {
-  float: 10px; }
+.flr {
+  float: right; }
 
-.fl12 {
-  float: 12px; }
-
-.fl13 {
-  float: 13px; }
-
-.fl14 {
-  float: 14px; }
-
-.fl15 {
-  float: 15px; }
-
-.fl16 {
-  float: 16px; }
-
-.fl17 {
-  float: 17px; }
-
-.fl18 {
-  float: 18px; }
-
-.fl19 {
-  float: 19px; }
-
-.fl20 {
-  float: 20px; }
-
-.fl21 {
-  float: 21px; }
-
-.fl22 {
-  float: 22px; }
-
-.fl23 {
-  float: 23px; }
-
-.fl24 {
-  float: 24px; }
-
-.fl25 {
-  float: 25px; }
-
-.fl26 {
-  float: 26px; }
-
-.fl27 {
-  float: 27px; }
-
-.fl28 {
-  float: 28px; }
-
-.fl32 {
-  float: 32px; }
-
-.fl34 {
-  float: 34px; }
-
-.fl36 {
-  float: 36px; }
-
-.fl42 {
-  float: 42px; }
-
-.fl48 {
-  float: 48px; }
+.fln {
+  float: none; }
 
 .ffs {
   font-family: serif; }
@@ -5053,6 +4990,30 @@
 .lh2 {
   line-height: 2; }
 
+.trf-rz45 {
+  transform: rotateZ(45deg); }
+
+.trf-rz-45 {
+  transform: rotateZ(-45deg); }
+
+.trf-rz90 {
+  transform: rotateZ(90deg); }
+
+.trf-rz-90 {
+  transform: rotateZ(-90deg); }
+
+.trf-rz180 {
+  transform: rotateZ(180deg); }
+
+.trs-bgc-0\.3s {
+  transition: background-color 0.3s; }
+
+.trs-c-0\.3s {
+  transition: color 0.3s; }
+
+.trs-all-0\.3s {
+  transition: all 0.3s; }
+
 .w0 {
   width: 0; }
 
@@ -6619,54 +6580,12 @@
     justify-content: space-around; } }
 
 @media all and (max-width: 1024px) {
-  .fl0\@lg {
-    float: 0; }
-  .fl10\@lg {
-    float: 10px; }
-  .fl12\@lg {
-    float: 12px; }
-  .fl13\@lg {
-    float: 13px; }
-  .fl14\@lg {
-    float: 14px; }
-  .fl15\@lg {
-    float: 15px; }
-  .fl16\@lg {
-    float: 16px; }
-  .fl17\@lg {
-    float: 17px; }
-  .fl18\@lg {
-    float: 18px; }
-  .fl19\@lg {
-    float: 19px; }
-  .fl20\@lg {
-    float: 20px; }
-  .fl21\@lg {
-    float: 21px; }
-  .fl22\@lg {
-    float: 22px; }
-  .fl23\@lg {
-    float: 23px; }
-  .fl24\@lg {
-    float: 24px; }
-  .fl25\@lg {
-    float: 25px; }
-  .fl26\@lg {
-    float: 26px; }
-  .fl27\@lg {
-    float: 27px; }
-  .fl28\@lg {
-    float: 28px; }
-  .fl32\@lg {
-    float: 32px; }
-  .fl34\@lg {
-    float: 34px; }
-  .fl36\@lg {
-    float: 36px; }
-  .fl42\@lg {
-    float: 42px; }
-  .fl48\@lg {
-    float: 48px; } }
+  .fll\@lg {
+    float: left; }
+  .flr\@lg {
+    float: right; }
+  .fln\@lg {
+    float: none; } }
 
 @media all and (max-width: 1024px) {
   .fz0\@lg {
@@ -10279,54 +10198,12 @@
     justify-content: space-around; } }
 
 @media all and (max-width: 768px) {
-  .fl0\@md {
-    float: 0; }
-  .fl10\@md {
-    float: 10px; }
-  .fl12\@md {
-    float: 12px; }
-  .fl13\@md {
-    float: 13px; }
-  .fl14\@md {
-    float: 14px; }
-  .fl15\@md {
-    float: 15px; }
-  .fl16\@md {
-    float: 16px; }
-  .fl17\@md {
-    float: 17px; }
-  .fl18\@md {
-    float: 18px; }
-  .fl19\@md {
-    float: 19px; }
-  .fl20\@md {
-    float: 20px; }
-  .fl21\@md {
-    float: 21px; }
-  .fl22\@md {
-    float: 22px; }
-  .fl23\@md {
-    float: 23px; }
-  .fl24\@md {
-    float: 24px; }
-  .fl25\@md {
-    float: 25px; }
-  .fl26\@md {
-    float: 26px; }
-  .fl27\@md {
-    float: 27px; }
-  .fl28\@md {
-    float: 28px; }
-  .fl32\@md {
-    float: 32px; }
-  .fl34\@md {
-    float: 34px; }
-  .fl36\@md {
-    float: 36px; }
-  .fl42\@md {
-    float: 42px; }
-  .fl48\@md {
-    float: 48px; } }
+  .fll\@md {
+    float: left; }
+  .flr\@md {
+    float: right; }
+  .fln\@md {
+    float: none; } }
 
 @media all and (max-width: 768px) {
   .fz0\@md {
@@ -13939,54 +13816,12 @@
     justify-content: space-around; } }
 
 @media all and (max-width: 500px) {
-  .fl0\@sm {
-    float: 0; }
-  .fl10\@sm {
-    float: 10px; }
-  .fl12\@sm {
-    float: 12px; }
-  .fl13\@sm {
-    float: 13px; }
-  .fl14\@sm {
-    float: 14px; }
-  .fl15\@sm {
-    float: 15px; }
-  .fl16\@sm {
-    float: 16px; }
-  .fl17\@sm {
-    float: 17px; }
-  .fl18\@sm {
-    float: 18px; }
-  .fl19\@sm {
-    float: 19px; }
-  .fl20\@sm {
-    float: 20px; }
-  .fl21\@sm {
-    float: 21px; }
-  .fl22\@sm {
-    float: 22px; }
-  .fl23\@sm {
-    float: 23px; }
-  .fl24\@sm {
-    float: 24px; }
-  .fl25\@sm {
-    float: 25px; }
-  .fl26\@sm {
-    float: 26px; }
-  .fl27\@sm {
-    float: 27px; }
-  .fl28\@sm {
-    float: 28px; }
-  .fl32\@sm {
-    float: 32px; }
-  .fl34\@sm {
-    float: 34px; }
-  .fl36\@sm {
-    float: 36px; }
-  .fl42\@sm {
-    float: 42px; }
-  .fl48\@sm {
-    float: 48px; } }
+  .fll\@sm {
+    float: left; }
+  .flr\@sm {
+    float: right; }
+  .fln\@sm {
+    float: none; } }
 
 @media all and (max-width: 500px) {
   .fz0\@sm {

@@ -400,6 +400,16 @@ $lineHeight: (
 // end text
 //********************
 
+/// transform trf
+$transforms: (
+  (vals: ('rz45': rotateZ(45deg), 'rz-45': rotateZ(-45deg), 'rz90': rotateZ(90deg), 'rz-90': rotateZ(-90deg), 'rz180': rotateZ(180deg), ),
+) !default;
+
+/// transition trs
+$transitions: (
+  (vals: ('bgc-0\\.3s': background-color 0.3s, 'c-0\\.3s': color 0.3s, 'all-0\\.3s': all 0.3s, )),
+) !default;
+
 // width w
 $width: (
   (vals: $px-map),
@@ -555,6 +565,8 @@ $atomic-config:(
   ('text-transform',    'tt',      '',         '',        $textTransform),
   ('line-height',       'lh',      '',         '',        $lineHeight),
   // end text
+  ('transform',         'trf-',    '',         '',        $transforms),
+  ('transition',        'trs-',    '',         '',        $transitions),
   // width
   ('width',             'w',       '',         '',        $width),
   ('width',             'w',       'vw',       '',        $width-vw),
