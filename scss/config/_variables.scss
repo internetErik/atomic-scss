@@ -141,7 +141,7 @@ $flexGrow: (
   (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5,)),
 ) !default;
 
-// flex-Shring fxsh
+// flex-Shrink fxsh
 $flexShrink: (
   (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5,)),
 ) !default;
@@ -484,7 +484,7 @@ $atomic-config:(
   // start flexbox
   ('flex',              'flx',     '',         '',        $flex),
   ('flex-grow',         'fxg',     '',         '',        $flexGrow),
-  ('flex-shring',       'fxsh',    '',         '',        $flexShrink),
+  ('flex-shrink',       'fxsh',    '',         '',        $flexShrink),
   ('flex-basis',        'fxb',     '',         '',        $flexBasis),
   ('flex-direction',    'fxdr',    '',         '',        $flexDirection),
   ('flex-wrap',         'fxw',     '',         '',        $flexWrap),
