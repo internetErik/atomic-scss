@@ -38,23 +38,6 @@ $breakpoint-order: (
   $bp-smx-mn,
 ) !default;
 
-// toggle for helpers
-$helpers-on: true !default;
-
-// breakpoints used for generating helpers
-$helper-bps: (
-  $bp-lgx-mx,
-  $bp-lg-mx ,
-  $bp-md-mx ,
-  $bp-sm-mx ,
-  $bp-smx-mx,
-  $bp-lgx-mn,
-  $bp-lg-mn ,
-  $bp-md-mn ,
-  $bp-sm-mn ,
-  $bp-smx-mn,
-) !default;
-
 //
 // Start style config variables
 //
@@ -158,7 +141,7 @@ $flexGrow: (
   (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5,)),
 ) !default;
 
-// flex-Shring fxsh
+// flex-Shrink fxsh
 $flexShrink: (
   (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5,)),
 ) !default;
@@ -412,9 +395,20 @@ $textTransform: (
 $lineHeight: (
   (vals: ('1': 1, '1\\.2': 1.2, '1\\.3': 1.3, '1\\.4': 1.4, '1\\.5': 1.5, '2': 2,),),
 ) !default;
+
 //********************
 // end text
 //********************
+
+/// transform trf
+$transforms: (
+  (vals: ('rz45': 'rotateZ(45deg)', 'rz-45': 'rotateZ(-45deg)', 'rz90': 'rotateZ(90deg)', 'rz-90': 'rotateZ(-90deg)', 'rz180': 'rotateZ(180deg)', )),
+) !default;
+
+/// transition trs
+$transitions: (
+  (vals: ('bgc-0\\.3s': background-color 0.3s, 'c-0\\.3s': color 0.3s, 'all-0\\.3s': all 0.3s, )),
+) !default;
 
 // width w
 $width: (
@@ -490,7 +484,7 @@ $atomic-config:(
   // start flexbox
   ('flex',              'flx',     '',         '',        $flex),
   ('flex-grow',         'fxg',     '',         '',        $flexGrow),
-  ('flex-shring',       'fxsh',    '',         '',        $flexShrink),
+  ('flex-shrink',       'fxsh',    '',         '',        $flexShrink),
   ('flex-basis',        'fxb',     '',         '',        $flexBasis),
   ('flex-direction',    'fxdr',    '',         '',        $flexDirection),
   ('flex-wrap',         'fxw',     '',         '',        $flexWrap),
@@ -499,7 +493,7 @@ $atomic-config:(
   ('justify-content',   'jc',      '',         '',        $justifyContent),
   ('order',             'ord',     '',         '',        $order),
   // end flex-box
-  ('float',             'fl',      '',         '',        $fontSize),
+  ('float',             'fl',      '',         '',        $float),
   // font
   ('font-family',       'ff',      '',         '',        $fontFamily),
   ('font-size',         'fz',      '',         '',        $fontSize),
@@ -571,6 +565,8 @@ $atomic-config:(
   ('text-transform',    'tt',      '',         '',        $textTransform),
   ('line-height',       'lh',      '',         '',        $lineHeight),
   // end text
+  ('transform',         'trf-',    '',         '',        $transforms),
+  ('transition',        'trs-',    '',         '',        $transitions),
   // width
   ('width',             'w',       '',         '',        $width),
   ('width',             'w',       'vw',       '',        $width-vw),

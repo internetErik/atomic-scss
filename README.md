@@ -1,5 +1,5 @@
 # atomic-scss
-Atomic SCSS library with additional helpers
+Atomic SCSS library
 
 ## How to use
 
