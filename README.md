@@ -1,6 +1,21 @@
 # atomic-scss
 Atomic SCSS library
 
+## What is this?
+
+This projecect contains SCSS that generates atomic CSS when certain configuration variables are present in the SCSS.
+
+For this it helps to think of CSS an API that your application will use for styling. The CSS class names are the methods provided by this API. Ultimately, this SCSS generates this API for you based on variables that you set (See `Configuring` section below).
+
+## What is atomic CSS?
+
+Atomic CSS (often called functional CSS, or utility classes) is an approach to CSS where every class has only one attribute in it. For example:
+
+```css
+.padding10 { padding: 10px; }
+.fontSizeSmall { font-size: 12px; }
+```
+
 ## How to use
 
 Install with npm
@@ -11,11 +26,9 @@ Import the scss into your own project from `node_modules` or copy the files into
 
 *(See example usage [here](https://github.com/internetErik/atomic-scss-starter-kit/blob/master/client/scss/atomic.scss))*
 
-It is highly recommended that you also copy the scss from [_atomic-config-sample.scss](scss/_atomic-config-sample.scss) into your project and use it as a starting point to configure `atomic-scss`.
+It is highly recommended that you also copy the scss from [\_atomic-config-sample.scss](scss/_atomic-config-sample.scss) into your project and use it as a starting point to configure `atomic-scss`.
 
 ## Configuring
-
-When you are generating atomic classes think of as generating an API that your application will use for styles (the css class names). Part of the configuration is for generating these class names, while another part is for providing the values that are going to be used.
 
 Here is some sample configuration:
 
@@ -145,7 +158,7 @@ When I return to old projects that I haven't touched in a while - even when they
 
 ## Why `atomic-scss` and not some other atomic library?
 
-Use what makes sense for you. This project was optimized for a workflow where I don't know what frameworks, libraries or platforms I will be working on in the future. That is, I don't want to assume that I will be using `gulp` or `reactjs` or whatever other platform.
+Use what makes sense for you. This project was optimized for a workflow where I don't know what frameworks, libraries or platforms I will be working on in the future. That is, I don't want to assume that I will be using `gulp` or `React` or whatever other platform. As long as I have a way of building SCSS I know that this will work.
 
 ## Other Recommendations
 
