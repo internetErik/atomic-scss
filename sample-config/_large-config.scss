@@ -38,7 +38,7 @@ $breakpoint-order: (
 //
 
 // background-color bgc
-$backgroundColor : (
+$background-color : (
   (vals: (
     'white': $color-white,
     'lightgray': $color-lightgray,
@@ -163,7 +163,7 @@ $color : (
 );
 
 //box-shadow txsh
-$boxShadow: (
+$box-shadow: (
   (vals: (
     '1-1-1-1-white'    : 1px 1px 1px 1px $color-white,
     '1-1-1-1-lightgray': 1px 1px 1px 1px $color-lightgray,
@@ -195,22 +195,22 @@ $flex: (
 );
 
 // flex-grow fxg
-$flexGrow: (
+$flex-grow: (
   (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5,)),
 );
 
 // flex-Shring fxsh
-$flexShrink: (
+$flex-shrink: (
   (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5,)),
 );
 
 // flex-basis fxb
-$flexBasis: (
+$flex-basis: (
   (vals: ('0': 0, '1': 1px, '5': 5px, '10': 10px, '15': 15px, '20': 20px, '25': 25px, '30': 30px, '40': 40px, '44': 44px, '50': 50px, '60': 60px, '70': 70px, '75': 75px, '80': 80px, '90': 90px, '100': 100px, '125': 125px, '150': 150px, '175': 175px, '200': 200px, '225': 225px, '250': 250px, '275': 275px, '300': 300px, '325': 325px, '350': 350px, '375': 375px, '400': 400px, '500': 500px, '600': 600px, '700': 700px, '800': 800px,),),
 );
 
 // flex-direction fxdr
-$flexDirection: (
+$flex-direction: (
   (vals: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse),),
   (vals: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse), bp: $bp-lg-mx),
   (vals: ('r': row, 'c': column, 'rr': row-reverse, 'cr': column-reverse), bp: $bp-md-mx),
@@ -218,22 +218,22 @@ $flexDirection: (
 );
 
 // flex-wrap fxw
-$flexWrap: (
+$flex-wrap: (
   (vals: ('n': nowrap, 'w': wrap, 'r': wrap-reverse),),
 );
 
 // align-items ai
-$alignItems: (
+$align-items: (
   (vals: ('fs': flex-start, 'fe': flex-end, 'b': baseline, 'c': center, 's': stretch),),
 );
 
 // align-self as
-$alignSelf: (
+$align-self: (
   (vals: ('b': baseline, 'c': center, 'a': auto),),
 );
 
 // justify-content jc
-$justifyContent: (
+$justify-content: (
   (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around),),
   (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-lg-mx),
   (vals: ('fs': flex-start, 'fe': flex-end, 'c': center, 'sb': space-between, 'sa': space-around), bp: $bp-md-mx),
@@ -261,21 +261,21 @@ $float: (
 //********************
 
 // font-family ff
-$fontFamily: (
+$font-family: (
   (vals: ('s': serif, 'ss': sans-serif),),
 );
 
 // font-size fz
 $fzs: ('0': 0, '10': 10px, '12': 12px, '13': 13px, '14': 14px, '15': 15px, '16': 16px, '17': 17px, '18': 18px, '19': 19px, '20': 20px, '21': 21px, '22': 22px, '23': 23px, '24': 24px, '25': 25px, '26': 26px, '27': 27px, '28': 28px, '32': 32px, '34': 34px, '36': 36px, '42': 42px, '48': 48px,);
 $fzs-vw: ('0': 0vw, '1': 1vw, '1\\.3': 1.3vw, '2': 2vw, '2\\.5': 2.5vw, '3': 3vw, '4': 4vw, '5': 5vw, '10': 10vw, '15': 15vw,);
-$fontSize: (
+$font-size: (
   (vals: $fzs),
   (vals: $fzs, bp: $bp-lg-mx, ),
   (vals: $fzs, bp: $bp-md-mx, ),
   (vals: $fzs, bp: $bp-sm-mx, ),
 );
 
-$fontSize-vw: (
+$font-size-vw: (
   (vals: $fzs-vw),
   (vals: $fzs-vw, bp: $bp-lg-mx, ),
   (vals: $fzs-vw, bp: $bp-md-mx, ),
@@ -283,17 +283,17 @@ $fontSize-vw: (
 );
 
 // font-style fs
-$fontStyle: (
+$font-style: (
   (vals: ('i': italic, 'o': oblique),),
 );
 
 // font-weight fw
-$fontWeight: (
+$font-weight: (
   (vals: ('100': 100, '200': 200, '300': 300, '400': 400, '500': 500, '600': 600, '700': 700, '800': 800, '900': 900,),),
 );
 
 // letter-spacing lts
-$letterSpacing: (
+$letter-spacing: (
   (vals: ('1': 1px, '2': 2px, '3': 3px, '4': 4px,  '5': 5px,)),
 );
 //********************
@@ -323,7 +323,7 @@ $height-perc: (
 );
 
 // list-style ls
-$listStyle: (
+$list-style: (
   (vals: ('n': none,)),
 );
 
@@ -422,7 +422,7 @@ $fill : (
 //********************
 
 // text-align ta
-$textAlign: (
+$text-align: (
   (vals: ('l': left, 'c': center, 'r': right, 'j': justify),),
   (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-lg-mx,),
   (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-md-mx,),
@@ -430,12 +430,12 @@ $textAlign: (
 );
 
 // text-decoration td
-$textDecoration: (
+$text-decoration: (
   (vals: ('n': none, 'u': underline),),
 );
 
 //text-shadow txsh
-$textShadow: (
+$text-shadow: (
   (vals: (
     '1-1-1-white'    : 1px 1px 1px $color-white,
     '1-1-1-lightgray': 1px 1px 1px $color-lightgray,
@@ -445,12 +445,12 @@ $textShadow: (
 );
 
 // text-transform tt
-$textTransform: (
+$text-transform: (
   (vals: ('u': uppercase, 'n': none),),
 );
 
 // line-height lh
-$lineHeight: (
+$line-height: (
   (vals: ('1': 1, '1\\.2': 1.2, '1\\.3': 1.3, '1\\.4': 1.4, '1\\.5': 1.5, '2': 2,),),
 );
 //********************
@@ -490,29 +490,29 @@ $width-perc: (
 );
 
 // vertical-align va
-$verticalAlign: (
+$vertical-align: (
   (vals: ('t': top, 'b': bottom, 'm': middle, 'sup': super, 'sub': sub, 'base': base,),),
 );
 
 // word-break wob
-$wordBreak: (
+$word-break: (
   (vals: ('n': normal, 'k': keep-all, 'ba': break-all, 'nm': normal,),),
 );
 
 // word-wrap wow
-$wordWrap: (
+$word-wrap: (
   (vals: ('u': unrestricted, 's': suppress, 'b': break-word, 'n': none,),),
 );
 
 //z-index z
-$zIndex: (
+$z-index: (
   (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '99': 99,),),
 );
 
 // atomic generation configuration
 $atomic-config:(
 //(attribute,         className,  postfix , modifier, style variants)
-  ('background-color',  'bgc-',    '',         '',        $backgroundColor),
+  ('background-color',  'bgc-',    '',         '',        $background-color),
   ('border',            'bd',      '',         '',        $border),
   ('border-top',        'bt',      '',         '',        $border),
   ('border-bottom',     'bb',      '',         '',        $border),
@@ -532,7 +532,7 @@ $atomic-config:(
   ('right',             'r',       'vw',       '',        $rs-vw),
   ('right',             'r',       '\\%',      '',        $rs-perc),
   // end top bottom left right
-  ('box-shadow',        'bxsh',    '',         '',        $boxShadow),
+  ('box-shadow',        'bxsh',    '',         '',        $box-shadow),
   ('cursor',            'cur',     '',         '',        $cursor),
   ('clear',             'cl',      '',         '',        $clear),
   ('color',             'c-',      '',         '',        $color),
@@ -540,24 +540,24 @@ $atomic-config:(
   ('display',           'd',       '',         '',        $display),
   // start flexbox
   ('flex',              'flx',     '',         '',        $flex),
-  ('flex-grow',         'fxg',     '',         '',        $flexGrow),
-  ('flex-shring',       'fxsh',    '',         '',        $flexShrink),
-  ('flex-basis',        'fxb',     '',         '',        $flexBasis),
-  ('flex-direction',    'fxdr',    '',         '',        $flexDirection),
-  ('flex-wrap',         'fxw',     '',         '',        $flexWrap),
-  ('align-items',       'ai',      '',         '',        $alignItems),
-  ('align-self',        'as',      '',         '',        $alignSelf),
-  ('justify-content',   'jc',      '',         '',        $justifyContent),
+  ('flex-grow',         'fxg',     '',         '',        $flex-grow),
+  ('flex-shring',       'fxsh',    '',         '',        $flex-shrink),
+  ('flex-basis',        'fxb',     '',         '',        $flex-basis),
+  ('flex-direction',    'fxdr',    '',         '',        $flex-direction),
+  ('flex-wrap',         'fxw',     '',         '',        $flex-wrap),
+  ('align-items',       'ai',      '',         '',        $align-items),
+  ('align-self',        'as',      '',         '',        $align-self),
+  ('justify-content',   'jc',      '',         '',        $justify-content),
   ('order',             'ord',     '',         '',        $order),
   // end flex-box
   ('float',             'fl',      '',         '',        $float),
   // font
-  ('font-family',       'ff',      '',         '',        $fontFamily),
-  ('font-size',         'fz',      '',         '',        $fontSize),
-  ('font-size',         'fz',      'vw',       '',        $fontSize-vw),
-  ('font-style',        'fs',      '',         '',        $fontStyle),
-  ('font-Weight',       'fw',      '',         '',        $fontWeight),
-  ('letter-spacing',    'lts',     '',         '',        $letterSpacing),
+  ('font-family',       'ff',      '',         '',        $font-family),
+  ('font-size',         'fz',      '',         '',        $font-size),
+  ('font-size',         'fz',      'vw',       '',        $font-size-vw),
+  ('font-style',        'fs',      '',         '',        $font-style),
+  ('font-Weight',       'fw',      '',         '',        $font-weight),
+  ('letter-spacing',    'lts',     '',         '',        $letter-spacing),
   // end font
   // grid
   // ???
@@ -573,7 +573,7 @@ $atomic-config:(
   ('min-height',        'mih',     'vw',       '',        $height-vw),
   ('min-height',        'mih',     '\\%',      '',        $height-perc),
   // end height
-  ('list-style',        'ls',      '',         '',        $listStyle),
+  ('list-style',        'ls',      '',         '',        $list-style),
   // margin
   ('margin',            'm',       '',         '',        $margin),
   ('margin',            'm',       'vw',       '',        $margin-vw),
@@ -616,11 +616,11 @@ $atomic-config:(
   ('stroke',            'stroke-', '',         '',        $stroke),
   ('fill',              'fill-',   '',         '',        $fill),
   // text
-  ('text-align',        'ta',      '',         '',        $textAlign),
-  ('text-decoration',   'td',      '',         '',        $textDecoration),
-  ('text-shadow',       'txsh',    '',         '',        $textShadow),
-  ('text-transform',    'tt',      '',         '',        $textTransform),
-  ('line-height',       'lh',      '',         '',        $lineHeight),
+  ('text-align',        'ta',      '',         '',        $text-align),
+  ('text-decoration',   'td',      '',         '',        $text-decoration),
+  ('text-shadow',       'txsh',    '',         '',        $text-shadow),
+  ('text-transform',    'tt',      '',         '',        $text-transform),
+  ('line-height',       'lh',      '',         '',        $line-height),
   // end text
   ('transform',         'trf-',    '',         '',        $transforms),
   ('transition',        'trs-',    '',         '',        $transitions),
@@ -635,8 +635,8 @@ $atomic-config:(
   ('min-width',         'miw',     'vw',       '',        $width-vw),
   ('min-width',         'miw',     '\\%',      '',        $width-perc),
   // end width
-  ('vertical-align',    'va',      '',         '',        $verticalAlign),
-  ('word-break',        'wob',     '',         '',        $wordBreak),
-  ('word-wrap',         'wow',     '',         '',        $wordWrap),
-  ('z-index',           'z',       '',         '',        $zIndex),
+  ('vertical-align',    'va',      '',         '',        $vertical-align),
+  ('word-break',        'wob',     '',         '',        $word-break),
+  ('word-wrap',         'wow',     '',         '',        $word-wrap),
+  ('z-index',           'z',       '',         '',        $z-index),
 );

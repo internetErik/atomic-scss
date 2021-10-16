@@ -27,7 +27,7 @@ $breakpoint-order: (
 //
 
 // background-color bgc
-$backgroundColor : (
+$background-color : (
   (vals: (
     'white': $color-white,
     'lightgray': $color-lightgray,
@@ -90,7 +90,7 @@ $float: (
 
 // font-size fz
 $fzs: ('0': 0, '14': 14px, '16': 16px, '18': 18px, '22': 22px, '24': 24px, '28': 28px, '32': 32px, '36': 36px,);
-$fontSize: (
+$font-size: (
   (vals: $fzs),
   (vals: $fzs, bp: $bp-lg-mx, ),
   (vals: $fzs, bp: $bp-md-mx, ),
@@ -98,12 +98,12 @@ $fontSize: (
 );
 
 // font-style fs
-$fontStyle: (
+$font-style: (
   (vals: ('i': italic, 'o': oblique),),
 );
 
 // font-weight fw
-$fontWeight: (
+$font-weight: (
   (vals: ('100': 100, '200': 200, '300': 300, '400': 400, '500': 500, '600': 600, '700': 700, '800': 800, '900': 900,),),
 );
 
@@ -155,7 +155,7 @@ $position: (
 //********************
 
 // text-align ta
-$textAlign: (
+$text-align: (
   (vals: ('l': left, 'c': center, 'r': right, 'j': justify),),
   (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-lg-mx,),
   (vals: ('l': left, 'c': center, 'r': right, 'j': justify), bp: $bp-md-mx,),
@@ -163,7 +163,7 @@ $textAlign: (
 );
 
 // line-height lh
-$lineHeight: (
+$line-height: (
   (vals: ('1': 1, '1\\.2': 1.2, '1\\.3': 1.3, '1\\.4': 1.4, '1\\.5': 1.5, '2': 2,),),
 );
 //********************
@@ -186,14 +186,14 @@ $width-perc: (
 );
 
 //z-index z
-$zIndex: (
+$z-index: (
   (vals: ('1': 1,'2': 2,'3': 3,),),
 );
 
 // atomic generation configuration
 $atomic-config:(
 //(attribute,         className,  postfix , modifier, style variants)
-  ('background-color',  'bgc-',    '',         '',        $backgroundColor),
+  ('background-color',  'bgc-',    '',         '',        $background-color),
   ('border',            'bd',      '',         '',        $border),
   // top bottom left right
   ('top',               't',       '',         '',        $tblr),
@@ -209,9 +209,9 @@ $atomic-config:(
   ('display',           'd',       '',         '',        $display),
   ('float',             'fl',      '',         '',        $float),
   // font
-  ('font-size',         'fz',      '',         '',        $fontSize),
-  ('font-style',        'fs',      '',         '',        $fontStyle),
-  ('font-Weight',       'fw',      '',         '',        $fontWeight),
+  ('font-size',         'fz',      '',         '',        $font-size),
+  ('font-style',        'fs',      '',         '',        $font-style),
+  ('font-Weight',       'fw',      '',         '',        $font-weight),
   // end font
   // height
   ('height',            'h',       '',         '',        $height),
@@ -233,11 +233,11 @@ $atomic-config:(
   // end padding
   ('position',          'pos',     '',         '',        $position),
   // text
-  ('text-align',        'ta',      '',         '',        $textAlign),
-  ('line-height',       'lh',      '',         '',        $lineHeight),
+  ('text-align',        'ta',      '',         '',        $text-align),
+  ('line-height',       'lh',      '',         '',        $line-height),
   // end text
   // width
   ('width',             'w',       '',         '',        $width),
   ('width',             'w',       '\\%',      '',        $width-perc),
-  ('z-index',           'z',       '',         '',        $zIndex),
+  ('z-index',           'z',       '',         '',        $z-index),
 );
