@@ -13,8 +13,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-sass": "^5.0.0",
     "sass": "^1.35.2"
+  },
+  "dependencies": {
+    "plugin-error": "^1.0.1"
   }
 }
