@@ -13,6 +13,13 @@ $bp-md-mn : (name: '\\@md-mn',  cond: 'all and (min-width: 768px)') !default;
 $bp-sm-mn : (name: '\\@sm-mn',  cond: 'all and (min-width: 500px)') !default;
 $bp-smx-mn: (name: '\\@smx-mn', cond: 'all and (min-width: 400px)') !default;
 
+
+$cont-200-mx: (name: '\\#200-mx', cond: '(max-width: 200px)') !default;
+
+$container-order: (
+  $cont-200-mx,
+) !default;
+
 // wire framing colors
 $color-white    : #ffffff !default;
 $color-lightgray: lightgray !default;
@@ -38,9 +45,20 @@ $breakpoint-order: (
   $bp-smx-mn,
 ) !default;
 
+// Container queries
+$con-200-mx: (name: '\\#smx-mx', cond: 'all and (mix-width: 200px)') !default;
+
+$container-order: (
+  $con-200-mx,
+) !default;
 //
 // Start style config variables
 //
+
+// CSS custom properties
+$vars-bg-color : (
+  (vals: ( 'black': $color-black, 'white': $color-white, )),
+);
 
 // background-color bgc
 $backgroundColor : (
@@ -245,6 +263,7 @@ $letterSpacing: (
 // height h
 $height: (
   (vals: $px-map),
+  (vals: ('211': 211px, ), cont: $cont-200-mx, ),
   (vals: $px-map, bp: $bp-lg-mx,),
   (vals: $px-map, bp: $bp-md-mx,),
   (vals: $px-map, bp: $bp-sm-mx,),
@@ -452,9 +471,15 @@ $zIndex: (
   (vals: ('1': 1,'2': 2,'3': 3,'4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '99': 99,),),
 ) !default;
 
+// container ct 
+$container: (
+  (vals: ('z': 'size', 'iz': inline-size, 'bz': box-size, 's': style, 'st': state))
+) !default;
+
 // atomic generation configuration
 $atomic-config:(
 //(attribute,         className,  postfix , modifier, style variants)
+  ('--bg-color',        'v--bg-color-',     '',         '', $vars-bg-color),
   ('background-color',  'bgc-',    '',         '',        $backgroundColor),
   ('border',            'bd',      '',         '',        $border),
   ('border-top',        'bt',      '',         '',        $border),

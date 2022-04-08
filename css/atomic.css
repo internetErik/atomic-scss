@@ -1,3 +1,11 @@
+.v--bg-color-black {
+  --bg-color: #000000;
+}
+
+.v--bg-color-white {
+  --bg-color: #ffffff;
+}
+
 .bgc-white {
   background-color: #ffffff;
 }
@@ -28888,5 +28896,20 @@
 
   .miw150\%\@sm {
     min-width: 150%;
+  }
+}
+@container (max-width: 200px) {
+  .h211\#200-mx {
+    height: 211px;
+  }
+}
+@container (max-width: 200px) {
+  .mah211\#200-mx {
+    max-height: 211px;
+  }
+}
+@container (max-width: 200px) {
+  .mih211\#200-mx {
+    min-height: 211px;
   }
 }

@@ -1,12 +1,14 @@
+@use "sass:map";
+
 @mixin atomicClassesNoBreakpoint ($attr, $cname, $cpost, $mod, $styles){
   @each $style in $styles {
-    // if there is no breakpoint
+    // if there is no breakpoint or container query length should be 1
     @if length($style) == 1 {
       @if(length(nth($style, 1)) == 1) {
         @warn Problem with formatting of $attr
       }
 
-      $vals: nth(nth($style, 1), 2);
+      $vals: map.get($style, "vals");
       @each $val in $vals {
         @include atomicClass($cname, $cpost, $attr, $mod, $val);
       }
@@ -16,22 +18,53 @@
 
 @mixin atomicClassesWithBreakpoint ($attr, $cname, $cpost, $mod, $styles, $cbp) {
   @each $style in $styles {
-    // if there is a breakpoint
-    @if length($style) > 1 {
 
-      @if(length(nth($style, 1)) == 1) {
+    // if there is a breakpoint
+    $bp: map.get($style, "bp");
+    @if $bp {
+
+      @if(length(nth($style, 1))==1) {
         @warn Problem with formatting of $attr
       }
 
-      $vals: nth(nth($style, 1), 2);
-      $bp  : nth(nth($style, 2), 2);
-      $bp-name: nth(nth($bp, 1), 2);
-      $bp-cond: nth(nth($bp, 2), 2);
-      $cbp-name: nth(nth($cbp, 1), 2);
-      $post: $cpost + $bp-name;
+      $vals: map.get($style, "vals");
+      $bp-name: map.get($bp, "name");
+      $bp-cond: map.get($bp, "cond");
+      $cbp-name: map.get($cbp, "name"); // current breakpoint name
+      $post: $cpost+$bp-name;
+
       // @warn #{$bp-name};
-      @if $cbp-name == $bp-name {
+      @if $cbp-name==$bp-name {
         @media #{$bp-cond} {
+          @each $val in $vals {
+            @include atomicClass($cname, $post, $attr, $mod, $val);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin atomicClassesWithContainer ($attr, $cname, $cpost, $mod, $styles, $ccont) {
+  @each $style in $styles {
+
+    // if there is a container
+    $cont: map.get($style, "cont");
+    @if $cont {
+
+      @if(length(nth($style, 1))==1) {
+        @warn Problem with formatting of $attr
+      }
+
+      $vals: map.get($style, "vals");
+      $cont-name: map.get($cont, "name");
+      $cont-cond: map.get($cont, "cond");
+      $ccont-name: map.get($ccont, "name"); // current container name
+      $post: $cpost+$cont-name;
+
+      // @warn #{$bp-name};
+      @if $ccont-name==$cont-name {
+        @container #{$cont-cond} {
           @each $val in $vals {
             @include atomicClass($cname, $post, $attr, $mod, $val);
           }
@@ -54,7 +87,18 @@
 }
 
 @each $bp in $breakpoint-order {
-  @each $attr, $cname, $cpost, $mod, $styles in $atomic-config {
+
+  @each $attr,
+  $cname,
+  $cpost,
+  $mod,
+  $styles in $atomic-config {
     @include atomicClassesWithBreakpoint($attr, $cname, $cpost, $mod, $styles, $bp);
+  }
+}
+
+@each $cont in $container-order {
+  @each $attr, $cname, $cpost, $mod, $styles in $atomic-config {
+    @include atomicClassesWithContainer($attr, $cname, $cpost, $mod, $styles, $cont);
   }
 }
