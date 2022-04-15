@@ -5,7 +5,7 @@ const sass = require('gulp-sass')(require('sass'));
  * Create variables for our project paths so we can change in one place
  */
 const paths = {
-  'sass'     : './scss/**/*.scss',
+  'sass'     : './scss/atomic.scss',
   'css'      : './css/',
 };
 
