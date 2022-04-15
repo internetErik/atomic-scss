@@ -38,14 +38,11 @@ $v-c-secondary : (
   (vals : ('white' : $color-white, 'black' : $color-black, 'gray': $color-gray,), bp: $bp-md-mx,),
   (vals : ('white' : $color-white, 'black' : $color-black, 'gray': $color-gray,), bp: $bp-sm-mx,),
 );
-//(attribute, className,  postfix , modifier, style variants)
+
 //(variableName, setClassName,  postfix, modifier, initialValue, styles)
 $css-custom-properties : (
   ('--c-primary', 'set\\(--c-primary\\,', '\\)', '', $color-white, $v-c-primary),
   ('--c-secondary', 'set\\(--c-secondary\\,', '\\)', '', $color-black, $v-c-secondary),
-  // 'bgc-secondary': $color-black,
-  // 'c-primary'    : $color-black,
-  // 'c-secondary'  : $color-white,
 );
 
 // some default ranges

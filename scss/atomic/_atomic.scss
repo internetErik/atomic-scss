@@ -89,6 +89,7 @@
 $css-custom-properties: false !default;
 $atomic-config: false !default;
 $breakpoint-order: false !default;
+$container-order: false !default;
 
 @if not $atomic-config {
   @warn '$atomic-config is not defined';
