@@ -82,23 +82,74 @@
   }
 }
 
-@each $attr, $cname, $cpost, $mod, $styles in $atomic-config {
-  @include atomicClassesNoBreakpoint($attr, $cname, $cpost, $mod, $styles);
+@mixin cssCustomProperty($name, $value) {
+  #{$name}: #{$value};
 }
 
-@each $bp in $breakpoint-order {
+$css-custom-properties: false !default;
+$atomic-config: false !default;
+$breakpoint-order: false !default;
 
-  @each $attr,
-  $cname,
-  $cpost,
-  $mod,
-  $styles in $atomic-config {
-    @include atomicClassesWithBreakpoint($attr, $cname, $cpost, $mod, $styles, $bp);
+@if not $atomic-config {
+  @warn '$atomic-config is not defined';
+}
+
+@if not $css-custom-properties {
+  @warn '$css-custom-properties is not defined';
+}
+
+@if not $breakpoint-order {
+  @warn '$breakpoint-order is not defined';
+}
+
+@if not $container-order {
+  @warn '$container-order is not defined';
+}
+
+@if $css-custom-properties {
+  // set variables up in root
+  :root {
+    @each $variableName, $cname, $cpost, $mod, $initialValue, $styles in $css-custom-properties {
+      @include cssCustomProperty($variableName, $initialValue);
+    } 
+  }
+
+  // generate classes for setting variables
+  @each $variableName, $cname, $cpost, $mod, $initialValue, $styles in $css-custom-properties {
+    @include atomicClassesNoBreakpoint($variableName, $cname, $cpost, $mod, $styles);
+  } 
+
+  @if $breakpoint-order {
+    // generate classes for setting variables with breakpoints
+    @each $bp in $breakpoint-order {
+      @each $variableName, $cname, $cpost, $mod, $initialValue, $styles in $css-custom-properties {
+        @include atomicClassesWithBreakpoint($variableName, $cname, $cpost, $mod, $styles, $bp);
+      }
+    }
   }
 }
 
-@each $cont in $container-order {
+@if $atomic-config {
+  // generate atomic classes
   @each $attr, $cname, $cpost, $mod, $styles in $atomic-config {
-    @include atomicClassesWithContainer($attr, $cname, $cpost, $mod, $styles, $cont);
+    @include atomicClassesNoBreakpoint($attr, $cname, $cpost, $mod, $styles);
+  }
+
+  @if $breakpoint-order {
+    // generate atomic classes with breakpoints
+    @each $bp in $breakpoint-order {
+      @each $attr, $cname, $cpost, $mod, $styles in $atomic-config {
+        @include atomicClassesWithBreakpoint($attr, $cname, $cpost, $mod, $styles, $bp);
+      }
+    }
+  }
+
+  @if $container-order {
+    // generate container classes
+    @each $cont in $container-order {
+      @each $attr, $cname, $cpost, $mod, $styles in $atomic-config {
+        @include atomicClassesWithContainer($attr, $cname, $cpost, $mod, $styles, $cont);
+      }
+    }
   }
 }
