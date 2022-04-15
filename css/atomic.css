@@ -1,9 +1,17 @@
-.v--bg-color-black {
-  --bg-color: #000000;
+.bgc--c-primary {
+  background-color: var(--c-primary);
 }
 
-.v--bg-color-white {
-  --bg-color: #ffffff;
+.bgc--c-secondary {
+  background-color: var(--c-secondary);
+}
+
+.c--c-primary {
+  color: var(--c-primary);
+}
+
+.c--c-secondary {
+  color: var(--c-secondary);
 }
 
 .bgc-white {

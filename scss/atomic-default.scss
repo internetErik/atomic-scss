@@ -1,0 +1,5 @@
+// variables that can be overridden external to atomic-scss
+@import "config/variables";
+
+// generates atomic css
+@import "atomic/atomic";
