@@ -128,6 +128,25 @@ Classes are generated on this formula:
   }
 }
 ```
+## On Version 4
+
+**Breaking Change: The file you `@import` into your project (`scss/atomic.scss`) no longer refers to a default config.**
+
+**YOU MUST DEFINE YOUR OWN CONFIGURATION.**
+
+**If you would like to use the default config still, `@import` the file `scss/atomic-default.scss` instead.**
+
+I have provided constructs for CSS custom properties and container queries.
+
+The `scss/atomic/_atomic.scss` file that generates the resulting css has been rewritten to provide some messaging and not break if variables are missing.
+
+Contemplating cascade layers for a future version, but this will not introduce any breaking change.
+
+## On Version 3
+
+I felt that the helper classes should be moved out into their own package. 
+
+Look in [scss-functional-helpers](https://github.com/internetErik/scss-functional-helpers) for these helper functions.
 
 ## On Version 2
 
