@@ -1,5 +1,6 @@
 const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+const rename = require('gulp-rename');
 
 /*
  * Create variables for our project paths so we can change in one place
@@ -15,6 +16,7 @@ const paths = {
 const sassBuild = cb => {
   return src(paths.sass)
   .pipe(sass({errLogToConsole: true}))
+  .pipe(rename('atomic.css'))
   .pipe(dest(paths.css));
 }
 
