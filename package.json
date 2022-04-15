@@ -11,11 +11,15 @@
     "type": "git",
     "url": "git@github.com:internetErik/atomic-scss.git"
   },
+  "preinstall": "npx npm-force-resolutions",
+  "resolutions": {
+    "glob-parent": "^6.0.1"
+  },
   "license": "MIT",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.0.0",
-    "sass": "^1.35.2"
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.50.0"
   }
 }
