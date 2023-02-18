@@ -1,0 +1,33 @@
+$bp-2000w: 2000px; // xtra xtra huge
+$bp-1800w : 1800px; // xtra xtra huge
+$bp-1600w  : 1600px; // xrta huge
+$bp-1400w : 1400px; // xtra xtra large
+$bp-1200w  : 1200px; // xtra large
+$bp-1000w  : 1000px; // large
+$bp-800w  : 800px;  // medium
+$bp-700w  : 700px;  // small
+$bp-600w : 600px;  // xtra small
+$bp-500w: 500px;  // xtra xtra small
+$bp-400w: 400px;  // diminutive
+$bp-350w: 350px;  // xtra diminutive
+$bp-320w: 320px;  // xtra xtra diminutive
+
+$bp-2000w-mx: (name: '\\@2000w', cond: 'all and (max-width: #{$bp-2000w})');
+$bp-1800w-mx : (name: '\\@1800w',  cond: 'all and (max-width: #{$bp-1800w})');
+$bp-1600w-mx  : (name: '\\@1600w',   cond: 'all and (max-width: #{$bp-1600w})');
+$bp-1400w-mx : (name: '\\@1400w',  cond: 'all and (max-width: #{$bp-1400w})');
+$bp-1200w-mx  : (name: '\\@1200w',   cond: 'all and (max-width: #{$bp-1200w})');
+$bp-1000w-mx  : (name: '\\@1000w',   cond: 'all and (max-width: #{$bp-1000w})');
+$bp-800w-mx  : (name: '\\@800w',   cond: 'all and (max-width: #{$bp-800w})');
+$bp-700w-mx  : (name: '\\@700w',   cond: 'all and (max-width: #{$bp-700w})');
+$bp-600w-mx : (name: '\\@600w',  cond: 'all and (max-width: #{$bp-600w})');
+$bp-500w-mx: (name: '\\@500w', cond: 'all and (max-width: #{$bp-500w})');
+$bp-400w-mx  : (name: '\\@400w',   cond: 'all and (max-width: #{$bp-400w})');
+$bp-350w-mx : (name: '\\@350w',  cond: 'all and (max-width: #{$bp-350w})');
+$bp-320w-mx: (name: '\\@320w', cond: 'all and (max-width: #{$bp-320w})');
+
+// containers - class for adding container defined in ./atomic-attributes/_containers.scss
+$cn-tc-1200w-mx  : (name: '\\#tc-1200w',   cond: 'two-col (max-width: #{$bp-1200w})');
+$cn-tc-800w-mx  : (name: '\\#tc-800w',   cond: 'two-col (max-width: #{$bp-800w})');
+$cn-tc-600w-mx : (name: '\\#tc-600w',  cond: 'two-col (max-width: #{$bp-600w})');
+$cn-tc-400w-mx  : (name: '\\#tc-400w',   cond: 'two-col (max-width: #{$bp-400w})');

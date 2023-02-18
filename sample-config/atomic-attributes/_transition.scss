@@ -1,0 +1,12 @@
+// transition trs-
+$transition : (
+  ( vals: (
+    'all-0\\.3-eio': all 0.3s ease-in-out,
+  ),),
+  ( vals: (
+    'n': none,
+  ), bp: $bp-800w-mx,),
+  ( vals: (
+    'n': none,
+  ), bp: $bp-600w-mx,),
+);

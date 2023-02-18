@@ -1,0 +1,24 @@
+// align-self as
+$align-self : (
+  ( vals: (
+    'c' : center,
+    's' : stretch,
+    'e' : end,
+    'fs' : flex-start,
+    'fe' : flex-end,
+  ),),
+  ( vals: (
+    'c' : center,
+    's' : stretch,
+    'e' : end,
+    'fs' : flex-start,
+    'fe' : flex-end,
+  ), bp: $bp-800w-mx, ),
+  ( vals: (
+    'c' : center,
+    's' : stretch,
+    'e' : end,
+    'fs' : flex-start,
+    'fe' : flex-end,
+  ), bp: $bp-600w-mx, ),
+);

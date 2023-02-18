@@ -1,0 +1,14 @@
+// grid-template-columns gtc
+$grid-template-columns : (
+  ( vals: (
+    '2': repeat(2, 1fr),
+    '3': repeat(3, 1fr),
+    '12': repeat(12, minmax(0, 1fr)),
+  ),),
+  ( vals: (
+    '2': repeat(2, 1fr),
+  ), bp: $bp-1000w-mx,),
+  ( vals: (
+    '5': repeat(5, 1fr),
+  ), bp: $bp-800w-mx,),
+);

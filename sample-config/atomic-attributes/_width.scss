@@ -1,0 +1,86 @@
+// width w
+$width : (
+  ( vals: (
+    '0': 0,
+  ),),
+  ( vals: (
+    '0': 0,
+  ), bp: $bp-800w-mx,),
+  ( vals: (
+    '0': 0,
+  ), bp: $bp-600w-mx,),
+  ( vals: (
+    '0': 0,
+    '500': 500px,
+  ), cont: $cn-tc-600w-mx,),
+);
+
+$width-hover: (
+  ( vals: (
+    '0': 0px,
+  ),),
+);
+
+$width-vw : (
+  ( vals: (
+    '50': 50vw,
+    '100': 100vw,
+  ),),
+  ( vals: (
+    '100': 100vw,
+  ), bp: $bp-800w-mx,),
+);
+
+$width-perc : (
+  ( vals: (
+    '25': 25%,
+    '30': 30%,
+    '33': 33%,
+    '40': 40%,
+    '45': 45%,
+    '50': 50%,
+    '55': 55%,
+    '60': 60%,
+    '66': 66%,
+    '75': 75%,
+    '90': 90%,
+    '100': 100%,
+    ),),
+  ( vals: (
+    '50': 50%,
+    '100': 100%,
+  ), bp: $bp-800w-mx,),
+  ( vals: (
+    '100': 100%,
+  ), bp: $bp-600w-mx,),
+);
+
+// max-width maw
+$max-width : (
+  ( vals: (
+    '0': 0,
+  ),),
+  ( vals: (
+    'unset': unset,
+    '0': 0,
+  ), bp: $bp-800w-mx,),
+  ( vals: (
+    'unset': unset,
+    '0': 0,
+  ), bp: $bp-600w-mx,),
+);
+
+// min-width miw
+$min-width : (
+  ( vals: (
+    '0': 0,
+  ),),
+  ( vals: (
+    'unset': unset,
+    '0': 0,
+  ), bp: $bp-800w-mx,),
+  ( vals: (
+    'unset': unset,
+    '0': 0,
+  ), bp: $bp-600w-mx,),
+);

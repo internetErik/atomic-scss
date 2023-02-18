@@ -1,0 +1,14 @@
+// justify-content jc
+$justify-content : (
+  ( vals: (
+    'c' : center,
+    'sb' : space-between,
+    'se': space-evenly,
+    'fs' : flex-start,
+    'fe' : flex-end,
+  ),),
+  ( vals: (
+    'c' : center,
+    'fs' : flex-start,
+  ), bp: $bp-800w-mx,),
+);

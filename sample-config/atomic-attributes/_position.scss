@@ -1,0 +1,19 @@
+// position pos
+$position : (
+  ( vals: (
+    'a' : absolute,
+    'r' : relative,
+    'f' : fixed,
+    'st' : sticky,
+  ),),
+  ( vals: (
+    'a' : absolute,
+    'r' : relative,
+    'f' : fixed,
+  ), bp: $bp-800w-mx,),
+  ( vals: (
+    'a' : absolute,
+    'r' : relative,
+    'f' : fixed,
+  ), bp: $bp-600w-mx,),
+);

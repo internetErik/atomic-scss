@@ -1,0 +1,18 @@
+// visibility v
+$visibility : (
+  ( vals: (
+    'h': hidden,
+    'v' : visible,
+    'c' : collapse,
+  ),),
+  ( vals: (
+    'h': hidden,
+    'v' : visible,
+    'c' : collapse,
+  ), bp: $bp-800w-mx,),
+  ( vals: (
+    'h': hidden,
+    'v' : visible,
+    'c' : collapse,
+  ), bp: $bp-600w-mx,),
+);

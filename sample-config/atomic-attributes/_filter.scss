@@ -1,0 +1,6 @@
+// fl-
+$filter : (
+  ( vals: (
+    'grayscale\\(100\\%\\)': grayscale(100%),
+  ),),
+);

@@ -1,0 +1,27 @@
+// border bd
+$border : (
+  ( vals: (
+    'n' : none,
+    '1-s-white' : '1px solid ' + $color-white,
+    '1-s-gray'  : '1px solid ' + $color-gray,
+    '1-s-black' : '1px solid ' + $color-black,
+    ),),
+);
+
+$border-hover : (
+  ( vals: (
+    'n' : none,
+    '1-s-white' : '1px solid ' + $color-white,
+    '1-s-gray'  : '1px solid ' + $color-gray,
+    '1-s-black' : '1px solid ' + $color-black,
+  ),),
+);
+
+$border-focus : (
+  ( vals: (
+    'n' : none,
+    '1-s-white' : '1px solid ' + $color-white,
+    '1-s-gray'  : '1px solid ' + $color-gray,
+    '1-s-black' : '1px solid ' + $color-black,
+  ),),
+);

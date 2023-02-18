@@ -1,0 +1,99 @@
+// stroke st-
+$stroke : (
+  ( vals: (
+    'inherit' : 'inherit',
+    'white' : $color-white,
+    'gray' : $color-gray,
+    'black' : $color-black,
+  ),),
+);
+
+// stroke st-value:h
+$stroke-hover : (
+  ( vals: (
+    'white' : $color-white,
+    'gray' : $color-gray,
+    'black' : $color-black,
+  ),),
+);
+
+// stroke st-value:f
+$stroke-focus : (
+  ( vals: (
+    'white' : $color-white,
+    'gray' : $color-gray,
+    'black' : $color-black,
+  ),),
+);
+
+// f fill
+$default-v-st-primary   : $color-black;
+$default-v-st-secondary : $color-white;
+$default-v-st-tertiary : $color-gray;
+
+$v-st-primary : (
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ),),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-800w-mx,),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-600w-mx,),
+);
+
+$v-st-secondary : (
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ),),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-800w-mx,),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-600w-mx,),
+);
+
+$v-st-tertiary : (
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ),),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-800w-mx,),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-600w-mx,),
+);
+
+$var-stroke: (
+  (vals: (
+    '--primary': var(--st-primary),
+    '--secondary': var(--st-secondary),
+    '--tertiary': var(--st-tertiary),
+  ),),
+  (vals: (
+    '--primary': var(--st-primary),
+    '--secondary': var(--st-secondary),
+    '--tertiary': var(--st-tertiary),
+  ), bp: $bp-800w-mx ),
+);

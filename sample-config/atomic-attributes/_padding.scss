@@ -1,0 +1,70 @@
+// padding p
+$padding : (
+  ( vals: (
+    '4': 4px,
+    '8': 8px,
+    '12': 12px,
+    '16': 16px,
+    '24': 24px,
+    '32': 32px,
+    '40': 40px,
+  ),),
+  ( vals: (
+    '0': 0,
+  ), bp: $bp-800w-mx,),
+  ( vals: (
+    '0': 0,
+  ), bp: $bp-600w-mx,),
+);
+
+// padding p pt pr pl pb
+$default-v-p-small : 12px;
+$default-v-p-medium: 24px;
+$default-v-p-large : 48px;
+$v-p-small : (
+  (vals : (
+    '12' : 12px,
+  ),),
+  (vals : (
+    '8' : 8px,
+  ), bp: $bp-800w-mx,),
+  (vals : (
+    '4' : 4px,
+  ), bp: $bp-600w-mx,),
+);
+$v-p-medium : (
+  (vals : (
+    '24' : 24px,
+  ),),
+  (vals : (
+    '16' : 16px,
+  ), bp: $bp-800w-mx,),
+  (vals : (
+    '8' : 8px,
+  ), bp: $bp-600w-mx,),
+);
+$v-p-large : (
+  (vals : (
+    '48' : 48px,
+    '80' : 80px,
+  ),),
+  (vals : (
+    '32' : 32px,
+  ), bp: $bp-800w-mx,),
+  (vals : (
+    '16' : 16px,
+  ), bp: $bp-600w-mx,),
+);
+
+$var-padding : (
+  (vals: (
+    '--small': var(--p-small),
+    '--medium': var(--p-medium),
+    '--large': var(--p-large),
+  ), ),
+  (vals: (
+    '--small': var(--p-small),
+    '--medium': var(--p-medium),
+    '--large': var(--p-large),
+  ), bp: $bp-800w-mx ),
+);

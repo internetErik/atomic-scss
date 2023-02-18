@@ -1,0 +1,20 @@
+// writing-mode wm
+$writing-mode : (
+  ( vals: (
+    'rl' : rl,
+    'vtb': vertical-tb,
+    'vlr': vertical-lr,
+  ),),
+  ( vals: (
+    'lr' : lr,
+    'rl' : rl,
+    'vtb': vertical-tb,
+    'vlr': vertical-lr,
+  ), bp: $bp-800w-mx,),
+  ( vals: (
+    'lr' : lr,
+    'rl' : rl,
+    'vtb': vertical-tb,
+    'vlr': vertical-lr,
+  ), bp: $bp-600w-mx,),
+);

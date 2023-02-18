@@ -1,0 +1,27 @@
+// display d
+$display : (
+  ( vals: (
+    'b' : block,
+    'ib' : inline-block,
+    'f' : flex,
+    'if': inline-flex,
+    'g': grid,
+    'n' : none,
+  ),),
+  ( vals: (
+    'b' : block,
+    'ib' : inline-block,
+    'f' : flex,
+    'if': inline-flex,
+    'g': grid,
+    'n' : none,
+  ), bp: $bp-800w-mx,),
+  ( vals: (
+    'b' : block,
+    'ib' : inline-block,
+    'f' : flex,
+    'if': inline-flex,
+    'g': grid,
+    'n' : none,
+  ), bp: $bp-600w-mx,),
+);

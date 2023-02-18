@@ -1,0 +1,23 @@
+// text-decoration td
+$text-decoration : (
+  ( vals: (
+    'n': none,
+    'u': underline,
+  ),),
+);
+
+// text-decoration tdval:h
+$text-decoration-hover : (
+  ( vals: (
+    'n': none,
+    'u': underline,
+  ),),
+);
+
+// text-decoration tdval:f
+$text-decoration-focus : (
+  ( vals: (
+    'n': none,
+    'u': underline,
+  ),),
+);

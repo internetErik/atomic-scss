@@ -1,0 +1,13 @@
+// text-shadow txsh
+$text-shadow : (
+  ( vals: (
+    '-fake-bold' : '-0.06ex 0 currentColor, 0.06ex 0 currentColor',
+  ),),
+);
+
+// text-shadow txshvalue:h
+$text-shadow-hover : (
+  ( vals: (
+    '-fake-bold' : '-0.06ex 0 currentColor, 0.06ex 0 currentColor',
+  ),),
+);

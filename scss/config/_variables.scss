@@ -15,9 +15,11 @@ $bp-smx-mn: (name: '\\@smx-mn', cond: 'all and (min-width: 400px)') !default;
 
 
 $cont-200-mx: (name: '\\#200-mx', cond: '(max-width: 200px)') !default;
+$cont-two-col-600-mx: (name: '\\#two-col\\@600w', cond: 'two-col (max-width: 600px)') !default;
 
 $container-order: (
   $cont-200-mx,
+  $cont-two-col-600-mx,
 ) !default;
 
 

@@ -1,0 +1,99 @@
+// color c-
+$color : (
+  ( vals: (
+    'inherit' : 'inherit',
+    'white' : $color-white,
+    'gray' : $color-gray,
+    'black' : $color-black,
+  ),),
+);
+
+// color c-value:h
+$color-hover : (
+  ( vals: (
+    'white' : $color-white,
+    'gray' : $color-gray,
+    'black' : $color-black,
+  ),),
+);
+
+// color c-value:f
+$color-focus : (
+  ( vals: (
+    'white' : $color-white,
+    'gray' : $color-gray,
+    'black' : $color-black,
+  ),),
+);
+
+// c-- color
+$default-v-c-primary   : $color-black;
+$default-v-c-secondary : $color-white;
+$default-v-c-tertiary : $color-gray;
+
+$v-c-primary : (
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ),),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-800w-mx,),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-600w-mx,),
+);
+
+$v-c-secondary : (
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ),),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-800w-mx,),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-600w-mx,),
+);
+
+$v-c-tertiary : (
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ),),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-800w-mx,),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-600w-mx,),
+);
+
+$var-color: (
+  (vals: (
+    '--primary': var(--c-primary),
+    '--secondary': var(--c-secondary),
+    '--tertiary': var(--c-tertiary),
+  ),),
+  (vals: (
+    '--primary': var(--c-primary),
+    '--secondary': var(--c-secondary),
+    '--tertiary': var(--c-tertiary),
+  ), bp: $bp-800w-mx ),
+);

@@ -1,0 +1,20 @@
+// transform trf-
+$transform : (
+  ( vals: (
+    'skew\\(45\\)': skew(45deg),
+  ),),
+);
+
+// transform trf-value:h
+$transform-hover : (
+  ( vals: (
+    'skew\\(45\\)': skew(45deg),
+  ),),
+);
+
+// transform trf-value:f
+$transform-focus : (
+  ( vals: (
+    'skew\\(45\\)': skew(45deg),
+  ),),
+);

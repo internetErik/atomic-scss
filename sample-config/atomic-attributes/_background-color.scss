@@ -1,0 +1,101 @@
+// background-color bgc-
+$background-color : (
+  ( vals: (
+    'transparent': transparent,
+    'white' : $color-white,
+    'gray' : $color-gray,
+    'black' : $color-black,
+  ),),
+);
+
+// background-color bgc-value:h
+$background-color-hover : (
+  ( vals: (
+    'transparent': transparent,
+    'white' : $color-white,
+    'gray' : $color-gray,
+    'black' : $color-black,
+  ),),
+);
+
+// background-color bgc-value:f
+$background-color-focus : (
+  ( vals: (
+    'transparent': transparent,
+    'white' : $color-white,
+    'gray' : $color-gray,
+    'black' : $color-black,
+  ),),
+);
+
+// c color
+$default-v-bgc-primary   : $color-black;
+$default-v-bgc-secondary : $color-white;
+$default-v-bgc-tertiary : $color-gray;
+
+$v-bgc-primary : (
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ),),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-800w-mx,),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-600w-mx,),
+);
+
+$v-bgc-secondary : (
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ),),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-800w-mx,),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-600w-mx,),
+);
+
+$v-bgc-tertiary : (
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ),),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-800w-mx,),
+  (vals : (
+    'white' : $color-white,
+    'black' : $color-black,
+    'gray': $color-gray,
+  ), bp: $bp-600w-mx,),
+);
+
+$var-background-color: (
+  (vals: (
+    '--primary': var(--bgc-primary),
+    '--secondary': var(--bgc-secondary),
+    '--tertiary': var(--bgc-tertiary),
+  ),),
+  (vals: (
+    '--primary': var(--bgc-primary),
+    '--secondary': var(--bgc-secondary),
+    '--tertiary': var(--bgc-tertiary),
+  ), bp: $bp-800w-mx ),
+);

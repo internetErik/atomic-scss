@@ -1,0 +1,78 @@
+// height h
+$height : (
+  ( vals: (
+    '-auto': auto,
+    '0': 0,
+  ),),
+  ( vals: (
+    '-auto': auto,
+    '0': 0,
+    ), bp: $bp-800w-mx,),
+  ( vals: (
+    '-auto': auto,
+    '0': 0,
+  ), bp: $bp-600w-mx,),
+);
+
+$height-hover : (
+  ( vals: (
+    '0': 0,
+  ),),
+);
+
+$height-vh : (
+  ( vals: (
+    '60': 60vh,
+    '80': 80vh,
+    '90': 90vh,
+    '100': 100vh,
+  ),),
+);
+
+$height-vw : (
+  ( vals: (
+    '100': 100vw,
+  ),),
+);
+
+$height-perc : (
+  ( vals: (
+    '50': 50%,
+    '100': 100%,
+  ),),
+  ( vals: (
+    '50': 50%,
+    '100': 100%,
+  ), bp: $bp-800w-mx,)
+);
+
+// max-height mah
+$max-height : (
+  ( vals: (
+    '0': 0,
+  ),),
+  ( vals: (
+    '-none': none,
+    '0': 0,
+  ), bp: $bp-800w-mx,),
+  ( vals: (
+    '-none': none,
+    '0': 0,
+  ), bp: $bp-600w-mx,),
+);
+
+// min-height mih
+$min-height : (
+  ( vals: (
+    '0': 0,
+  ),),
+  ( vals: (
+    '-auto': auto,
+    '0': 0,
+  ),
+  bp: $bp-800w-mx,),
+  ( vals: (
+    '-auto': auto,
+    '0': 0,
+  ), bp: $bp-600w-mx,),
+);

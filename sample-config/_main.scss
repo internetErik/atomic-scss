@@ -1,0 +1,281 @@
+@import "./variables";
+@import "./breakpoints";
+
+// independant files for each attribute
+@import "./atomic-attributes/align-items";
+@import "./atomic-attributes/align-self";
+@import "./atomic-attributes/background-color";
+@import "./atomic-attributes/background-position";
+@import "./atomic-attributes/background-repeat";
+@import "./atomic-attributes/background-size";
+@import "./atomic-attributes/border-radius";
+@import "./atomic-attributes/border";
+@import "./atomic-attributes/bottom";
+@import "./atomic-attributes/box-shadow";
+@import "./atomic-attributes/color";
+@import "./atomic-attributes/contain";
+@import "./atomic-attributes/container";
+@import "./atomic-attributes/content-visibility";
+@import "./atomic-attributes/cursor";
+@import "./atomic-attributes/display";
+@import "./atomic-attributes/filter";
+@import "./atomic-attributes/fill";
+@import "./atomic-attributes/font-family";
+@import "./atomic-attributes/font-size";
+@import "./atomic-attributes/font-weight";
+@import "./atomic-attributes/flex-basis";
+@import "./atomic-attributes/flex-direction";
+@import "./atomic-attributes/flex-grow";
+@import "./atomic-attributes/flex-shrink";
+@import "./atomic-attributes/flex-wrap";
+@import "./atomic-attributes/gap";
+@import "./atomic-attributes/grid-template-columns";
+@import "./atomic-attributes/height";
+@import "./atomic-attributes/justify-content";
+@import "./atomic-attributes/left";
+@import "./atomic-attributes/letter-spacing";
+@import "./atomic-attributes/line-height";
+@import "./atomic-attributes/list-style";
+@import "./atomic-attributes/margin";
+@import "./atomic-attributes/object-fit";
+@import "./atomic-attributes/opacity";
+@import "./atomic-attributes/order";
+@import "./atomic-attributes/outline";
+@import "./atomic-attributes/overflow";
+@import "./atomic-attributes/padding";
+@import "./atomic-attributes/position";
+@import "./atomic-attributes/right";
+@import "./atomic-attributes/rotate";
+@import "./atomic-attributes/scale";
+@import "./atomic-attributes/scroll-snap-align";
+@import "./atomic-attributes/stroke";
+@import "./atomic-attributes/text-align";
+@import "./atomic-attributes/text-decoration";
+@import "./atomic-attributes/text-orientation";
+@import "./atomic-attributes/text-shadow";
+@import "./atomic-attributes/text-transform";
+@import "./atomic-attributes/text-underline-offset";
+@import "./atomic-attributes/top";
+@import "./atomic-attributes/transform-origin";
+@import "./atomic-attributes/transform";
+@import "./atomic-attributes/transition-delay";
+@import "./atomic-attributes/translate";
+@import "./atomic-attributes/transition";
+@import "./atomic-attributes/user-select";
+@import "./atomic-attributes/visibility";
+@import "./atomic-attributes/white-space";
+@import "./atomic-attributes/writing-mode";
+@import "./atomic-attributes/width";
+@import "./atomic-attributes/z-index";
+
+$breakpoint-order: (
+  $bp-2000w-mx,
+  $bp-1800w-mx,
+  $bp-1600w-mx,
+  $bp-1400w-mx,
+  $bp-1200w-mx,
+  $bp-1000w-mx,
+  $bp-800w-mx,
+  $bp-700w-mx,
+  $bp-600w-mx,
+  $bp-500w-mx,
+  $bp-400w-mx,
+  $bp-350w-mx,
+  $bp-320w-mx,
+);
+
+// These are for setting the order of the output for containers
+// ex. use of a container style in ./atomic-attributes/_width.scss
+$container-order : (
+  $cn-tc-1200w-mx,
+  $cn-tc-800w-mx,
+  $cn-tc-600w-mx,
+  $cn-tc-400w-mx,
+);
+
+// atomic generation configuration
+$atomic-config:(
+  // define containers
+  ('container',     '\\#',      '',         '',        $container),
+//(attribute,         className,  postfix , modifier, style variants)
+  ////////////////////////////////////////////////////////////////////////
+  // custom properties
+  // ('background-color',  'bgc',     '',         '',        $var-background-color),
+  // ('color',             'c',       '',         '',        $var-color),
+  // ('fill',              'f',       '',         '',        $var-fill),
+  // ('margin',            'm',       '',         '',        $var-margin),
+  // ('margin-top',        'mt',      '',         '',        $var-margin),
+  // ('margin-bottom',     'mb',      '',         '',        $var-margin),
+  // ('margin-left',       'ml',      '',         '',        $var-margin),
+  // ('margin-right',      'mr',      '',         '',        $var-margin),
+  // ('padding',           'p',       '',         '',        $var-padding),
+  //   ('padding-top',       'pt',      '',         '',        $var-padding),
+  //   ('padding-bottom',    'pb',      '',         '',        $var-padding),
+  //   ('padding-left',      'pl',      '',         '',        $var-padding),
+  //   ('padding-right',     'pr',      '',         '',        $var-padding),
+  // ('stroke',            'st',      '',         '',        $var-stroke),
+  // end custom properties
+  ////////////////////////////////////////////////////////////////////////
+  ('align-items',       'ai',      '',         '',        $align-items),
+  ('align-self',        'as',      '',         '',        $align-self),
+  ('background-color',  'bgc-',    '',         '',        $background-color),
+  ('background-color',  'bgc-',    '\\:h',     ':hover',  $background-color-hover),
+  ('background-color',  'bgc-',    '\\:f',     ':focus',  $background-color-focus),
+  ('background-position',   'bgp-',  '',       '',        $background-position),
+    ('background-position-x', 'bgpx-', '',       '',        $background-position-x),
+    ('background-position-y', 'bgpy-', '',       '',        $background-position-y),
+  ('background-repeat', 'bgr-',    '',         '',        $background-repeat),
+  ('background-size',   'bgs-',    '',         '',        $background-size),
+  ('border-radius',     'bdrs',    '',         '',        $border-radius),
+  ('border',            'bd',      '',         '',        $border),
+    ('border-top',        'bt',      '',         '',        $border),
+    ('border-bottom',     'bb',      '',         '',        $border),
+    ('border-left',       'bl',      '',         '',        $border),
+    ('border-right',      'br',      '',         '',        $border),
+    ('border-bottom',     'bb',      '\\:h',     ':hover',  $border-hover),
+    ('border-bottom',     'bb',      '\\:f',     ':focus',  $border-focus),
+  ('border',            'bd',      '\\:h',     ':hover',  $border-hover),
+  ('border',            'bd',      '\\:f',     ':focus',  $border-focus),
+  ('bottom',            'b',       '',         '',        $bottom),
+  ('box-shadow',        'bxsh',    '',         '',        $box-shadow),
+  ('color',             'c-',      '',         '',        $color),
+  ('color',             'c-',      '\\:h',     ':hover',  $color-hover),
+  ('color',             'c-',      '\\:f',     ':focus',  $color-focus),
+  ('contain',           'cn',      '',         '',        $contain),
+  ('content-visibility','cv',      '',         '',        $content-visibility),
+  ('cursor',            'cur',     '',         '',        $cursor),
+  ('display',           'd',       '',         '',        $display),
+  ('fill',              'f-',      '',         '',        $fill),
+  ('fill',              'f-',      '\\:h',     ':hover',  $fill-hover),
+  ('fill',              'f-',      '\\:f',     ':focus',  $fill-focus),
+  ('filter',            'fl-',     '',         '',        $filter),
+  ('flex-basis',        'fxb',     '',         '',        $flex-basis),
+  ('flex-direction',    'fxdr',    '',         '',        $flex-direction),
+  ('flex-grow',         'fxg',     '',         '',        $flex-grow),
+  ('flex-shrink',       'fxs',     '',         '',        $flex-shrink),
+  ('flex-wrap',         'fxw',     '',         '',        $flex-wrap),
+  ('font-family',       'ff-',     '',         '',        $font-family),
+  ('font-size',         'fz',      '',         '',        $font-size),
+  ('font-weight',       'fw',      '',         '',        $font-weight),
+  ('font-weight',       'fw',      '\\:h',     ':hover',  $font-weight-hover),
+  ('gap',               'g',       '',         '',        $gap),
+  ('grid-template-columns', 'gc',  '',         '',        $grid-template-columns),
+  ('height',            'h',       '',         '',        $height),
+  ('height',            'h',       '\\:h',     ':hover',  $height-hover),
+  ('height',            'h',       'vh',       '',        $height-vh),
+  ('height',            'h',       'vw',       '',        $height-vw),
+  ('height',            'h',       '\\%',      '',        $height-perc),
+    ('max-height',        'mah',     '',         '',        $max-height),
+    ('min-height',        'mih',     '',         '',        $min-height),
+  ('justify-content',   'jc',      '',         '',        $justify-content),
+  ('left',              'l',       '',         '',        $left),
+  ('letter-spacing',    'lts',     '',         '',        $letter-spacing),
+  ('line-height',       'lh',      '',         '',        $line-height),
+  ('list-style',        'ls',      '',         '',        $list-style),
+  ('margin',            'm',       '',         '',        $margin),
+    ('margin-top',        'mt',      '',         '',        $margin),
+    ('margin-right',      'mr',      '',         '',        $margin),
+    ('margin-bottom',     'mb',      '',         '',        $margin),
+    ('margin-left',       'ml',      '',         '',        $margin),
+  ('object-fit',        'of',      '',         '',        $object-fit),
+  ('opacity',           'op',      '',         '',        $opacity),
+  ('opacity',           'op',      '\\:h',     ':hover',  $opacity-hover),
+  ('opacity',           'op',      '\\:fw',    ':focus-within',  $opacity-focus),
+  ('order',             'or',      '',         '',        $order),
+  ('outline',           'ol',      '',         '',        $outline),
+  ('overflow',          'o',       '',         '',        $overflow),
+    ('overflow-x',        'ox',      '',         '',        $overflow),
+    ('overflow-y',        'oy',      '',         '',        $overflow),
+  ('padding',           'p',       '',         '',        $padding),
+    ('padding-top',       'pt',      '',         '',        $padding),
+    ('padding-right',     'pr',      '',         '',        $padding),
+    ('padding-bottom',    'pb',      '',         '',        $padding),
+    ('padding-left',      'pl',      '',         '',        $padding),
+  ('position',          'pos',     '',         '',        $position),
+  ('right',             'r',       '',         '',        $right),
+  ('rotate',            'rt',      '',         '',        $rotate),
+  ('rotate',            'rt',      '\\:h',     ':hover',  $rotate-hover),
+  ('scale',             'scl',     '',         '',        $scale),
+  ('scale',             'scl',     '\\:h',     ':hover',  $scale-hover),
+  ('scroll-snap-align', 'ssa',     '',         '',        $scroll-snap-align),
+  ('stroke',            'st-',     '',         '',        $stroke),
+  ('stroke',            'st-',     '\\:h',     ':hover',  $stroke-hover),
+  ('stroke',            'st-',     '\\:f',     ':focus',  $stroke-focus),
+  ('text-align',        'ta',      '',         '',        $text-align),
+  ('text-decoration',   'td',      '',         '',        $text-decoration),
+  ('text-decoration',   'td',      '\\:h',     ':hover',  $text-decoration-hover),
+  ('text-decoration',   'td',      '\\:f',     ':focus',  $text-decoration-focus),
+  ('text-orientation',  'to',      '',         '',        $text-orientation),
+  ('text-shadow',       'txsh',    '',         '',        $text-shadow),
+  ('text-shadow',       'txsh',    '\\:h',     ':hover',  $text-shadow-hover),
+  ('text-transform',    'tt',      '',         '',        $text-transform),
+  ('text-underline-offset', 'tuo', '',         '',        $text-underline-offset),
+  ('top',               't',       '',         '',        $top),
+  ('transform-origin',  'trfo-',   '',         '',        $transform-origin),
+  ('transform',         'trf-',    '',         '',        $transform),
+  ('transform',         'trf-',    '\\:h',     ':hover',  $transform-hover),
+  ('transform',         'trf-',    '\\:f',     ':focus',  $transform-focus),
+  ('transition-delay',  'trsd-',   '',         '',        $transition-delay),
+  ('transition',        'trs-',    '',         '',        $transition),
+  ('translate',         'trl',     '',         '',        $translate),
+  ('translate',         'trl',     '\\:h',     ':hover',  $translate-hover),
+  ('user-select',       'us',      '',         '',        $user-select),
+  ('visibility',        'v',       '',         '',        $visibility),
+  ('white-space',       'ws',      '',         '',        $white-space),
+  ('width',             'w',       '',         '',        $width),
+  ('width',             'w',       '\\:h',     ':hover',  $width-hover),
+  ('width',             'w',       'vw',       '',        $width-vw),
+  ('width',             'w',       '\\%',      '',        $width-perc),
+    ('max-width',         'maw',     '',         '',        $max-width),
+    ('min-width',         'miw',     '',         '',        $min-width),
+  ('writing-mode',      'wm',      '',         '',        $writing-mode),
+  ('z-index',           'z',       '',         '',        $z-index),
+);
+
+
+
+$css-custom-properties : (
+  // (variableName     , setClassName              , postfix , modifier, initialValue       , style variants)
+  // ('--bgc-primary'  , 'set\\(--bgc-primary\\,'  , '\\)'   , ''      , $color-white       , $v-bgc-primary),
+  // ('--bgc-secondary', 'set\\(--bgc-secondary\\,', '\\)'   , ''      , $color-black       , $v-bgc-secondary),
+  // ('--bgc-tertiary' , 'set\\(--bgc-tertiary\\,' , '\\)'   , ''      , $color-black       , $v-bgc-tertiary),
+  // ('--c-primary'    , 'set\\(--c-primary\\,'    , '\\)'   , ''      , $color-white       , $v-c-primary),
+  // ('--c-secondary'  , 'set\\(--c-secondary\\,'  , '\\)'   , ''      , $color-black       , $v-c-secondary),
+  // ('--c-tertiary'   , 'set\\(--c-tertiary\\,'   , '\\)'   , ''      , $color-black       , $v-c-tertiary),
+  // ('--f-primary'    , 'set\\(--f-primary\\,'    , '\\)'   , ''      , $color-white       , $v-f-primary),
+  // ('--f-secondary'  , 'set\\(--f-secondary\\,'  , '\\)'   , ''      , $color-black       , $v-f-secondary),
+  // ('--f-tertiary'   , 'set\\(--f-tertiary\\,'   , '\\)'   , ''      , $color-black       , $v-f-tertiary),
+  // ('--m-small'      , 'set\\(--m-small\\,'      , '\\)'   , ''      , $default-v-m-small , $v-m-small),
+    // ('--mt-small'     , 'set\\(--mt-small\\,'     , '\\)'   , ''      , $default-v-m-small , $v-m-small),
+    // ('--mb-small'     , 'set\\(--mb-small\\,'     , '\\)'   , ''      , $default-v-m-small , $v-m-small),
+    // ('--ml-small'     , 'set\\(--ml-small\\,'     , '\\)'   , ''      , $default-v-m-small , $v-m-small),
+    // ('--mr-small'     , 'set\\(--mr-small\\,'     , '\\)'   , ''      , $default-v-m-small , $v-m-small),
+  // ('--m-medium'     , 'set\\(--m-medium\\,'     , '\\)'   , ''      , $default-v-m-medium, $v-m-medium),
+    // ('--mt-medium'    , 'set\\(--mt-medium\\,'    , '\\)'   , ''      , $default-v-m-medium, $v-m-medium),
+    // ('--mb-medium'    , 'set\\(--mb-medium\\,'    , '\\)'   , ''      , $default-v-m-medium, $v-m-medium),
+    // ('--ml-medium'    , 'set\\(--ml-medium\\,'    , '\\)'   , ''      , $default-v-m-medium, $v-m-medium),
+    // ('--mr-medium'    , 'set\\(--mr-medium\\,'    , '\\)'   , ''      , $default-v-m-medium, $v-m-medium),
+  // ('--m-large'      , 'set\\(--m-large\\,'      , '\\)'   , ''      , $default-v-m-large , $v-m-large),
+    // ('--mt-large'     , 'set\\(--mt-large\\,'     , '\\)'   , ''      , $default-v-m-large , $v-m-large),
+    // ('--mb-large'     , 'set\\(--mb-large\\,'     , '\\)'   , ''      , $default-v-m-large , $v-m-large),
+    // ('--ml-large'     , 'set\\(--ml-large\\,'     , '\\)'   , ''      , $default-v-m-large , $v-m-large),
+    // ('--mr-large'     , 'set\\(--mr-large\\,'     , '\\)'   , ''      , $default-v-m-large , $v-m-large),
+  // ('--p-small'      , 'set\\(--p-small\\,'      , '\\)'   , ''      , $default-v-p-small , $v-p-small),
+    // ('--pt-small'     , 'set\\(--pt-small\\,'     , '\\)'   , ''      , $default-v-p-small , $v-p-small),
+    // ('--pb-small'     , 'set\\(--pb-small\\,'     , '\\)'   , ''      , $default-v-p-small , $v-p-small),
+    // ('--pl-small'     , 'set\\(--pl-small\\,'     , '\\)'   , ''      , $default-v-p-small , $v-p-small),
+    // ('--pr-small'     , 'set\\(--pr-small\\,'     , '\\)'   , ''      , $default-v-p-small , $v-p-small),
+  // ('--p-medium'     , 'set\\(--p-medium\\,'     , '\\)'   , ''      , $default-v-p-medium, $v-p-medium),
+    // ('--pt-medium'    , 'set\\(--pt-medium\\,'    , '\\)'   , ''      , $default-v-p-medium, $v-p-medium),
+    // ('--pb-medium'    , 'set\\(--pb-medium\\,'    , '\\)'   , ''      , $default-v-p-medium, $v-p-medium),
+    // ('--pl-medium'    , 'set\\(--pl-medium\\,'    , '\\)'   , ''      , $default-v-p-medium, $v-p-medium),
+    // ('--pr-medium'    , 'set\\(--pr-medium\\,'    , '\\)'   , ''      , $default-v-p-medium, $v-p-medium),
+  // ('--p-large'      , 'set\\(--p-large\\,'      , '\\)'   , ''      , $default-v-p-large , $v-p-large),
+    // ('--pt-large'     , 'set\\(--pt-large\\,'     , '\\)'   , ''      , $default-v-p-large , $v-p-large),
+    // ('--pb-large'     , 'set\\(--pb-large\\,'     , '\\)'   , ''      , $default-v-p-large , $v-p-large),
+    // ('--pl-large'     , 'set\\(--pl-large\\,'     , '\\)'   , ''      , $default-v-p-large , $v-p-large),
+    // ('--pr-large'     , 'set\\(--pr-large\\,'     , '\\)'   , ''      , $default-v-p-large , $v-p-large),
+  // ('--st-primary'   , 'set\\(--st-primary\\,'   , '\\)'   , ''      , $color-white       , $v-st-primary),
+  // ('--st-secondary' , 'set\\(--st-secondary\\,' , '\\)'   , ''      , $color-black       , $v-st-secondary),
+  // ('--st-tertiary'  , 'set\\(--st-tertiary\\,'  , '\\)'   , ''      , $color-black       , $v-st-tertiary),
+);

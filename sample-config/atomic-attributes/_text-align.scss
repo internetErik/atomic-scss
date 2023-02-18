@@ -1,0 +1,18 @@
+// text-align ta
+$text-align : (
+  ( vals: (
+    'l' : left,
+    'c' : center,
+    'r' : right,
+  ),),
+  ( vals: (
+    'l' : left,
+    'c': center,
+    'r': right,
+  ), bp: $bp-800w-mx,),
+  ( vals: (
+    'l' : left,
+    'c': center,
+    'r': right,
+  ), bp: $bp-600w-mx,),
+);
